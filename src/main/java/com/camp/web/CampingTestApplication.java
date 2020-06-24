@@ -8,6 +8,7 @@ public class CampingTestApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(CampingTestApplication.class, args);
+		
 	}
 
 }
