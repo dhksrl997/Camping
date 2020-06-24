@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Build-Jdk-Spec: 13
-Implementation-Title: SpringWeb
+Implementation-Title: springweb
 Implementation-Version: 1.0
 Implementation-Vendor: Pivotal Software, Inc.
 Created-By: Maven Integration for Eclipse

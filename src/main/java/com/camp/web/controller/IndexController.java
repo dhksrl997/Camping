@@ -10,7 +10,7 @@ public class IndexController {
 	private String index() {
 		
 		
-		return "index";
+		return "root.index";
 }
 }
 
