@@ -13,14 +13,15 @@ asideButton.addEventListener("click", function(e){
     e.preventDefault();
     console.log("asdasd");
     if(flag){
+ 
     asideMenu.classList.add("show");
     // section.insertAdjacentHTML('afterbegin',template);
    shield.classList.add("showup");
-
 }
 else{
     asideMenu.classList.remove("show");
     shield.classList.remove("showup");
+  
 
 }
 });

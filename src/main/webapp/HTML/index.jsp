@@ -8,13 +8,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Campnic</title>
     <link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/intro.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css"
-        integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
+    integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
     <script defer src="../js/index.js"></script>
 </head>
 
 <body>
+
+ <section class="intro">
+        <div class="stars">
+            <div class="tent">
+                <img class="logo loadOpacity" src="../images/whiteTent.png">
+            </div>
+            <img id="blackPic" class="BlackPic" src="../images/BlackPic.png">
+            <img id="WhitePic" class="whitePic" src="../images/whitePics.png">
+            <img class="campIn" src="../images/WHITECAMP.png">
+            <img class="campIn blackCAMP" src="../images/BlackCamp.png">
+        </div>
+    </section>
+
+
     <div class="shield"></div>
       <section class="header">
         <div class="header_logo"><a class="aside-button" href=""><i class="fas fa-bars"></i></a>
