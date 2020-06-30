@@ -11,9 +11,7 @@ var flag = false;
 asideButton.addEventListener("click", function(e){
     flag=!flag;
     e.preventDefault();
-    console.log("asdasd");
     if(flag){
- 
     asideMenu.classList.add("show");
     // section.insertAdjacentHTML('afterbegin',template);
    shield.classList.add("showup");

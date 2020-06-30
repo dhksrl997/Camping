@@ -14,7 +14,6 @@
 <title>Campnic</title>
 <link rel="stylesheet" href="/css/reset.css">
 <link rel="stylesheet" href="/css/index.css">
-<link href='<tiles:getAsString name="css"/>' type="text/css" rel="stylesheet" />
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <link rel="stylesheet"

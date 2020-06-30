@@ -3,19 +3,28 @@ $(function() {
 	var darkBtn = document.querySelector(".dark-mode-btn");
 	var body = document.querySelector("body");
 	var darkmode = true;
+	var logo = $(".logo");
+	darkBtn.style.backgroundImage = "url('images/night.png')";
 	darkBtn.onclick = function() {
 		darkmode = !darkmode;
-		console.log($(".dark-mode-btn"));
 		if (darkmode == false) { //다크모드 
+			logo.attr("src", "images/indexlogo-w.png");
+			$(".header").css("transition","0.5s").css("background-color","rgb(47, 47, 47)");
 			body.style.cursor = "url('images/WhiteCursor.png'), auto";
 			body.style.background = "black";
 			body.style.color = "white";
 			darkBtn.style.backgroundImage = "url('https://png.pngtree.com/png-vector/20190115/ourmid/pngtree-vector-stars-and-moon-icon-png-image_317944.jpg')";
+			$(".sidemenu").css("color","white");
+			$(".aside-list").find("li").css("transition","0.5s").css("background-color", "black").css("color","white");
 		} else {//라이트모드 
+			logo.attr("src", "images/indexlogo-b.png");
+			$(".header").css("background-color","white");
 			body.style.cursor = "url('images/BlackCursor.png'), auto";
 			body.style.background = "white";
 			body.style.color = "black";
 			darkBtn.style.backgroundImage = "url('images/night.png')";
+			$(".sidemenu").css("color","black");
+			$(".aside-list").find("li").css("transition","0.5s").css("background-color", "white").css("color","black");
 		}
 	};
 

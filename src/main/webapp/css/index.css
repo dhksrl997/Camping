@@ -12,11 +12,11 @@ a {
 	position: fixed;
 	z-index: 3;
 	top: 90%;
-	left: 90%;
+	left: 95%;
 	width: 50px;
 	height: 50px;
 	background-image:
-		url("https://png.pngtree.com/png-vector/20190115/ourmid/pngtree-vector-stars-and-moon-icon-png-image_317944.jpg");
+		url('/images/night.png');
 	background-size: cover;
 	border-radius: 50px;
 	transition: 0.5s;
@@ -55,7 +55,7 @@ a {
 
 .header_menu {
 	display: flex;
-	background-color: beige;
+	/* background-color: beige; */
 	justify-content: center;
 	align-items: center;
 	box-sizing: border-box;

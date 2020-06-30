@@ -7,15 +7,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.security.web.savedrequest.SavedRequest;
 import org.springframework.stereotype.Component;
-
-import com.camp.web.entity.Member;
-import com.camp.web.service.MemberService;
 
 @Component
 public class CampAuthenticationSuccessHandler implements AuthenticationSuccessHandler {
@@ -29,13 +25,8 @@ public class CampAuthenticationSuccessHandler implements AuthenticationSuccessHa
 		System.out.println("로그인 성공ㅇ");
 
 		HttpSession session = request.getSession();
-		String userId = authentication.getName();
-		//System.out.println(userId);
-		session.setAttribute("userId", userId);
-
-		//System.out.println(authentication.getPrincipal());
-		System.out.println(session.getAttribute("userId"));
 		
+		//session.getAttribute("SPRING_SECURITY_SAVED_REQUEST");
 
 		SavedRequest savedRequest = (SavedRequest)session.getAttribute
 				("SPRING_SECURITY_SAVED_REQUEST");
@@ -43,8 +34,8 @@ public class CampAuthenticationSuccessHandler implements AuthenticationSuccessHa
 		if(savedRequest != null) {
 			String returnURL = savedRequest.getRedirectUrl();
 			response.sendRedirect(returnURL);
-
-		} else {
+		}
+		else{
 			response.sendRedirect("/index");
 		}
 	}

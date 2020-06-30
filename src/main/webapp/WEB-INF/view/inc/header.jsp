@@ -9,8 +9,9 @@
 		<header>
 			<section class="header">
 				<div class="header_logo">
-					<a class="aside-button" href=""><i class="fas fa-bars"></i></a> <a
-						href="#"><img src="../images/indexlogo.png" width="230px"
+					<a class="aside-button" href=""> <i
+						class="fas fa-bars sidemenu"></i></a> <a href="#"><img
+						class="logo" src="../images/indexlogo.png" width="230px"
 						alt="campnic_logo"></a>
 				</div>
 				<ul class="header_menu">
@@ -50,7 +51,7 @@
 				<div class="3 number">CAMPING</div>
 			</ul>
 
-			
+
 
 
 
