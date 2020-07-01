@@ -9,10 +9,10 @@
 		<version>2.3.1.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.newlecture</groupId>
-	<artifactId>springweb</artifactId>
+	<groupId>com.newlecture.web</groupId>
+	<artifactId>SpringWeb</artifactId>
 	<version>1.0</version>
-	<name>springweb</name>
+	<name>SpringWeb</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -21,8 +21,30 @@
 
 	<dependencies>
 		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-taglibs</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<optional>true</optional>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
 		</dependency>
 
 
@@ -34,8 +56,7 @@
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-			<optional>true</optional>
+			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
 		<dependency>
@@ -49,6 +70,7 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
@@ -66,22 +88,6 @@
 			<groupId>org.apache.tiles</groupId>
 			<artifactId>tiles-jsp</artifactId>
 			<version>3.0.8</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>	
-			<artifactId>spring-boot-starter-security</artifactId>
-		</dependency>
-		
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-taglibs</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.tiles</groupId>

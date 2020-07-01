@@ -15,32 +15,32 @@
 <link rel="stylesheet" href="/css/reset.css">
 <link rel="stylesheet" href="/css/index.css">
 <!-- <link rel="stylesheet" href="/css/camp/list.css"> -->
-<%-- <link href='<tiles:getAsString name="css"/>' type="text/css" rel="stylesheet" /> --%>
-
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link href='<tiles:getAsString name="css"/>' type="text/css"
+	rel="stylesheet" />
 <link rel="stylesheet"
 	href="https://use.fontawesome.com/releases/v5.13.1/css/all.css"
 	integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q"
 	crossorigin="anonymous">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 </head>
 
 <body>
 	<!-- header 부분 -->
-
-	<tiles:insertAttribute name="header" />
-
+	<header class="header">
+		<tiles:insertAttribute name="header" />
+	</header>
 	<!-- --------------------------- <visual> --------------------------------------- -->
 	<!-- visual 부분 -->
 
 
 	<!-- --------------------------- <body> --------------------------------------- -->
 	<div id="body">
-
-
-		<!-- --------------------------- main --------------------------------------- -->
-		<tiles:insertAttribute name="main" />
+		<main class="main">
+			<!-- --------------------------- main --------------------------------------- -->
+			<tiles:insertAttribute name="main" />
+		</main>
 		<input type="button" value="" class="dark-mode-btn">
 
 	</div>

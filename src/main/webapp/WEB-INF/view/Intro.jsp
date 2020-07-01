@@ -44,7 +44,7 @@
     </section>
         
         <nav class="aside-list">    
-        <li><i class="fas fa-home"></i><div>홈</div></li>
+        <a href="index"><li><i class="fas fa-home"></i><div>홈</div></li></a>
             <li><i class="fas fa-campground"></i><div>구독</div></li>
             <li><i class="fas fa-tree"></i><div> 컨텐츠 1</div></li>
             <li><i class="fas fa-grin-hearts"></i><div> 캠핑장 소개</div></li>
