@@ -2,7 +2,6 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="s" uri="http://www.springframework.org/security/tags"%>
-	<div class="content-container">
 		<!-- ---------------------------<header>--------------------------------------- -->
 		<section class="header">
 			<div class="header_logo">
@@ -29,16 +28,7 @@
 				<div>캠린이 생존템</div></li>
 			<li><i class="fab fa-accusoft"></i>
 				<div>예약 시스템</div></li>
-			<li><i class="fab fa-accusoft"></i>
-				<div>캠핑 꿀팁스><</div></li>
-			<li><i class="fab fa-accusoft"></i>
-				<div>캠핑 꿀팁스><</div></li>
-			<li><i class="fab fa-accusoft"></i>
-				<div>캠핑 꿀팁스><</div></li>
-			<li><i class="fab fa-accusoft"></i>
-				<div>캠핑 꿀팁스><</div></li>
-			<li><i class="fab fa-accusoft"></i>
-				<div>캠핑 꿀팁스><</div></li>
+			
 		</nav>
 
 		

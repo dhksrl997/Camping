@@ -16,14 +16,14 @@ $(function() {
 			darkBtn.style.backgroundImage = "url('https://png.pngtree.com/png-vector/20190115/ourmid/pngtree-vector-stars-and-moon-icon-png-image_317944.jpg')";
 			$(".sidemenu").css("color","white");
 			$(".aside-list").find("li").css("transition","0.5s").css("background-color", "rgb(47, 47, 47)")
-			.css("color","white").hover(function(){
-//				console.log("asd")
+			.css("color","white")
+			.hover(function(){
 				$(this).css("background-color", "rgb(86,88,96)").css("color", "white")
 			},
 			function(){
 				$(this).css("background-color", "rgb(47, 47, 47)").css("color", "white")
 			}
-			);
+			).find("i").css("color","white");
 //			%(".aside-list").find("li").hover(function(){
 //				$(this).toggleClass("darkhover");
 //			});
@@ -37,13 +37,12 @@ $(function() {
 			$(".sidemenu").css("color","black");
 			$(".aside-list").find("li").css("transition","0.5s").css("background-color", "white")
 			.css("color","black").hover(function(){
-//				console.log("asd")
-				$(this).css("background-color", "rgba(0, 0, 0, 0.4)").css("color", "black")
+				$(this).css("background-color", "rgb(210,210,210)").css("color", "black")
 			},
 			function(){
 				$(this).css("background-color", "white").css("color", "black")
 			}
-			);;
+			).find("i").css("color","black");
 		}
 	};
 

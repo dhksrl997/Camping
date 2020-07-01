@@ -68,11 +68,11 @@ a {
 	box-sizing: border-box;
 }
 
-.aside-list li:hover {
-	background-color: rgba(0, 0, 0, 0.4);
+/* .aside-list li:hover {
+	background-color: rgb(0, 0, 0);
 	transition: .2s;
 	color: white;
-}
+} */
 
 .aside-list i {
 	font-size: 30px;
