@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<header id="header">
-	<%@ taglib prefix="s"
+<%@ taglib prefix="s"
 		uri="http://www.springframework.org/security/tags"%>
+<header id="header">
 	<div class="content-container">
 		<!-- ---------------------------<header>--------------------------------------- -->
 		<header>
@@ -22,7 +22,8 @@
 
 			<nav class="aside-list">
 				<li><i class="fas fa-home"></i>
-					<div>홈</div></li>
+					<div>홈</div>
+					</li>
 				<li><i class="fas fa-campground"></i>
 					<div>구독</div></li>
 				<li><i class="fas fa-tree"></i>
@@ -50,9 +51,4 @@
 				<div class="2 number">TOOLS</div>
 				<div class="3 number">CAMPING</div>
 			</ul>
-
-
-
-
-
 		</header>

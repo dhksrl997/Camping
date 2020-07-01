@@ -87,6 +87,15 @@ a {
 	color: white;
 }
 
+.darkhover{
+	background-color:white;
+	transition: .2s;
+	color:black;
+}
+.whitehover{
+	
+}
+
 .aside-list i {
 	font-size: 30px;
 	padding-left: 30px;
@@ -143,7 +152,7 @@ a {
 	margin-left: 500px;
 }
 
-/* ///////////////////////////////���///////////////////// */
+/* ///////////////////////////////占쏙옙占�///////////////////// */
 .container {
 	position: relative;
 	overflow: hidden;
