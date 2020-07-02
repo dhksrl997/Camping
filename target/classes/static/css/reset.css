@@ -26,11 +26,11 @@ address, caption, cite, code, dfn, em, strong, th, var {
     font-weight: normal;
 }
 
- ol, ul, li {
+ol, ul, li {
     list-style: none;
 }
 
- caption, th {
+caption, th {
     text-align: left;
 }
 
@@ -78,12 +78,12 @@ legend {
     display: none;
 }
 
-a{/* 모든 상태에서 언더라인 없앰*/
+a{/* 紐⑤뱺 �긽�깭�뿉�꽌 �뼵�뜑�씪�씤 �뾾�빊*/
     text-decoration: none;
-    /* 텍스트의 밑줄 지우는 방법*/
+    /* �뀓�뒪�듃�쓽 諛묒쨪 吏��슦�뒗 諛⑸쾿*/
 }
 
-a:hover{/* hover일때만 밑줄 있음*/
+a:hover{/* hover�씪�븣留� 諛묒쨪 �엳�쓬*/
     text-decoration: none;
     
 }

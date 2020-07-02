@@ -1,6 +1,9 @@
+
+
 body {
 	margin: 0px;
-	overflow: hidden;
+	/* overflow: hidden; */
+	
 }
 
 a {
@@ -42,7 +45,7 @@ a {
 .header_menu {
 	float: right; 
 	display : flex;
-	background-color: beige;
+	
 	justify-content: center;
 	align-items: center;
 	box-sizing: border-box;
@@ -57,22 +60,18 @@ a {
 
 .aside-list {
 	z-index: 5;
-	position: absolute;
+	/* position: absolute;  */
+	position:fixed;  
 	width: 350px;
-	height: 110%;
+	height: 100%;
 	top: -10px;
-	left: -350px;
+	left: -350px;  
 	transition: .5s;
 	background-color: white;
 	padding-top: 70px;
-	box-sizing: border-box;
+	box-sizing:content-box;
 }
 
-/* .aside-list li:hover {
-	background-color: rgb(0, 0, 0);
-	transition: .2s;
-	color: white;
-} */
 
 .aside-list i {
 	font-size: 30px;
@@ -95,7 +94,7 @@ a {
 }
 
 .aside-list li div {
-	box-sizing: border-box;
+ 	box-sizing: border-box; 
 	/* background-color: cornflowerblue; */
 	padding-left: 20px;
 }
@@ -105,22 +104,19 @@ a {
 	transition: .5s;
 }
 
-.shield {
-	position: absolute;
-	/* display: none; */
-	width: 100%;
-	height: 100%;
-	left: 0px;
-	z-index: -999;
-	background-color: rgba(0, 0, 0, 0.5);
-	/* transition: .5s; */
-	opacity: 0;
+.dark-mode-btn {
+	position: fixed;
+	z-index: 3;
+	top: 90%;
+	left: 95%;
+	width: 50px;
+	height: 50px;
+	background-image:
+		url("/images/night.png");
+	background-size: cover;
+	border-radius: 50px;
+	transition: 0.5s;
 }
 
-.showup {
-	/* display: block; */
-	opacity: 1;
-	z-index: 4;
-	/* transition-duration: .2s; */
-	/* transition: .5s; */
-}
+
+

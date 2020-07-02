@@ -1,65 +1,68 @@
 $(function() {
-	var body = $("body");
+	var sessionValue=localStorage.getItem('darkmode');
+	console.log("Loaded Value : "+ sessionValue);
+	if(sessionValue=="false"||sessionValue==null)
+		var flag = false;
+	else if(sessionValue=="true")
+		flag=true;
+	
 	var darkBtn = document.querySelector(".dark-mode-btn");
 	var body = document.querySelector("body");
-	var darkmode = true;
 	var logo = $(".logo");
 	darkBtn.style.backgroundImage = "url('/images/night.png')";
-	darkBtn.onclick = function() {
-		darkmode = !darkmode;
-		if (darkmode == false) { //다크모드 
+	
+	$(document).ready(function() {
+		var flag= sessionValue;
+		if (flag == "false") { // 다크모드
+			
 			logo.attr("src", "/images/indexlogo-w.png");
-			$(".header").css("transition","0.5s").css("background-color","rgb(47, 47, 47)");
-			body.style.cursor = "url('/images/WhiteCursor.png'), auto";
-			body.style.background = "black";
-			body.style.color = "white";
+			$(".header").css("background-color","rgb(47, 47, 47)");
+			$("body").css("background-color","rgb(15,15,15)").css("color", "rgb(166,170,175)");
 			darkBtn.style.backgroundImage = "url('https://png.pngtree.com/png-vector/20190115/ourmid/pngtree-vector-stars-and-moon-icon-png-image_317944.jpg')";
-			$(".sidemenu").css("color","white");
-			$(".aside-list").find("li").css("transition","0.5s").css("background-color", "rgb(47, 47, 47)")
-			.css("color","white")
-			.hover(function(){
-				$(this).css("background-color", "rgb(86,88,96)").css("color", "white")
-			},
-			function(){
-				$(this).css("background-color", "rgb(47, 47, 47)").css("color", "white")
-			}
-			).find("i").css("color","white");
-//			%(".aside-list").find("li").hover(function(){
-//				$(this).toggleClass("darkhover");
-//			});
-		} else {//라이트모드 
+			$(".sidemenu").css("color", "white");
+			$(".aside-list").css("background-color","rgb(47, 47, 47)").find("li").css("transition", "0.7s").css("background-color", "rgb(47, 47, 47)").css("color", "white").hover(
+							function() {$(this).css("background-color","rgb(86,88,96)").css("color","white")},
+							function() {$(this).css("background-color","rgb(47, 47, 47)").css("color", "white")}).find("i").css("color", "white");
+		} else {// 라이트모드
 			logo.attr("src", "/images/indexlogo-b.png");
-			$(".header").css("background-color","white");
-			body.style.cursor = "url('/images/BlackCursor.png'), auto";
-			body.style.background = "white";
-			body.style.color = "black";
+			$(".header").css("background-color", "white");
+			$("body").css("background-color", "white").css("color", "black");
 			darkBtn.style.backgroundImage = "url('/images/night.png')";
-			$(".sidemenu").css("color","black");
-			$(".aside-list").find("li").css("transition","0.5s").css("background-color", "white")
-			.css("color","black").hover(function(){
-				$(this).css("background-color", "rgb(210,210,210)").css("color", "black")
-			},
-			function(){
-				$(this).css("background-color", "white").css("color", "black")
+			$(".sidemenu").css("color", "black");
+			$(".aside-list").css("background-color","white").find("li").css("background-color", "white").css("color", "black").hover(
+					function() {$(this).css("background-color", "rgb(210,210,210)").css("color", "black")},
+					function() {$(this).css("background-color", "white").css("color","black")}).find("i").css("color", "black");
 			}
-			).find("i").css("color","black");
-		}
+	});
+	
+	
+	
+	darkBtn.onclick = function() {
+		console.log(flag);
+		flag = !flag;
+		if (flag == false) { // 다크모드
+			localStorage.setItem('darkmode','false');
+			logo.attr("src", "/images/indexlogo-w.png");
+			$(".header").css("transition", "0.7s").css("background-color","rgb(47, 47, 47)").css("color","rgb(166,170,175)");
+			$("body").css("transition", "0.7s").css("background-color","rgb(15,15,15)").css("color", "rgb(166,170,175)");
+			darkBtn.style.backgroundImage = "url('https://png.pngtree.com/png-vector/20190115/ourmid/pngtree-vector-stars-and-moon-icon-png-image_317944.jpg')";
+			$(".sidemenu").css("color", "white");
+			$(".aside-list").css("transition", "0.7s").css("background-color","rgb(47, 47, 47)").find("li").css("transition", "0.7s").css("background-color", "rgb(47, 47, 47)").css("color", "white").hover(
+							function() {$(this).css("background-color","rgb(86,88,96)").css("color","white")},
+							function() {$(this).css("background-color","rgb(47, 47, 47)").css("color", "white")}).find("i").css("color", "white");
+		} else {// 라이트모드
+			localStorage.setItem('darkmode','true');
+			logo.attr("src", "/images/indexlogo-b.png");
+			$(".header").css("transition", "0.7s").css("background-color", "white").css("color","black");
+			$("body").css("transition", "0.7s").css("background-color", "white").css("color", "black");
+			darkBtn.style.backgroundImage = "url('/images/night.png')";
+			$(".sidemenu").css("color", "black");
+			$(".aside-list").css("transition", "0.7s").css("background-color","white").find("li").css("transition", "0.7s").css("background-color", "white").css("color", "black").hover(
+					function() {$(this).css("background-color", "rgb(210,210,210)").css("color", "black")},
+					function() {$(this).css("background-color", "white").css("color","black")}).find("i").css("color", "black");
+			}
 	};
-
-	body.onmousedown = function() { // 마우스가 눌려질 때
-		if (darkmode) {// 라이트모드
-			body.style.cursor = "url('/images/BlackCursorClicked.png'), auto";
-		} else {// 다크모드일 때
-			body.style.cursor = "url('/images/WhiteCursorClicked.png'), auto";
-		}
-	};
-
-	body.onmouseup = function() { // 마우스가 땔 때
-		if (darkmode) {// 라이트모드
-			body.style.cursor = "url('/images/BlackCursor.png'), auto";
-		} else {// 다크모드일 때
-			body.style.cursor = "url('/images/WhiteCursor.png'), auto";
-		}
-	};
+//	————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+	
 
 });

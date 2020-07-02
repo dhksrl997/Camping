@@ -4,7 +4,7 @@
        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 <tiles-definitions>
 	<definition name="root.*" template="/WEB-INF/view/inc/layout.jsp">
-		<put-attribute name="css" value="" />
+		<put-attribute name="css" value="/css/index.css" />
 		<put-attribute name="header" value="/WEB-INF/view/inc/header.jsp" />
 		<put-attribute name="main" value="/WEB-INF/view/{1}.jsp" />
 	</definition>

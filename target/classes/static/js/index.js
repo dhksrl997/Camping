@@ -4,6 +4,7 @@ let asideButton = document.querySelector(".aside-button");
 let numButton = document.querySelector(".numbutton");
 // console.log(asideButton);
 let asideMenu = document.querySelector(".aside-list");
+
 let shield = document.querySelector(".shield");
 var flag = false;
 
