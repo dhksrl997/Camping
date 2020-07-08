@@ -33,7 +33,7 @@ public class MemberController {
 
 		memberService.insert(member);
 		
-		return "redirect:/index";
+		return "redirect:/member/login";
 	}
 	
 	@GetMapping("agree")

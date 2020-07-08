@@ -4,15 +4,26 @@
        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 <tiles-definitions>
 	<definition name="root.*" template="/WEB-INF/view/inc/layout.jsp">
-		<put-attribute name="css" value="" />
+	<put-attribute name="css" value="/css/index.css" />
 		<put-attribute name="header" value="/WEB-INF/view/inc/header.jsp" />
 		<put-attribute name="main" value="/WEB-INF/view/{1}.jsp" />
 	</definition>
 	
+	<definition name="camp.*" template="/WEB-INF/view/inc/layout.jsp">
+		<put-attribute name="css" value="/css/camp/list.css" />
+		<put-attribute name="header" value="/WEB-INF/view/inc/header.jsp" />
+		<put-attribute name="main" value="/WEB-INF/view/camp/{1}.jsp" />
+	</definition>
+	
 	<definition name="member.*" template="/WEB-INF/view/inc/layout.jsp">
-		<put-attribute name="css" value="/css/member-main.css" />
+		<put-attribute name="css" value="/css/member/login.css" />
 		<put-attribute name="header" value="/WEB-INF/view/inc/header.jsp" />
 		<put-attribute name="main" value="/WEB-INF/view/member/{1}.jsp" />
 	</definition>
 	
+	<definition name="items.*" template="/WEB-INF/view/inc/layout.jsp">
+		<put-attribute name="css" value="/css/items/item.css" />
+		<put-attribute name="header" value="/WEB-INF/view/inc/header.jsp" />
+		<put-attribute name="main" value="/WEB-INF/view/items/{1}.jsp" />
+	</definition>
 </tiles-definitions>
