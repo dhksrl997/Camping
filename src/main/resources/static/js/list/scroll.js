@@ -9,10 +9,9 @@ $(function(){
         if( scrollTop + windowHeight +1>= documentHeight ){
            index++;
            setTimeout(fetchlist,200); 
-//           fetchImage();
-//           fetchlist();
+// fetchImage();
+// fetchlist();
         }
-        
         function fetchlist(){
            $.ajax({
                type: "get",
