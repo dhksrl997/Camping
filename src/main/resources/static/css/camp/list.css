@@ -9,12 +9,20 @@
 	font-style: normal;
 }
 
+@font-face {
+	font-family: 'Recipekorea';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/Recipekorea.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
 body {
-	width:100%;
-	height:100%;
-	/* height: max-content; */
+	width: 100%;
+	min-height: 100vh; margin : 0px;
+	overflow: auto;
 	margin: 0px;
-	
 }
 
 .region-list {
@@ -87,19 +95,19 @@ body {
 .img {
 	width: 400px;
 	height: 250px;
-	overflow:hidden;
+	overflow: hidden;
 }
 
 .image {
 	border-radius: 25%;
 	background-size: auto;
 	transform: scale(0.92);
-	transition:transform .5s;
+	transition: transform .5s;
 }
 
 .image:hover {
 	transform: scale(1.0);
-	 transition:transform .5s; 
+	transition: transform .5s;
 	-webkit-transform: scale(1.0);
 	-moz-transform: scale(1.0);
 	-ms-transform: scale(1.0);
@@ -115,7 +123,7 @@ body {
 
 .title a {
 	font-size: 30px;
-	/* color: black; */
+	color: rgb(110, 183, 216);
 }
 
 .icons {
@@ -131,10 +139,12 @@ body {
 	padding: 10px;
 	border-radius: 50%;
 }
-.price{
+
+.price {
 	text-overflow: ellipsis;
-	overflow:hidden;
+	overflow: hidden;
 }
+
 .icon i {
 	font-size: 25px;
 	color: darkblue;
@@ -146,4 +156,104 @@ body {
 	display: flex;
 	flex-direction: column;
 	font-size: 15px;
+}
+
+.rec-list {
+	display: flex;
+	width: 100%;
+	height: 500px;
+	background-color: red;
+}
+
+.items {
+	justify-content: center;
+	width: 320px;
+	height: 200px;
+	background-color: blue;
+	border: 1px solid black;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+.container {
+	position: relative;
+	width: 1400px;
+	margin-left: auto;
+	margin-right: auto;
+	height: 500px;
+	overflow-x: hidden;
+}
+
+.box-wrap {
+	width: 100%;
+	height: 500px;
+	/*     position: absolute; */
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	left: 0px;
+	overflow-x: hidden;
+}
+
+.box-wrap2 {
+	position: absolute;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	left: -1000px;
+	width: 1000px;
+	height: 500px;
+	background-color: crimson;
+}
+
+.box-wrap3 {
+	position: absolute;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 1000px;
+	height: 500px;
+	background-color: darkmagenta;
+	left: 1000px;
+}
+
+.slide {
+	display: flex;
+}
+
+.box {
+	/* position:absolute; */
+	display: block;
+	width: 400px;
+	height: 300px;
+	margin: 10px;
+}
+
+.rec-img {
+	width: 100%;
+	height: 250px;
+}
+
+.name-sec {
+	font-family: Recipekorea;
+	width: 100%;
+	font-size: 30px;
+	text-align: center;
+	height: 40px;
+}
+
+.address-sec {
+	font-family: Recipekorea;
+	width: 100%;
+	font-size: 15px;
+	text-align: center;
+}
+
+.Message {
+	margin-left:auto;
+	margin-right:auto;
+	font-family: Recipekorea;
+	font-size : 75px;
+	font-weight:bold;
 }

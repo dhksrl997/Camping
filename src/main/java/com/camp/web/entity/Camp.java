@@ -7,17 +7,17 @@ public class Camp {
 	private String img3;
 	private String img4;
 	private String name;
-	private String latitude;//위도 
-	private String longitude; //경도 
+	private String latitude;// 위도
+	private String longitude; // 경도
 	private String address;
 	private String phone;
-	private int acceptNum; //수용인원 
-	private int parking; //주차장 
+	private int acceptNum; // 수용인원
+	private int parking; // 주차장
 	private String faclity; // 편의시설
-	private String safety; // 안전 시설 
-	private String open; // 영업시간 
-	private String price; //가격 
-	
+	private String safety; // 안전 시설
+	private String open; // 영업시간
+	private String price; // 가격
+
 	public Camp() {
 		// TODO Auto-generated constructor stub
 	}
@@ -171,8 +171,12 @@ public class Camp {
 		this.open = open;
 		this.price = price;
 	}
-	
-	
-	
-	
+
+	@Override
+	public String toString() {
+		return "Camp [id=" + id + ", img1=" + img1 + ", img2=" + img2 + ", img3=" + img3 + ", img4=" + img4 + ", name="
+				+ name + ", latitude=" + latitude + ", longitude=" + longitude + ", address=" + address + ", phone="
+				+ phone + ", acceptNum=" + acceptNum + ", parking=" + parking + ", faclity=" + faclity + ", safety="
+				+ safety + ", open=" + open + ", price=" + price + "]";
 	}
+}
