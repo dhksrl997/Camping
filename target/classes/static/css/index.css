@@ -8,110 +8,6 @@ a {
 	color: black;
 }
 
-
-
-.header {
-	width: 100%;
-	height: 60px;
-	/* background-color: aqua; */
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	position: sticky;
-	top: 0px;
-	z-index: 99;
-	background-color: white;
-	border-bottom:3px solid black;
-}
-
-.header i {
-	font-size: 40px;
-	color: black;
-	padding-right: 10px;
-}
-
-.header_logo {
-	box-sizing: border-box;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	padding-left: 38px;
-}
-
-.header_logo div {
-	padding-left: 20px;
-}
-
-.header_menu {
-	display: flex;
-	/* background-color: beige; */
-	justify-content: center;
-	align-items: center;
-	box-sizing: border-box;
-	margin-right: 20px;
-}
-
-.header_menu li {
-	text-align: center;
-	width: 100px;
-}
-
-/* .aside-list {
-	z-index: 80;
-	position: absolute;
-	opacity: 0;
-	width: 350px;
-	height: 110%;
-	top: -10px;
-	left: -350px;
-	transition: .5s;
-	background-color: white;
-	padding-top: 70px;
-	box-sizing: border-box;
-}
-
-.aside-list li:hover {
-	background-color: rgb(233, 233, 233);
-	transition: .2s;
-	font-color: white;
-} */
-
-/* .aside-list i {
-	font-size: 30px;
-	padding-left: 30px;
-	width: 50px;
-	text-align: center;
-}
-
-.aside-list li {
-	display: flex;
-	align-items: center;
-	box-sizing: border-box;
-	width: 350px;
-	background-color: white;
-	height: 50px;
-	font-size: 20px;
-	padding-top: 40px;
-	padding-bottom: 40px;
-	font-weight: bold;
-}
-
-.aside-list li div {
-	box-sizing: border-box;
-	background-color: cornflowerblue;
-	padding-left: 20px;
-} */
-
-/* .show {
-	opacity: 1;
-	left: 0px;
-	transition: .5s;
-} */
-
-
-
-
-
 .button_wrapper {
 	margin-left: 500px;
 }
@@ -136,18 +32,22 @@ a {
 	width: 100%;
 	height: 100%;
 	position: absolute;
-	background: url(../images/main-bn1.png) no-repeat center;
+/* 	background: url(../images/main-bn1.png) no-repeat center; */
+	background: url(https://t1.daumcdn.net/cfile/blog/99A54D4F5A65006511) no-repeat center;
 	background-size: cover;
 	/* top: 0px; */
 	top: 0%;
 	transition: 1s;
 }
-
+.Logo{
+	margin-left:400px;
+	margin-top:300px;
+}
 .img2 {
 	width: 100%;
 	height: 100%;
 	position: absolute;
-	background: url(../images/main-bn2.jpg) no-repeat center;
+ 	background: url(../images/main-bn2.jpg) no-repeat center; 
 	background-size: cover;
 	top: 100%;
 	transition: 1s;

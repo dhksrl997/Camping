@@ -7,7 +7,9 @@
 	<div class="3 number">CAMPING</div>
 </ul>
 <div class="container">
-	<div class="img img1"></div>
+	<div class="img img1">
+	<!-- <img class="Logo" src="/images/mark-w.png" width="500px" height="500px"> -->
+	</div>
 	<div class="img img2"></div>
 	<div class="img img3">
 		<span style="font-size: 50px; color: white;"></span>

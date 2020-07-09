@@ -2,8 +2,7 @@
 
 body {
 	margin: 0px;
-	/* overflow: hidden; */
-	
+	min-height:	100vh;
 }
 
 a {
@@ -19,9 +18,10 @@ a {
 	justify-content: space-between;
 	align-items: center;
 	position: sticky;
-	top: 0px;
+/* 	top: 0px; */
 	z-index: 99;
 	background-color: white;
+	border-bottom:3px solid black;
 }
 
 .header i {
