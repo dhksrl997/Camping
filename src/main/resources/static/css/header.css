@@ -2,7 +2,7 @@
 
 body {
 	margin: 0px;
-	min-height:	max-content;
+	min-height:	100vh;
 }
 
 a {

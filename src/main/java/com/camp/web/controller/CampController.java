@@ -1,14 +1,14 @@
 package com.camp.web.controller;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -23,7 +23,7 @@ public class CampController {
 	private CampDao campDao;
 
 	@GetMapping("list")
-	private String getList(@RequestParam(name = "reg", defaultValue = "") String region, Model model)
+	private String getList(@RequestParam(name = "reg",defaultValue = "") String region, Model model)
 			throws ClassNotFoundException, SQLException {
 		if (region.equals("se"))
 			region = "서울";
@@ -39,10 +39,19 @@ public class CampController {
 			region = "충청";
 		else if (region.equals("jj"))
 			region = "제주";
-		else if (region.equals(""))
-			region = null;
+		else if (region.equals("")||region == null) {
+			Random rand =new Random();
+			List<Camp> list = campDao.recommend();
+			List<Camp> indexlist = new ArrayList<>();
+			for(int i =0 ; i<3; i++) {
+				int index=rand.nextInt(99)+1;
+				indexlist.add(list.get(index));
+			}
+			model.addAttribute("recommend", indexlist);
+			return "camp.list";
+		}
 
-		if (region != null) {
+		if (!(region.equals(""))) {
 			List<Camp> list = campDao.getList(region);
 			model.addAttribute("list", list);
 		}
