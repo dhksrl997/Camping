@@ -1,5 +1,4 @@
 @charset "UTF-8";
-
 @font-face {
 	font-family: 'S-CoreDream-3Light';
 	src:
@@ -250,4 +249,12 @@ body {
 }
 .loadimage{
 	text-align:center;
+}
+
+.Message {
+	margin-left:auto;
+	margin-right:auto;
+	font-family: Recipekorea;
+	font-size : 75px;
+	font-weight:bold;
 }

@@ -17,6 +17,7 @@
 </nav>
 <!-- 캠핑장 찾기누르자마자 나오는 화면  -->
 <c:if test="${param.reg == null }">
+<span class="Message">&nbsp;이런 캠핑장은 어때요&nbsp;?</span>
 	<div class="container">
 		<div class="box-wrap">
 			<c:forEach var="r" items="${recommend }">

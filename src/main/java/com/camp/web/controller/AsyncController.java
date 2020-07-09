@@ -56,6 +56,6 @@ public class AsyncController {
 
    }
    
-   @RequestMapping("/camp/reclist")
+ 
 
 }
