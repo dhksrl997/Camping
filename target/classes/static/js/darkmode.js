@@ -28,6 +28,7 @@ $(function() {
          $(".linear").attr("src","../../images/mark-w.png");
          $(".checklist-wrap").css("transition", "0.7s").css("background-color","rgb(150,150,150)").css("color","black");
          $(".listcontent").css("transition", "0.7s").css("background-color","rgb(150,150,150)").css("color","black");
+         $(".item-text").css("transition", "0.7s").css("background-color","white").css("color","black");
       } else {// 라이트모드
          logo.attr("src", "/images/indexlogo-b.png");
          $(".header").css("background-color", "white");
@@ -43,6 +44,7 @@ $(function() {
          $(".linear").attr("src","../../images/mark-b.png");
          $(".checklist-wrap").css("transition", "0.7s").css("background-color","white").css("color","black");
          $(".listcontent").css("transition", "0.7s").css("background-color","white").css("color","black");
+         $(".item-text").css("transition", "0.7s").css("background-color","white").css("color","black");
          }
    });
    
@@ -67,6 +69,7 @@ $(function() {
          $(".linear").attr("src","../../images/mark-w.png");
          $(".checklist-wrap").css("transition", "0.7s").css("background-color","rgb(150,150,150)").css("color","black");
          $(".listcontent").css("transition", "0.7s").css("background-color","rgb(150,150,150)").css("color","black");
+         $(".item-text").css("transition", "0.7s").css("background-color","white").css("color","black");
       } else {// 라이트모드
          localStorage.setItem('darkmode','true');
          logo.attr("src", "/images/indexlogo-b.png");
@@ -83,6 +86,7 @@ $(function() {
          $(".linear").attr("src","../../images/mark-b.png");
          $(".checklist-wrap").css("transition", "0.7s").css("background-color","white").css("color","black");
          $(".listcontent").css("transition", "0.7s").css("background-color","white").css("color","black");
+         $(".item-text").css("transition", "0.7s").css("background-color","white").css("color","black");
          }
    };
 //   ————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
