@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<script defer src="/js/list/scroll.js"></script> 
+<script defer src="/js/list/scroll.js"></script>
+<script defer src="/js/list/recommend.js"></script> 
 <link rel="stylesheet"
 	href="https://use.fontawesome.com/releases/v5.13.1/css/all.css"
 	integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q"
@@ -16,9 +17,15 @@
 	<li><a href="list?reg=jj">제주도</a></li>
 </nav>
 <!-- 캠핑장 찾기누르자마자 나오는 화면  -->
+	<div class="d-none top-button"><i class="fas fa-arrow-up"></i></div>
 <c:if test="${param.reg == null }">
-	<span class="Message">&nbsp;이런 캠핑장은 어때요&nbsp;?</span>
+	<!-- <div> -->
+	<div class="message1">&nbsp;<span>어</span><span>디</span><span>로</span>&nbsp;<span>갈</span><span>지</span></div>
+	<div class="message2">&nbsp;<span>고</span><span>민</span><span>된</span><span>다</span><span>면</span><span>?</span> </div>
+	<!-- </div> -->
 	<div class="container">
+ 	<div class="refresh"><span class="recButton">캠핑장 랜덤추천 <i class="fas fa-sync-alt"></i></span></div>
+ <!-- <i class="fas fa-sync-alt recButton">&nbsp;click here</i>   -->
 		<div class="box-wrap">
 			<c:forEach var="r" items="${recommend }">
 				<div class="box">
