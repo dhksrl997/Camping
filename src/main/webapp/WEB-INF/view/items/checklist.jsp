@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <link rel="stylesheet" href="https://emoji-css.afeld.me/emoji.css">
-<!-- <script src="../../js/items.js"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="/js/items/campitems.js"></script>
+
     <div class="contentWrap">
  
         <div class="about">
@@ -10,30 +12,151 @@
                     <i class="em em-camping" aria-role="presentation" aria-label=""></i>
                 </h2>
                 <p class="asub">
-                    캠핑 입문자를 위해 캠핑 장비 컨텐츠와 체크리스트를 준비 했습니다.
-                    캠핑 준비할 때 참고하세요. 
+			                    캠핑 입문자를 위해 캠핑 장비 컨텐츠와 체크리스트를 준비 했습니다.
+			                    캠핑 준비할 때 참고하세요. 
                     <i class="em em-wink" aria-role="presentation" aria-label="WINKING FACE"></i>
                     <br> 
-                    We have prepared camping equipment contents and checklists for beginners.
+                    We have prepared camping equipment contents and checklist for beginners.
                     Please refer to it when preparing for camping.
                 </p>
           </div>
         </div>
 
         <div class="survival-items">
-            <div class="cpitemsbox">
-                <span class="ctitle">Survival Items</span>
-                <div class="items-wrap">
-                    <div class="itembox"></div>
-                    <div class="itembox"></div>
-                    <div class="itembox"></div>
-                    <div class="itembox"></div>
-                    <div class="itembox"></div>
-                    <div class="itembox"></div>
-                    <div class="itembox"></div>
-                    <div class="itembox"></div>
+            <span class="ctitle">Survival Items</span>
+            
+            <div class="slide-wrap">
+                <div class="container"> 
+                    <div class="items-wrap">
+                        <div class="item-part">
+                            <section>
+                                <div class="item-text">
+                                    <h2 class="item-tit">캠핑 패드</h2>
+                                    <p class="item-sub">
+                                       	 캠핑 패드의 종류와 캠핑 패드를<br>선택하는 방법
+                                    </p>
+                                </div>
+                                <!-- <a href="item/airmat.html"> -->
+                                <a href="https://www.rei.com/learn/expert-advice/sleeping-pads.html" target="_blank">
+                                    <div class="morebtn">자세히보기</div>
+                                </a>
+                            </section>
+                            <img src="../../images/airmat380.jpg">  
+                        </div>
+
+                        <div class="item-part">
+                            <section>
+                                <div class="item-text">
+                                    <h2 class="item-tit">텐트 케어</h2>
+                                    <p class="item-sub">
+                                        	캠핑 텐트를 청소하는 방법과<br>기본적인 관리법
+                                    </p>
+                                </div>
+                                <a href="https://www.rei.com/learn/expert-advice/caring-tent.html" target="_blank">
+                                    <div class="morebtn">자세히보기</div>
+                                </a>
+                            </section>
+                            <img src="../../images/tentcare380.jpg">
+                        </div>
+
+                        <div class="item-part">
+                            <section>
+                                <div class="item-text">
+                                    <h2 class="item-tit">침낭 케어</h2>
+                                    <p class="item-sub">
+                                        	침낭 세척 및 건조 방법과<br>보관하는 방법
+                                    </p>
+                                </div>
+                                <a href="https://www.rei.com/learn/expert-advice/caring-sleeping-bag.html" target="_blank">
+                                    <div class="morebtn">자세히보기</div>
+                                </a>
+                            </section>
+                            <img src="../../images/bagcare380.jpg">
+                        </div>
+
+                        <div class="item-part">
+                            <section>
+                                <div class="item-text">
+                                    <h2 class="item-tit">캠핑 의자</h2>
+                                    <p class="item-sub">
+                                        	캠프 의자의 스타일과<br>구입 시 고려할 사항
+                                    </p>
+                                </div>
+                                <a href="https://www.rei.com/learn/expert-advice/how-to-choose-a-camp-chair.html" target="_blank">
+                                    <div class="morebtn">자세히보기</div>
+                                </a>
+                            </section>
+                            <img src="../../images/chair380.jpg">
+                        </div>
+                        
+                        <div class="item-part">
+                            <section>
+                                <div class="item-text">
+                                    <h2 class="item-tit">캠프파이어</h2>
+                                    <p class="item-sub">
+                                        	모닥불 붙이는 방법과<br>화재 예방을 위한 에티켓
+                                    </p>
+                                </div>
+                                <a href="https://www.rei.com/learn/expert-advice/campfire-basics.html" target="_blank">
+                                    <div class="morebtn">자세히보기</div>
+                                </a>
+                            </section>
+                            <img src="../../images/fire380.jpg">
+                        </div>
+
+                        <div class="item-part">
+                            <section>
+                                <div class="item-text">
+                                    <h2 class="item-tit">아이들과 캠핑</h2>
+                                    <p class="item-sub">
+                                        	아이들에게 유익하도록<br>캠핑하는 방법
+                                    </p>
+                                </div>
+                                <a href="https://www.rei.com/learn/expert-advice/camping-kids.html" target="_blank">
+                                    <div class="morebtn">자세히보기</div>
+                                </a>
+                            </section>
+                            <img src="../../images/withkids380.jpg">  
+                        </div>
+
+                        <div class="item-part">
+                            <section>
+                                <div class="item-text">
+                                    <h2 class="item-tit">초보자를 위한 캠핑</h2>
+                                    <p class="item-sub">
+                                        	첫 캠프에 대해 알아야 할 사항과<br> 계획에 관한 팁
+                                    </p>
+                                </div>
+                                <a href="https://www.rei.com/learn/expert-advice/camping-for-beginners.html?series=intro-to-camping" target="_blank">
+                                    <div class="morebtn">자세히보기</div>
+                                </a>
+                            </section>
+                            <img src="../../images/camp380.jpg">
+                        </div>
+
+                        <div class="item-part">
+                            <section>
+                                <div class="item-text">
+                                    <h2 class="item-tit">텐트 설치</h2>
+                                    <p class="item-sub">
+                                       	 텐트 설치하는 방법과<br>캠프장 선택에 관한 팁
+                                    </p>
+                                </div>
+                                <a href="https://www.rei.com/learn/expert-advice/tent-set-up.html?series=intro-to-camping" target="_blank">
+                                    <div class="morebtn">자세히보기</div>
+                                </a>
+                            </section>
+                            <img src="../../images/tent380.jpg">
+                        </div>
+
+                    </div>
+                </div>
+                <div class="prev-nextbtn">
+                    <span class="prev">&lt;</span>
+                    <span class="next">&gt;</span>
                 </div>
             </div>
+
         </div>
         
         <div class="checklisttitle">
@@ -157,12 +280,8 @@
                                 <label for="checkbox11">비상약 및 구급함</label>
                             </div>
                         </li>
-                    </ul>
-                    
+                    </ul>           
                 </div>
             </div>
         </div>
-        
     </div>
-
-

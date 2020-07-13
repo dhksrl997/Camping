@@ -105,3 +105,37 @@ body {
 	font-family: Recipekorea;
 	font-weight: bold;
 }
+.comments-text{
+	margin-top:50px;
+	margin-left:24%;
+	font-family: Recipekorea;
+ 	font-size:25px;
+}
+.comment-Line{
+	margin-bottom:30px;
+	width:80%;
+	border-top:1px solid black;
+	margin-left:auto;
+	margin-right:auto;
+}
+.comment-section{
+	display:flex;
+}
+.writer{
+	text-align:center;
+	width:120px;
+}
+.pub-section{
+	display:flex;
+	justify-content:flex-end;
+}
+.pub{
+	margin-right:19%;
+}
+.comment{
+	
+	width:55%;
+	hegith:max-contnet;
+	margin-left:auto;
+	margin-right:auto;
+}

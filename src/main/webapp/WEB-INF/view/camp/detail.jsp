@@ -14,7 +14,7 @@
 			<img class="main-img" src="/images/${c.img1 }">
 		</div>
 		<div class="sub-img">
-		<div class="img1 smallimg">
+			<div class="img1 smallimg">
 				<img class="imgs" src="/images/${c.img1 }" width="220px"
 					height="130px">
 			</div>
@@ -73,10 +73,56 @@
 				<div class="data">${c.open }</div>
 				<div class="components">
 					<i class="fas fa-won-sign">&nbsp;</i>
-					<div class="price icons2">가 격</div>
+					<div class="price icons2">요 금</div>
 				</div>
 				<div class="data">${c.price }</div>
 			</div>
 		</div>
 	</section>
 </c:forEach>
+<div class="comments-text">Comments</div>
+<div class="comment-Line"></div>
+
+<!-- 댓글 입력 폼    -->
+<div class="comment">
+	<form action="comment" method="get">
+		<div class="pub-section">
+			<div class="pub">
+				비공개<input name="pub" type="checkbox">
+			</div>
+		</div>
+		<div class="comment-section">
+			<div class="writer">wangi</div>
+			<textarea name="content" rows="5" cols="90" placeholder="댓글을 입력하세요."></textarea>
+			<input type="submit" value="등록" style="width:100px;height:100px;">
+		</div>
+	</form>
+</div>
+<!-- 기존 댓글들   -->
+<div class="comment">
+		<div style="margin-top:20px;border-top : 1px solid lightgrey;"></div>
+	<form action="comment" method="get">
+		<div class="comment-section" style="margin-top:30px;">
+			<div class="writer">정상훈</div>
+			<div>여기 별로인데 ㅋㅋ루ㅋㅋ삥뽕빵뽕</div>
+		</div>
+		<div class="regDate" style="margin-left: 12%;">2020-07-06</div>
+	</form>
+</div>
+
+
+
+<div class="comment">
+		<div style="margin-top:20px;border-top : 1px solid lightgrey;"></div>
+	<form action="comment" method="get">
+		<div class="comment-section" style="margin-top:30px;">
+			<div class="writer">정상훈</div>
+			<div>여기 별로인데 ㅋㅋ루ㅋㅋ삥뽕빵뽕</div>
+		</div>
+		<div class="regDate" style="margin-left: 12%;">2020-07-06</div>
+	</form>
+</div>
+
+
+<div style="border-bottom : 1px solid lightgrey;margin-top:20px;width:55%;margin-left:auto;margin-right:auto;"></div>
+<div style="border-bottom : 1px solid lightgrey;margin-top:100px;"></div>

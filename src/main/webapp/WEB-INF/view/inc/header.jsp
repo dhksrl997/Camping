@@ -10,7 +10,9 @@
 			width="230px" alt="campnic_logo"></a>
 	</div>
 	<ul class="header_menu">
-		<li>회원가입</li>
+		<input class="search-field" name="query" type="text" style="color:black;">
+		<i class="fas fa-search search-icon"></i>
+		<a href="/member/join"><li>회원가입</li></a>
 		<a href="/member/login"><li>로그인</li></a>
 	</ul>
 </section>

@@ -29,12 +29,12 @@
 		<div class="box-wrap">
 			<c:forEach var="r" items="${recommend }">
 				<div class="box">
-						<img src="/images/${r.img1 }" class="rec-img">
+						<a href="detail?id=${r.id }"><img src="/images/${r.img1 }" class="rec-img"></a>
 					<div class="name-sec">
-						<span class="rec-name"><i class="fas fa-map-signs">&nbsp;&nbsp;${r.name }</i></span>
+						<a href="detail?id=${r.id }"><span class="rec-name"><i class="fas fa-map-signs">&nbsp;&nbsp;${r.name }</i></span></a>
 					</div>
 					<div class="address-sec">
-						<span class="rec-address"> ${r.address } </span>
+						<a href="detail?id=${r.id }"><span class="rec-address"> ${r.address } </span></a>
 					</div>
 				</div>
 			</c:forEach>
@@ -51,8 +51,8 @@
 		<section class="list">
 			<div class="list-container">
 				<div class="img">
-					<img class="image" src="/images/${camp.img1 }" width="200"
-						height="150">
+					<a href="detail?id=${camp.id }"><img class="image" src="/images/${camp.img1 }" width="200"
+						height="150"></a>
 				</div>
 				<div class="content-container">
 					<div class="title">
