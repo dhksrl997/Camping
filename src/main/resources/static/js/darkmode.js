@@ -1,6 +1,5 @@
 $(function() {
    var sessionValue=localStorage.getItem('darkmode');
-   console.log("Loaded Value : "+ sessionValue);
    if(sessionValue=="false"||sessionValue==null)
       var flag = false;
    else if(sessionValue=="true")
@@ -11,9 +10,23 @@ $(function() {
    var logo = $(".logo");
    darkBtn.style.backgroundImage = "url('/images/night.png')";
    
+   var searchStatus=true;
+   $(".fa-search").click(function(){
+	   searchStatus=!searchStatus;
+	   if(searchStatus)
+		   $(".search-field").css("transition", "0.7s").css("width","0px");
+	   else
+		   $(".search-field").css("transition", "0.7s").css("width","130px");
+	
+   });
+   
+   
    $(document).ready(function() {
       var flag= sessionValue;
       if (flag == "false") { // 다크모드
+    	  $(".search-field").css("transition", "0.7s").attr("style","color:white;");
+    	 $(".search-icon").css("transition", "0.7s").css("color","white");
+    	 $(".comment-Line").css("transition", "0.7s").css("border","1px solid lightgrey");
          logo.attr("src", "/images/indexlogo-w.png");
          $(".header").css("background-color","rgb(47, 47, 47)");
          $("body").css("background-color","rgb(15,15,15)").css("color", "rgb(166,170,175)");
@@ -30,6 +43,9 @@ $(function() {
          $(".listcontent").css("transition", "0.7s").css("background-color","rgb(150,150,150)").css("color","black");
          $(".item-text").css("transition", "0.7s").css("background-color","white").css("color","black");
       } else {// 라이트모드
+    	  $(".search-field").css("transition", "0.7s").attr("style","color:black;");
+    	  $(".search-icon").css("transition", "0.7s").css("color","black");
+    	  $(".comment-Line").css("transition", "0.7s").css("border","1px solid black");
          logo.attr("src", "/images/indexlogo-b.png");
          $(".header").css("background-color", "white");
          $("body").css("background-color", "white").css("color", "black");
@@ -54,7 +70,11 @@ $(function() {
       console.log(flag);
       flag = !flag;
       if (flag == false) { // 다크모드
-         localStorage.setItem('darkmode','false');
+    	  localStorage.setItem('darkmode','false');
+    	  $(".search-icon").css("transition", "0.7s").css("color","white");
+    	  $(".search-field").css("transition", "0.7s").attr("style","color:white;");
+    	  $(".search").css("transition", "0.7s").css("color","white");
+    	  $(".comment-Line").css("transition", "0.7s").css("border","1px solid lightgrey");
          logo.attr("src", "/images/indexlogo-w.png");
          $(".header").css("transition", "0.7s").css("background-color","rgb(47, 47, 47)").css("color","rgb(166,170,175)");
          $("body").css("transition", "0.7s").css("background-color","rgb(15,15,15)").css("color", "rgb(166,170,175)");
@@ -71,7 +91,11 @@ $(function() {
          $(".listcontent").css("transition", "0.7s").css("background-color","rgb(150,150,150)").css("color","black");
          $(".item-text").css("transition", "0.7s").css("background-color","white").css("color","black");
       } else {// 라이트모드
-         localStorage.setItem('darkmode','true');
+    	  localStorage.setItem('darkmode','true');
+    	  $(".search-field").css("transition", "0.7s").attr("style","color:black;");
+    	  $(".search-icon").css("transition", "0.7s").css("color","black");
+         $(".search").css("transition", "0.7s").css("color","black");
+         $(".comment-Line").css("transition", "0.7s").css("border","1px solid black");
          logo.attr("src", "/images/indexlogo-b.png");
          $(".header").css("transition", "0.7s").css("background-color", "white").css("color","black");
          $("body").css("transition", "0.7s").css("background-color", "white").css("color", "black");
