@@ -1,21 +1,86 @@
 
 $(function(){
    let index=0;
+//   $(".rec-img").hover(function() {
+//	 $(".rec-img").css("transition",".7s").css("transform","scale(1.2)");
+//	   
+//	 });
+   
+   /////////////////////////////////////////////////////////////
+   function message1(){
+	   $(".Message1").css("transition","1.2s").css("left","350px");
+   }
+   function message2(){
+	   $(".Message2").css("transition","1.2s").css("left","550px");
+   }
+   function loadMessage(){
+	   setTimeout(message1,300);
+	   setTimeout(message2,1000);
+   };
+   loadMessage();
+   
+   ///////////////////////////////////////////////
+   $(".rec-Button").click(function(){
+	   $(".box").remove();
+	   getRecList();
+   });
+   
+   function getRecList(){
+	   $.ajax({
+           type: "get",
+           url : "/camp/reclist",
+           async:"true",
+           success : function(recommend) {
+        	   console.log(recommend.reclist);
+        	   for(var i=0; i<recommend.reclist.length; i++){
+        		   var rec = recommend.reclist[i];
+        		   $(".box-wrap").append(`
+				<div class="box">
+						<img src="/images/${rec.img1 }" class="rec-img">
+					<div class="name-sec">
+						<span class="rec-name"><i class="fas fa-map-signs">&nbsp;&nbsp;${rec.name }</i></span>
+					</div>
+					<div class="address-sec">
+						<span class="rec-address"> ${rec.address } </span>
+					</div>
+				</div>
+
+	`);
+        		   
+        	   };
+           }
+	   })
+   };
+   //////////////////////////////
+   	function fetchImage(){
+   		if(localStorage.getItem('darkmode') == "true")
+   		$("body").append('<div class="load-box" style="text-align:center"><img class="ajaxload" src="/images/loadimage.gif" /></div>');
+   		else 
+   			$("body").append('<div class="load-box" style="text-align:center"><img class="ajaxload" src="/images/loadimage2.gif" /></div>')
+   			}
+   	
+   	function vanishImage(){
+   		$(".load-box").hide();
+   	}
     $(window).scroll(function(){
         let $window = $(this);
         let scrollTop = $window.scrollTop();
         let windowHeight = $window.height();
         let documentHeight = $(document).height();
-        if( scrollTop + windowHeight +1>= documentHeight ){
+        
+       
+        
+        if( scrollTop + windowHeight +0.1>= documentHeight ){
            index++;
-           setTimeout(fetchlist,200); 
-// fetchImage();
-// fetchlist();
+           fetchImage();
+           setTimeout(vanishImage,500);
+           setTimeout(fetchlist,500); 
         }
         function fetchlist(){
            $.ajax({
                type: "get",
                url : "/camp/getlist?reg="+searchParam('reg')+"&index="+index,
+               async:"false",
                success : function(camps) {
                   console.log(camps.lists[1]);
                   if (camps == null){
@@ -55,14 +120,12 @@ $(function(){
                      
                   }
                }
-                 
            });
            };
            
            function searchParam(key) {
                 return new URLSearchParams(location.search).get(key);
               };
-           
     })    
 });
 
