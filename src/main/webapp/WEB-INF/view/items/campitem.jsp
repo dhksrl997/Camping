@@ -36,8 +36,8 @@
                                        	 캠핑 패드의 종류와 캠핑 패드를<br>선택하는 방법
                                     </p>
                                 </div>
-                                <!-- <a href="item/airmat.html"> -->
-                                <a href="https://www.rei.com/learn/expert-advice/sleeping-pads.html" target="_blank">
+                                <a href="detail">
+                                <!-- <a href="https://www.rei.com/learn/expert-advice/sleeping-pads.html" > -->
                                     <div class="morebtn">자세히보기</div>
                                 </a>
                             </section>
@@ -52,7 +52,8 @@
                                         	캠핑 텐트를 청소하는 방법과<br>기본적인 관리법
                                     </p>
                                 </div>
-                                <a href="https://www.rei.com/learn/expert-advice/caring-tent.html" target="_blank">
+                                <!-- <a href="https://www.rei.com/learn/expert-advice/caring-tent.html" > -->
+                                <a>
                                     <div class="morebtn">자세히보기</div>
                                 </a>
                             </section>
@@ -67,7 +68,8 @@
                                         	침낭 세척 및 건조 방법과<br>보관하는 방법
                                     </p>
                                 </div>
-                                <a href="https://www.rei.com/learn/expert-advice/caring-sleeping-bag.html" target="_blank">
+                                <!-- <a href="https://www.rei.com/learn/expert-advice/caring-sleeping-bag.html" > -->
+                                <a>    
                                     <div class="morebtn">자세히보기</div>
                                 </a>
                             </section>
@@ -82,7 +84,8 @@
                                         	캠프 의자의 스타일과<br>구입 시 고려할 사항
                                     </p>
                                 </div>
-                                <a href="https://www.rei.com/learn/expert-advice/how-to-choose-a-camp-chair.html" target="_blank">
+                                <!-- <a href="https://www.rei.com/learn/expert-advice/how-to-choose-a-camp-chair.html" > -->
+                                <a>
                                     <div class="morebtn">자세히보기</div>
                                 </a>
                             </section>
@@ -97,7 +100,8 @@
                                         	모닥불 붙이는 방법과<br>화재 예방을 위한 에티켓
                                     </p>
                                 </div>
-                                <a href="https://www.rei.com/learn/expert-advice/campfire-basics.html" target="_blank">
+                                <!-- <a href="https://www.rei.com/learn/expert-advice/campfire-basics.html" > -->
+                                <a>
                                     <div class="morebtn">자세히보기</div>
                                 </a>
                             </section>
@@ -112,7 +116,8 @@
                                         	아이들에게 유익하도록<br>캠핑하는 방법
                                     </p>
                                 </div>
-                                <a href="https://www.rei.com/learn/expert-advice/camping-kids.html" target="_blank">
+                                <!-- <a href="https://www.rei.com/learn/expert-advice/camping-kids.html" > -->
+                                <a>
                                     <div class="morebtn">자세히보기</div>
                                 </a>
                             </section>
@@ -127,7 +132,8 @@
                                         	첫 캠프에 대해 알아야 할 사항과<br> 계획에 관한 팁
                                     </p>
                                 </div>
-                                <a href="https://www.rei.com/learn/expert-advice/camping-for-beginners.html?series=intro-to-camping" target="_blank">
+                                <!-- <a href="https://www.rei.com/learn/expert-advice/camping-for-beginners.html?series=intro-to-camping" > -->
+                                <a>
                                     <div class="morebtn">자세히보기</div>
                                 </a>
                             </section>
@@ -142,7 +148,8 @@
                                        	 텐트 설치하는 방법과<br>캠프장 선택에 관한 팁
                                     </p>
                                 </div>
-                                <a href="https://www.rei.com/learn/expert-advice/tent-set-up.html?series=intro-to-camping" target="_blank">
+                                <!-- <a href="https://www.rei.com/learn/expert-advice/tent-set-up.html?series=intro-to-camping" > -->
+                                <a>
                                     <div class="morebtn">자세히보기</div>
                                 </a>
                             </section>

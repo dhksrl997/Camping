@@ -1,0 +1,126 @@
+body {
+	margin: 0px;
+}
+@font-face { 
+    font-family: 'S-CoreDream-3Light'; 
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff'); 
+    font-weight: normal; font-style: normal; 
+}
+
+.contentTop {
+	position: static;
+	width: 100%;
+}
+	.headerWrap {
+		position: relative;
+		height: 600px;
+		background-repeat: no-repeat;
+		background-position: 0 50%;
+		background-size: cover;
+	}
+		.innerWrap {
+			height: 94%;
+			position: relative;
+			width: 1000px;
+			margin: 0 auto;
+		}
+			.contImg {
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 94%;
+				background-repeat: no-repeat;
+				background-position: 0 50%;
+				background-size: cover;
+				overflow: hidden;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				margin: 0 auto;
+			}	
+				.contImg .contbgimg {
+					top: 0;
+					left: 50%;
+					width: 2000px;
+					max-width: none;
+					margin-left: -960px;
+					height: auto;
+					min-height: 100%;
+					position: absolute;
+					background: url(../../images/sleepingPads-cover.jpg) no-repeat center; 
+					background-size: cover;
+					background-attachment: fixed;
+				}
+				.maskOverlay {
+					background-position: top;
+					opacity: 2;
+					background-color: black;
+				}
+
+			.contText {
+				position: absolute;
+				top: 220px;
+				justify-content: center;
+				bottom: 5rem;
+				display: flex;
+				flex-direction: column;
+				z-index: 1;
+			}
+				.contTitle {
+					font-size: 3.5rem;
+					font-weight: bold;
+					/* font-family: 'S-CoreDream-3Light'; */
+					line-height: 1.25;
+					word-spacing: -1rem;
+					color: white;
+				}
+				
+
+
+/* *************************************************** */
+
+.detailWrap {
+	max-width: 1000px;
+    padding: 0 50px;
+    margin-top: 110px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* .contentWrap {
+    
+}	 */
+	.contentimg {
+		max-width: 100%;
+		margin: 30px 0 20px;
+	}
+	/* .contenttit {
+		font-size: 47px;
+		font-weight: bold;
+		word-spacing: -0.4rem;
+	} */
+		.subtit {
+			margin-top: 60px;
+			font-size: 32px;
+			font-weight: bold;
+			line-height: 40px;
+			background-color: black;
+			color: white;
+		}
+		
+		.fontstyle {
+			padding: 20px 0;
+			font-size: 24px;
+		}
+		
+	.contenttext {
+    	font-size: 1.2rem;	
+		letter-spacing: -0.4px;
+		line-height: 1.9rem;
+   		padding: 0 100px 140px 5px;
+	}
+		.lipadding {
+			padding-bottom: 20px;
+		}
+		
+		
