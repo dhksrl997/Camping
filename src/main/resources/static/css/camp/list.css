@@ -17,6 +17,8 @@
 	font-weight: normal;
 	font-style: normal;
 }
+   @font-face { font-family: 'MapoHongdaeFreedom'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/MapoHongdaeFreedomA.woff') format('woff');
+    font-weight: normal; font-style: normal; }
 
 body {
 	width: 100%;
@@ -139,7 +141,6 @@ body {
 	padding: 10px;
 	border-radius: 50%;
 }
-
 .price {
 	text-overflow: ellipsis;
 	overflow: hidden;
@@ -174,49 +175,30 @@ body {
 	margin-top: auto;
 	margin-bottom: auto;
 }
-
+.loadimage{
+	text-align:center;
+}
 .container {
+	margin-top:230px;
 	position: relative;
 	width: 1400px;
 	margin-left: auto;
 	margin-right: auto;
 	height: 500px;
-	overflow-x: hidden;
 }
+
 
 .box-wrap {
 	width: 100%;
-	height: 500px;
-	/*     position: absolute; */
+	height: 450px;
 	position: relative;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	left: 0px;
-	overflow-x: hidden;
+
 }
 
-.box-wrap2 {
-	position: absolute;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	left: -1000px;
-	width: 1000px;
-	height: 500px;
-	background-color: crimson;
-}
-
-.box-wrap3 {
-	position: absolute;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	width: 1000px;
-	height: 500px;
-	background-color: darkmagenta;
-	left: 1000px;
-}
 
 .slide {
 	display: flex;
@@ -227,7 +209,7 @@ body {
 	display: block;
 	width: 400px;
 	height: 300px;
-	margin: 10px;
+	margin: 10px;	
 }
 
 .rec-img {
@@ -236,6 +218,7 @@ body {
 }
 
 .name-sec {
+	margin-top:50px;
 	font-family: Recipekorea;
 	width: 100%;
 	font-size: 30px;
@@ -249,11 +232,117 @@ body {
 	font-size: 15px;
 	text-align: center;
 }
+.recButton{
+	font-size:30px;
+	z-index:100;
+	font-family: MapoHongdaeFreedom
+	
+}
+.recButton:hover{
+	cursor:pointer;
+}
 
-.Message {
+.refresh{
+	width:300px;
 	margin-left:auto;
 	margin-right:auto;
-	font-family: Recipekorea;
+}
+.message1 {
+	position: absolute;
+	margin-left:auto;
+	margin-right:auto;
+	font-family: MapoHongdaeFreedom;
 	font-size : 75px;
 	font-weight:bold;
+	top:200px;
+	left: -740px;
 }
+.message2 {
+	position: absolute;
+	margin-left:auto;
+	margin-right:auto;
+	font-family: MapoHongdaeFreedom;
+	font-size : 75px;
+	font-weight:bold;
+	top:300px;
+	left: -740px;
+}
+
+.message1 span {
+  display: inline-block;
+  margin: 0 -.05em;
+  animation: message1 2s infinite;
+}
+.message1 span:nth-child(2) {
+  animation-delay: .1s;
+}
+.message1 span:nth-child(3) {
+  animation-delay: .2s;
+}
+.message1 span:nth-child(4) {
+  animation-delay: .3s;
+}
+.message1 span:nth-child(5) {
+  animation-delay: .4s;
+}
+
+
+@keyframes message1 {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(15px);
+  }
+}
+
+.message2 span {
+  display: inline-block;
+  margin: 0 -.05em;
+  animation: message1 2s infinite;
+}
+.message2 span:nth-child(2) {
+  animation-delay: .1s;
+}
+.message2 span:nth-child(3) {
+  animation-delay: .2s;
+}
+.message2 span:nth-child(4) {
+  animation-delay: .3s;
+}
+.message2 span:nth-child(5) {
+  animation-delay: .4s;
+}
+
+
+@keyframes message2 {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(15px);
+  }
+}
+
+.d-none{
+	display: none;
+}
+.top-button{
+	position: fixed;
+    z-index: 100;
+    top: 83%;
+    left: 95%;
+}
+.top-button i{
+	font-size:50px;
+	/* color:white */
+}
+
+
+
+
+
+
+
+
+
