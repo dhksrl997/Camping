@@ -23,7 +23,7 @@ body {
 	display: flex;
 	margin-right: auto;
 	margin-left: auto;
-	padding-top:50px;
+	padding-top: 50px;
 }
 
 .main-img {
@@ -34,13 +34,13 @@ body {
 .sub-img {
 	display: flex;
 	justify-content: center;
-	margin-top:15px;
+	margin-top: 15px;
 }
 
 .smallimg {
 	width: 220px;
 	height: 130px;
-	padding:10px;
+	padding: 10px;
 	/* margin: 15px; */
 	/* padding-top:200px; */
 }
@@ -105,37 +105,41 @@ body {
 	font-family: Recipekorea;
 	font-weight: bold;
 }
-.comments-text{
-	margin-top:50px;
-	margin-left:24%;
+
+.comments-text {
+	margin-top: 50px;
+	margin-left: 24%;
 	font-family: Recipekorea;
- 	font-size:25px;
+	font-size: 25px;
 }
-.comment-Line{
-	margin-bottom:30px;
-	width:80%;
-	border-top:1px solid black;
-	margin-left:auto;
-	margin-right:auto;
+
+.comment-Line {
+	margin-bottom: 30px;
+	width: 80%;
+	border-top: 1px solid black;
+	margin-left: auto;
+	margin-right: auto;
 }
-.comment-section{
-	display:flex;
+
+.comment-section {
+	display: flex;
 }
-.writer{
-	text-align:center;
-	width:120px;
+
+.writer {
+	text-align: center;
+	width: 120px;
+	margin-top:auto;
+	margin-bottom:auto;
 }
-.pub-section{
-	display:flex;
-	justify-content:flex-end;
+
+.pub-section {
+	display: flex;
+	justify-content: flex-end;
 }
-.pub{
-	margin-right:19%;
-}
-.comment{
-	
-	width:55%;
-	hegith:max-contnet;
-	margin-left:auto;
-	margin-right:auto;
+
+.comment {
+	width: 55%;
+	hegith: max-contnet;
+	margin-left: auto;
+	margin-right: auto;
 }

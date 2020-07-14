@@ -9,10 +9,9 @@ $(function() {
    var body = document.querySelector("body");
    var logo = $(".logo");
    darkBtn.style.backgroundImage = "url('/images/night.png')";
-   
    var searchStatus=true;
    $(".fa-search").click(function(){
-	   searchStatus=!searchStatus;
+	   searchStatus= !searchStatus;
 	   if(searchStatus)
 		   $(".search-field").css("transition", "0.7s").css("width","0px");
 	   else
