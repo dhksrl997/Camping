@@ -1,0 +1,164 @@
+@charset "UTF-8";
+@font-face { font-family: 'S-CoreDream-3Light'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff')
+    format('woff'); font-weight: normal; font-style: normal; }
+
+$primary: #11998e;
+$secondary: #38ef7d;
+$white: #fff;
+$gray: #9b9b9b;
+body {
+	margin: 0px;
+	min-height: 100vh;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+.header {
+	   font-family: 'S-CoreDream-3Light';
+font-weight: bold;
+	width: 100%;
+	height: 60px;
+	/* background-color: aqua; */
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: sticky;
+	top: 0px;
+	z-index: 99;
+	background-color: white;
+	border-bottom: 3px solid black;
+}
+
+.header i {
+	font-size: 40px;
+	color: black;
+	padding-right: 18px;
+}
+
+.header_logo {
+	box-sizing: border-box;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-left: 35px;
+}
+
+.header_logo div {
+	padding-left: 20px;
+}
+
+.header-menu {
+	float: right;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-sizing: border-box;
+	margin-right: 20px;
+	display: flex;
+}
+
+.header-menu li {
+	text-align: center;
+	width: 100px;
+}
+
+.aside-list {
+	z-index: 5;
+	/* position: absolute;  */
+	position: fixed;
+	width: 350px;
+	height: 100%;
+	top: -10px;
+	left: -350px;
+	transition: .5s;
+	background-color: white;
+	padding-top: 70px;
+	box-sizing: content-box;
+}
+
+.aside-list i {
+	font-size: 30px;
+	padding-left: 30px;
+	width: 50px;
+	text-align: center;
+}
+
+.aside-list li {
+	display: flex;
+	align-items: center;
+	box-sizing: border-box;
+	width: 350px;
+	background-color: white;
+	height: 50px;
+	font-size: 20px;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	font-weight: bold;
+}
+
+.aside-list li div {
+	box-sizing: border-box;
+	/* background-color: cornflowerblue; */
+	padding-left: 20px;
+}
+
+.show {
+	left: 0px;
+	transition: .5s;
+}
+
+.dark-mode-btn {
+	position: fixed;
+	z-index: 3;
+	top: 90%;
+	left: 95%;
+	width: 50px;
+	height: 50px;
+	background-image: url("/images/night.png");
+	background-size: cover;
+	border-radius: 50px;
+	transition: 0.5s;
+
+}
+.header-mypage{
+    top: -3000px;
+    position: fixed;
+    width: 200px;
+    height: 300px;
+    margin-top: 181px;
+    background: white;
+    border: 1px solid black;
+   text-align: center;
+	
+
+}
+.header-login{
+	cursor: pointer;
+}
+.header-mypage a{
+	cursor: pointer;
+}
+.header-mypage li{
+    margin-top: 20px;
+    
+}
+.header-menu i {
+	font-size: 20px;
+}
+.search-field{
+	width:0px;
+	border-left:none;
+	border-right:none;
+	border-top:none;
+	background:transparent;
+	color:red;
+}
+.show2{
+position: fixed;
+   top: -121px;
+right:0px;
+
+}

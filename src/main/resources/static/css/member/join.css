@@ -1,0 +1,119 @@
+html{
+    height: 100%;
+    overflow: hidden;
+}
+body{
+    background: url(/images/test.png) no-repeat center;
+    background-size: cover;
+    height: 100%;
+    
+}
+fieldset{
+    border: none;
+}
+.join {
+    display: flex;
+   
+    margin-top: 20px;
+color: #fff;
+	
+	
+}
+#form1{
+    justify-content: center;
+    margin: auto;
+    margin-top: 150px;
+   
+}
+
+
+input {
+	width: 200px;
+	margin-bottom: 10px;
+	background: #fff;
+	border: none;
+	outline: none;
+	padding: 10px;
+	font-size: 13px;
+	color:black;
+	
+	border: 1px solid rgba(0, 0, 0, 0.3);
+	border-radius: 4px;
+	transition: box-shadow .5s ease;
+	-webkit-transition: box-shadow .5s ease;
+	-moz-transition: box-shadow .5s ease;
+	-o-transition: box-shadow .5s ease;
+	-ms-transition: box-shadow .5s ease;
+	transition: box-shadow .5s ease;
+}
+
+
+
+.d-none {
+	display: none;
+}
+
+.body-th {
+    font-family: 'S-CoreDream-3Light';
+font-weight: bold;
+    
+    float: left;
+    text-align: -internal-center;
+}
+
+@font-face {
+	font-family: 'S-CoreDream-3Light';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff')
+		format('woff');
+	
+}
+.signup-body label{
+   font-size: 16px;
+}
+#submit-Button{
+    margin-top: 20px;
+  font-size : 17px;
+    width: 220px;
+    font-weight:bold;
+ background:royalblue;
+    
+}
+
+#id-danger{
+    display: none;
+    font-size:12px;
+    padding-bottom: 10px;
+}
+
+#pwd-danger{
+    display: none;
+    font-size:12px;
+    padding-top: -10px;
+}
+.join-form{
+	
+	background:rgba(0, 0, 0, 0.7); ;
+	width : 400px;
+	height : 550px;
+	display:flex;
+	justify-content:center;
+	text-align : center;
+	
+}
+fieldset{
+	
+	margin-top : 50px;
+	 font-weight:bold;
+	
+	
+}
+input::placeholder {
+	color:gray;
+}
+/* .login-background{
+    width: 100%;
+    height: 100%;
+    background: url(test.png) no-repeat center;
+    background-size: cover;
+} */
