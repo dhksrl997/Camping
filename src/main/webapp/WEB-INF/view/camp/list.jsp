@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <script defer src="/js/list/scroll.js"></script>
+<script defer src="/js/camp/list.js"></script>
 <link rel="stylesheet"
 	href="https://use.fontawesome.com/releases/v5.13.1/css/all.css"
 	integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q"
@@ -78,7 +79,7 @@
 
 
 </c:if>
-
+<div class="camp-list">
 	<!-- 지역별 캠핑장을 찾을 때  -->
 	<c:if test="${list!=null }">
 		<c:forEach var="camp" items="${list }">
@@ -96,20 +97,31 @@
 						<div class="comfor">${camp.faclity }</div>
 					</div>
 					<div class="icon-list">
-						<div class="icons">
-							<div class="icon">
-								<i class="fas fa-map-marker-alt"></i> <span>지도</span>
-							</div>
-						</div>
-						<div class="icons">
-							<div class="icon">
-								<i class="fas fa-book"></i> <span>예약</span>
-							</div>
+					<div class="icons list-map">
+						<div class="icon">
+							<i class="fas fa-map-marker-alt"></i> <span class="map-span">지도</span>
+							<div class="d-none latitude">${camp.latitude}</div>
+                             <div class="d-none longitude">${camp.longitude}</div>
 						</div>
 					</div>
+					<div class="icons">
+						<div class="icon">
+							<i class="fas fa-book"></i> <span class="map-span">예약</span>
+						</div>
+					</div>
+					
 				</div>
-			</section>
+				<div id="map" class="map hide">
+                        <div class="maps-exit">Exit
+
+                        </div>
+
+                    </div>
+                    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=6d381a3bf90a679a591c3eb39a8edfe8"></script>
+			</div>
+		</section>
 			<section class="inner"></section>
 		</c:forEach>
 	</c:if>
+</div>
 </c:if>

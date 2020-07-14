@@ -12,6 +12,7 @@
 <title>Campnic</title>
 <link rel="stylesheet" href="/css/reset.css">
 <link rel="stylesheet" href="/css/header.css">
+
 <link href='<tiles:getAsString name="css"/>' type="text/css"
 	rel="stylesheet" />
 <link rel="stylesheet"
