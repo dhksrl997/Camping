@@ -22,7 +22,6 @@ public class AsyncController {
 	@Autowired
 	private CampDao campDao;
 
-//   @RequestMapping("/camp/getlist?reg=" + reg + "&index=" + index)
 	@RequestMapping("/camp/getlist")
 	public Map<String, Object> list(@RequestParam(name = "index", defaultValue = "1") int index,
 			@RequestParam(name = "reg", defaultValue = "") String region, Model model)
@@ -58,7 +57,7 @@ public class AsyncController {
 
 	}
 
-	@RequestMapping("/camp/getRecommend")
+	@RequestMapping("/camp/reclist")
 	public Map<String, Object> recList() throws ClassNotFoundException, SQLException {
 		Map<String, Object> map = new HashMap<>();
 		Random rand = new Random();
@@ -68,7 +67,7 @@ public class AsyncController {
 			int index = rand.nextInt(99) + 1;
 			indexlist.add(list.get(index));
 		}
-		map.put("recList", indexlist);
+		map.put("reclist", indexlist);
 		return map;
 	}
 

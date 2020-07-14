@@ -53,29 +53,31 @@
 	</nav>
 	<!-- 캠핑장 찾기누르자마자 나오는 화면  -->
 	<c:if test="${param.reg == null }">
-		<span class="Message">&nbsp;이런 캠핑장은 어때요&nbsp;?</span>
-		<div class="container">
-			<div class="box-wrap">
-				<c:forEach var="r" items="${recommend }">
-					<div class="box">
-						<a href="detail?id=${r.id }"><img src="/images/${r.img1 }"
-							class="rec-img"></a>
-						<div class="name-sec">
-							<a href="detail?id=${r.id }"><span class="rec-name"><i
-									class="fas fa-map-signs">&nbsp;&nbsp;${r.name }</i></span></a>
-						</div>
-						<div class="address-sec">
-							<a href="detail?id=${r.id }"><span class="rec-address">
-									${r.address } </span></a>
-						</div>
+	<div class="Message1"><span>이</span><span>런</span>&nbsp;&nbsp;<span>캠</span><span>핑</span><span>장</span></div>
+	<div class="Message2"><span>어</span><span>떠</span><span>세</span><span>요</span><span>!</span></div>
+	
+	
+	
+		<div class="random-message"><span class="rec-Button">캠핑장 랜덤추천 <i class="fas fa-redo"></i> </span></div>
+	<div class="camp-container">
+		<div class="box-wrap">
+			<c:forEach var="r" items="${recommend }">
+				<div class="box">
+						<img src="/images/${r.img1 }" class="rec-img">
+					<div class="name-sec">
+						<span class="rec-name"><i class="fas fa-map-signs">&nbsp;&nbsp;${r.name }</i></span>
 					</div>
-				</c:forEach>
+					<div class="address-sec">
+						<span class="rec-address"> ${r.address } </span>
+					</div>
+				</div>
+			</c:forEach>
 
-			</div>
 		</div>
+	</div>
 
 
-	</c:if>
+</c:if>
 
 	<!-- 지역별 캠핑장을 찾을 때  -->
 	<c:if test="${list!=null }">
