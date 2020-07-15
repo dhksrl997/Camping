@@ -35,13 +35,15 @@ $(function() {
                      function() {$(this).css("background-color","rgb(86,88,96)").css("color","white")},
                      function() {$(this).css("background-color","rgb(47, 47, 47)").css("color", "white")}).find("i").css("color", "white");
          $(".region-list").find("li a").css("transition", "0.7s").css("color","white");
-         $("a").css("transition", "0.7s").css("color","white");
+         $("a").css("color","white");
+         $(".title").find("a").css("color","white");
          $(".survival-items").css("transition", "0.7s").css("color","white").css("background-color","rgb(41,41,41)");
          $(".linear").attr("src","../../images/mark-w.png");
          $(".checklist-wrap").css("transition", "0.7s").css("background-color","rgb(150,150,150)").css("color","black");
          $(".listcontent").css("transition", "0.7s").css("background-color","rgb(150,150,150)").css("color","black");
          $(".item-text").css("transition", "0.7s").css("background-color","white").css("color","black");
       } else {// 라이트모드
+    	  $(".title").find("a").css("color","black");
     	  $(".search-field").css("transition", "0.7s").attr("style","color:black;");
     	  $(".search-icon").css("transition", "0.7s").css("color","black");
     	  $(".comment-Line").css("transition", "0.7s").css("border","1px solid black");
@@ -83,8 +85,9 @@ $(function() {
                      function() {$(this).css("background-color","rgb(86,88,96)").css("color","white")},
                      function() {$(this).css("background-color","rgb(47, 47, 47)").css("color", "white")}).find("i").css("color", "white");
          $(".region-list").find("li a").css("transition", "0.7s").css("color","white");
-         $("a").css("transition", "0.7s").css("color","white");
+         $("a").css("color","white");
          $(".survival-items").css("transition", "0.7s").css("color","white").css("background-color","rgb(41,41,41)");
+         $(".title").find("a").css("color","white");
          $(".linear").attr("src","../../images/mark-w.png");
          $(".checklist-wrap").css("transition", "0.7s").css("background-color","rgb(150,150,150)").css("color","black");
          $(".listcontent").css("transition", "0.7s").css("background-color","rgb(150,150,150)").css("color","black");
@@ -106,6 +109,7 @@ $(function() {
          $(".region-list").find("li a").css("transition", "0.7s").css("color","black");
          $("a").css("transition", "0.7s").css("color","black");
          $(".survival-items").css("transition", "0.7s").css("color","black").css("background-color","rgb(226,225,225)");
+         $(".title").find("a").css("color","black");
          $(".linear").attr("src","../../images/mark-b.png");
          $(".checklist-wrap").css("transition", "0.7s").css("background-color","white").css("color","black");
          $(".listcontent").css("transition", "0.7s").css("background-color","white").css("color","black");

@@ -1,10 +1,12 @@
-
-$(function(){
+'use strict';
+$(document).ready(function(){
    let index=0;
-//   $(".rec-img").hover(function() {
-//	 $(".rec-img").css("transition",".7s").css("transform","scale(1.2)");
-//	   
-//	 });
+   let topBtn = $('.top-btn');
+   let flag = true;
+   var para = document.location.href.split("?");
+   console.log(para[1]);
+
+ 
    
    /////////////////////////////////////////////////////////////
    function message1(){
@@ -24,6 +26,13 @@ $(function(){
 	   $(".box").remove();
 	   getRecList();
    });
+   
+   topBtn.click(function() {
+     $('html, body').animate({scrollTop: 0}, 500);
+   });
+  
+  
+
    
    function getRecList(){
 	   $.ajax({
@@ -68,15 +77,97 @@ $(function(){
         let windowHeight = $window.height();
         let documentHeight = $(document).height();
         
-       
-        
-        if( scrollTop + windowHeight +0.1>= documentHeight ){
-           index++;
-           fetchImage();
-           setTimeout(vanishImage,500);
-           setTimeout(fetchlist,500); 
+        if(scrollTop<1){
+        	topBtn.hide();
         }
+        else if(scrollTop>1){
+        	topBtn.show();
+        }
+     
+
+
+
+        
+        if(scrollTop + windowHeight +0.1>= documentHeight){
+           index++;
+           if(flag == true){  
+        	   fetchImage();
+           };
+           setTimeout(vanishImage,500);
+           
+
+           if (para[1].indexOf('reg') != -1) {
+        	   setTimeout(fetchlist,500);
+           };
+
+           if (para[1].indexOf('query') != -1) {
+        	   setTimeout(fetchsearchlist,500); 
+           };
+        }
+        
+        
+        function fetchsearchlist(){
+//        	console.log(searchParam('query'));
+            $.ajax({
+                type: "get",
+                url : "/camp/searchlist?query="+searchParam('query')+"&index="+index,
+                async:"true",
+                success : function(searched) {
+                	
+                   if (searched.searchlist.length <10){
+                	 if(flag == true){
+                	   $("body").append('<div class="alert-text">존재하는 데이터가 없습니다</div>')
+                	 }
+                	   flag = false;
+                   }
+                	   else{
+                   for(var i=0; i<searched.searchlist.length; i++){
+                      var search = searched.searchlist[i];
+                        $("body").append(`
+                        <section class="list">
+                        <div class="list-container">
+					<div class="img">
+						<a href="detail?id=${search.id }"><img class="image"
+							src="/images/${search.img1 }" width="200" height="150"></a>
+					</div>
+					<div class="content-container">
+						<div class="title">
+							<a style="color: rgb(255, 72, 82);" href="detail?id=${search.id }">${search.name }</a>
+						</div>
+						<div style="color: rgb(0, 140, 236);" class="local">${search.address }</div>
+						<div class="comfor">${search.faclity }</div>
+					</div>
+					<div class="icon-list">
+						<div class="icons">
+							<div class="icon">
+								<i class="fas fa-map-marker-alt"></i> <span>지도</span>
+							</div>
+						</div>
+						<div class="icons">
+							<div class="icon">
+								<i class="fas fa-book"></i> <span>예약</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				</section>
+                 `);
+                       
+                   }
+                   };
+                }
+            });
+        }
+        
         function fetchlist(){
+        	   let title = "";
+        	   let sessionValue=localStorage.getItem('darkmode');
+        	   if(sessionValue == "false"){
+        	    	 title = "title";
+        	     }
+        	     else if(sessionValue == "true"){
+        	    	 title = "title2"; 
+        	     }
            $.ajax({
                type: "get",
                url : "/camp/getlist?reg="+searchParam('reg')+"&index="+index,
@@ -89,6 +180,7 @@ $(function(){
                   if(camps != null)
                   for(var i=0; i<camps.lists.length; i++){
                      var camping = camps.lists[i];
+                     
                        $("body").append(`<section class="list">
                      <div class="list-container">
                         <div class="img">
@@ -96,7 +188,7 @@ $(function(){
                               height="150">
                         </div>
                         <div class="content-container">
-                           <div class="title">
+                           <div class="${title}">
                            <a href="detail?id=${camping.id }">${camping.name }</a>
                            </div>
                            <div class="local" style="color: rgb(0, 140, 236);">${camping.address }</div>
@@ -117,7 +209,7 @@ $(function(){
                      </div>
                   </section>
                   `);
-                     
+                      
                   }
                }
            });

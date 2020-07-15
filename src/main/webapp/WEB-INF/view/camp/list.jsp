@@ -6,8 +6,10 @@
 	href="https://use.fontawesome.com/releases/v5.13.1/css/all.css"
 	integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q"
 	crossorigin="anonymous">
+	
+<div class="top-btn" ><i class="fas fa-arrow-up"></i> </div>
+		
 <c:if test="${param.query!=null }">
-
 <div style="margin-top:50px;text-align:center;margin-bottom:50px;font-size:24px;">${param.query }에 대한 ${index }개의 검색결과 입니다.</div>
 		<c:forEach var="rs" items="${result }">
 			<section class="list">

@@ -36,4 +36,7 @@ public interface CampDao {
 	
 	@Select("SELECT Count(*) FROM camping2 Where name LIKE '%${query}%' || address LIKE '%${query}%'||phone LIKE '%${query}%' || faclity LIKE '%${query}%'")
 	int getSearchIndex(String query) throws ClassNotFoundException, SQLException;
+	
+	@Select("SELECT * FROM camping2 Where name LIKE '%${query}%' || address LIKE '%${query}%'||phone LIKE '%${query}%' || faclity LIKE '%${query}%' limit 10 offset ${index}")
+	List<Camp> getSearchScroll(String query, int index);
 }

@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<script defer src="/js/detail/detail.js"></script>
 <link rel="stylesheet" href="/css/camp/detail.css">
 <link rel="stylesheet"
 	href="https://use.fontawesome.com/releases/v5.13.1/css/all.css"
