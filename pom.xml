@@ -9,7 +9,7 @@
 		<version>2.3.1.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.newlecture.web</groupId>
+	<groupId>com.campnic.web</groupId>
 	<artifactId>SpringWeb</artifactId>
 	<version>1.0</version>
 	<name>SpringWeb</name>

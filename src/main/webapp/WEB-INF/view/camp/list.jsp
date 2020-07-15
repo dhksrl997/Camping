@@ -10,7 +10,7 @@
 <div class="top-btn" ><i class="fas fa-arrow-up"></i> </div>
 		
 <c:if test="${param.query!=null }">
-<div style="margin-top:50px;text-align:center;margin-bottom:50px;font-size:24px;">${param.query }에 대한 ${index }개의 검색결과 입니다.</div>
+<div style="margin-top:50px;text-align:center;margin-bottom:50px;font-size:24px;">${param.query }에 대한 ${index }개의 검색결과</div>
 		<c:forEach var="rs" items="${result }">
 			<section class="list">
 				<div class="list-container">
