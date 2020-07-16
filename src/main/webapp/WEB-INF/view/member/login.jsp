@@ -13,8 +13,15 @@
 				placeholder="Password" required="required" />
 			<button type="submit" class="btn btn-primary btn-block btn-large">Let
 				me in.</button>
+<c:if test="${not empty SPRING_SECURITY_LAST_EXCEPTION}">
+    <font style="margin-top:5px;"color="red">
+        <p>로그인 실패!!</p>
+        <c:remove var="SPRING_SECURITY_LAST_EXCEPTION" scope="session"/>
+    </font>
+</c:if>
 		</form>
 	</div>
 </div>
+
 
 </main>

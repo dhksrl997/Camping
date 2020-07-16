@@ -162,3 +162,21 @@ position: fixed;
 right:0px;
 
 }
+.header-login{
+	width: 30px;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+}
+.header-login a{
+	width:45px;
+	height:45px;
+	background:purple;
+	border: 1px solid purple;
+	border-radius:50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

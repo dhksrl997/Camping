@@ -20,6 +20,8 @@ import com.camp.web.service.MemberService;
 @Component
 public class CampAuthenticationSuccessHandler implements AuthenticationSuccessHandler {
 
+	
+	
 	@Override
 	public void onAuthenticationSuccess(HttpServletRequest request,
 			HttpServletResponse response,

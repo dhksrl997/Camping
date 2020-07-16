@@ -16,7 +16,7 @@
 		</form>
 		<i class="fas fa-search search-icon"></i>
 		<s:authorize access="isAuthenticated()">
-			<li><a class="header-login">${sessionScope.userName}</a></li>
+			<li class="header-login"><a class="header-name">${sessionScope.userName}</a></li>
 		</s:authorize>
 		
 

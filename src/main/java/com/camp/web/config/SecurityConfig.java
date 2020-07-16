@@ -10,6 +10,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
+import com.camp.web.security.CampAuthenticationFailHandler;
 import com.camp.web.security.CampAuthenticationSuccessHandler;
 
 
@@ -38,6 +39,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 			.loginProcessingUrl("/member/login")
 			.defaultSuccessUrl("/index")
 			.successHandler(new CampAuthenticationSuccessHandler())
+//			.failureHandler(new CampAuthenticationFailHandler())
 		.and()
 		
 		.logout()

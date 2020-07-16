@@ -26,17 +26,6 @@ asideButton.addEventListener("click", function (e) {
 });
 
 
-login.addEventListener("click", function (e) {
-	flag2 = !flag2;
-	e.preventDefault();
-	if (flag2) {
-		myPage.classList.add("show2");
-	}
-	else {
-		myPage.classList.remove("show2");
-	}
-});
-
 
 
 
@@ -63,3 +52,16 @@ nums[2].onclick = function () {
     imgs[1].style.top = "-100%";
     imgs[2].style.top = "0%";
 }
+
+
+login.addEventListener("click", function (e) {
+	flag2 = !flag2;
+	e.preventDefault();
+	if (flag2) {
+		myPage.classList.add("show2");
+	}
+	else {
+		myPage.classList.remove("show2");
+	}
+});
+

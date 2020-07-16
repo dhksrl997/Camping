@@ -41,6 +41,8 @@ $(function() {
          $(".checklist-wrap").css("transition", "0.7s").css("background-color","rgb(150,150,150)").css("color","black");
          $(".listcontent").css("transition", "0.7s").css("background-color","rgb(150,150,150)").css("color","black");
          $(".item-text").css("transition", "0.7s").css("background-color","white").css("color","black");
+         $(".header-name").css("transition", "0.7s").css("color","white");
+         $(".title").find("a").css("color","white");
       } else {// 라이트모드
     	  $(".search-field").css("transition", "0.7s").attr("style","color:black;");
     	  $(".search-icon").css("transition", "0.7s").css("color","black");
@@ -60,7 +62,9 @@ $(function() {
          $(".checklist-wrap").css("transition", "0.7s").css("background-color","white").css("color","black");
          $(".listcontent").css("transition", "0.7s").css("background-color","white").css("color","black");
          $(".item-text").css("transition", "0.7s").css("background-color","white").css("color","black");
-         }
+         $(".header-name").css("transition", "0.7s").css("color","white");
+         $(".title").find("a").css("color","black");
+      }
    });
    
    
@@ -89,6 +93,8 @@ $(function() {
          $(".checklist-wrap").css("transition", "0.7s").css("background-color","rgb(150,150,150)").css("color","black");
          $(".listcontent").css("transition", "0.7s").css("background-color","rgb(150,150,150)").css("color","black");
          $(".item-text").css("transition", "0.7s").css("background-color","white").css("color","black");
+         $(".header-name").css("transition", "0.7s").css("color","white");
+         $(".title").find("a").css("color","white");
       } else {// 라이트모드
     	  localStorage.setItem('darkmode','true');
     	  $(".search-field").css("transition", "0.7s").attr("style","color:black;");
@@ -110,7 +116,9 @@ $(function() {
          $(".checklist-wrap").css("transition", "0.7s").css("background-color","white").css("color","black");
          $(".listcontent").css("transition", "0.7s").css("background-color","white").css("color","black");
          $(".item-text").css("transition", "0.7s").css("background-color","white").css("color","black");
-         }
+         $(".header-name").css("transition", "0.7s").css("color","white");
+         $(".title").find("a").css("color","black");   
+      }
    };
 //   ————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
    
