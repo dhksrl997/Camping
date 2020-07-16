@@ -1,7 +1,6 @@
 package com.camp.web.controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.camp.web.dao.CampDao;
 import com.camp.web.entity.Camp;
 import com.camp.web.entity.Comment;
+import com.camp.web.entity.Member;
 
 @Controller
 @RequestMapping("/camp/")
@@ -29,6 +29,8 @@ public class CampController {
 
 	@Autowired
 	private CampDao campDao;
+	
+	
 
 	@GetMapping("list")
 	private String getList(@RequestParam(name = "reg", defaultValue = "") String region, Model model, String query)
@@ -81,12 +83,20 @@ public class CampController {
 	}
 
 	@GetMapping("detail")
-	public String detail(@RequestParam(name = "id") int id, Model model) throws ClassNotFoundException, SQLException {
+	public String detail(@RequestParam(name = "id") int id, Model model , HttpServletRequest request) throws ClassNotFoundException, SQLException {
 		List<Camp> list = campDao.getDetail(id);
 		List<Comment> cmt = new ArrayList<>();
 		cmt = campDao.getComment(id);
 		model.addAttribute("list", list);
 		model.addAttribute("getComment", cmt);
+		
+		HttpSession session = request.getSession();
+		String userId = (String) session.getAttribute("userId");
+		
+		List<Member> memberList = campDao.getMemberInfo(userId);
+		model.addAttribute("memberList" , memberList);
+		
+		
 		return "camp.detail";
 	}
 

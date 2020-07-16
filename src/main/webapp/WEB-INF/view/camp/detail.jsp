@@ -100,39 +100,59 @@
 <div class="comment-Line"></div>
 
 <!-- 댓글 입력 폼    -->
+		<c:forEach var="m" items="${memberList}">
 <div class="comment">
 	<form method="POST">
 		<div class="pub-section">
 			<div class="pub">
 				비공개<input name="pub" type="checkbox">
 			</div>
+			<div class="reservation">
+				예약<input name="reservation" type="checkbox">
+			</div>
 		</div>
 		<div class="comment-section">
-			<div class="writer" name="writer">wangi</div>
-			<textarea name="content" rows="5" cols="90" placeholder="후기를 남기거나 비공개로 예약을 신청할 수 있습니다."></textarea>
+			<div class="writer" name="writer">${sessionScope.userName}</div>
+		
+		<textarea name="content"  maxlength="100" rows="5" cols="90" placeholder="후기를 남기거나 비공개로 예약을 신청할 수 있습니다."></textarea> 
+		<%-- <textarea name="content reservation-check"  rows="5" cols="90" placeholder="">아이디 : ${m.uid}   이름 : ${m.name}
+핸드폰번호 : ${m.phone}
+------------------------------</textarea> --%> 
+			
 			<input type="hidden" name="id" value="${param.id }"> <input
 				type="submit" value="등록" style="width: 100px; height: 100px;">
 		</div>
 	</form>
 </div>
+		</c:forEach>	
 <!-- 기존 댓글들   -->
 <c:forEach var="com" items="${getComment }">
-	<div class="comment">
-		<div style="margin-top: 20px; border-top: 1px solid lightgrey;"></div>
-		<form action="comment" method="get">
-			<div class="comment-section" style="margin-top: 30px;">
+	<div class="comment" style="margin-top:10px;height: 100px;">
+		<div style=" border-top: 1px solid lightgrey;">
+
+		<form class="comment-form" action="comment" method="get">
+					<div class="regDate" style="font-size: 13px;">${com.regDate }</div>
+			<div class="comment-section" ">
 				<div class="writer">${com.writer }</div>
 				<c:choose>
 					<c:when test="${com.pub == 'on' }">
+						<c:if test="${com.writer!=sessionScope.userName}">
 						<div style="font-weight:bold;font-size:22px;">비공개 댓글입니다.</div>
+						</c:if>
+						<c:if test="${com.writer==sessionScope.userName}">
+						<div class="comment-content">${com.content }</div>
+						</c:if>
 					</c:when>
 					<c:otherwise>
-						<div>${com.content }</div>
+						<div class="comment-content">${com.content }</div>
 					</c:otherwise>
 				</c:choose>
 			</div>
-			<div class="regDate" style="margin-left: 10%;float:right;">${com.regDate }</div>
+			<c:if test="${com.writer==sessionScope.userName}">
+			<button class="comment-delete">삭제</button>
+			</c:if>
 		</form>
+		</div>
 	</div>
 </c:forEach>
 

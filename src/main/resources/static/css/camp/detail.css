@@ -126,6 +126,7 @@ body {
 }
 
 .writer {
+	font-family: Recipekorea;
 	text-align: center;
 	width: 120px;
 	margin-top:auto;
@@ -142,6 +143,7 @@ body {
 	hegith: max-contnet;
 	margin-left: auto;
 	margin-right: auto;
+	
 }
 .detail-map{
 	font-size: 30px;
@@ -162,6 +164,31 @@ body {
 	width: 900px;
 	height: 400px;
 	background-color: yellow;
+}
+.d-none{
+	display:none;
+}
 
+.comment-delete{
+	
+	float:right;
+	text-align:center;
+	font-family: Recipekorea;
+}
+.comment-form{
+	width:720px;
+	height: 90px;
+	
+}
 
+.regDate{
+	padding-top:10px;
+	width: 720px;
+	height:20px;
+	text-align:right;
+}
+.comment-content{
+	width:550px;
+	height:50px;
+	word-break:break-all;
 }
