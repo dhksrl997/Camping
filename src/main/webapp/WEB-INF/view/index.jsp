@@ -66,7 +66,8 @@
 	<div class="img img4">
 		<section class="indexConWrap">
 			<div class="txt-block">
-				<h1 class="indexCon-tit">Connect on instagram</h1>
+				<h1 class="indexCon-tit">Connect on Campnic <img src="https://img.icons8.com/ios-glyphs/60/000000/instagram-new.png"/>
+				</h1>
 			</div> 
 		</section>
 		<div class="instaWrap">
