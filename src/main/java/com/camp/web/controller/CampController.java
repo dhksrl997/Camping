@@ -53,7 +53,7 @@ public class CampController {
 				List<Camp> list = campDao.recommend();
 				List<Camp> indexlist = new ArrayList<>();
 				for (int i = 0; i < 3; i++) {
-					int index = rand.nextInt(99) + 1;
+					int index = rand.nextInt(list.size()) + 1;
 					indexlist.add(list.get(index));
 				}
 				model.addAttribute("recommend", indexlist);
@@ -105,7 +105,6 @@ public class CampController {
 			response.sendRedirect("detail?id=" + campId);
 		} else 
 			response.sendRedirect("/member/login");
-		
 	}
 
 }

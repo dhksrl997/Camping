@@ -33,9 +33,12 @@
 			<a href="/index"><li><i class="fas fa-home"></i><div>홈</div></li></a> 
 			<a href="/camp/list"><li><i class="fas fa-campground"></i><div>캠핑장 찾기</div></li></a>
 			<a href="/items/campitem"><li><i class="fas fa-tree"></i><div>캠린이 생존템</div></li></a>
-			<li><i class="fas fa-grin-hearts"></i><div>캠핑장 소개</div></li>
-			<li><i class="fab fa-accusoft"></i><div>samplePage</div></li>
-			<li><i class="fab fa-accusoft"></i><div>예약 시스템</div></li>
+			<a href="/board/freeBoard"><li><i class="fas fa-hiking"></i><div>후기 게시판</div></li></a>
+			<a href="/board/freeBoard"><li><i class="fas fa-comments"></i><div>자유 게시판</div></li></a>
+			<li><i class="far fa-question-circle"></i><div>문의하기</div></li>
+			<a href="/aboutUs"><li><i class="fas fa-laptop-code"></i><div>만든사람들</div></li></a>
+
+			
 		</nav>
 	<input type="button" value="" class="dark-mode-btn">
 	<!-- --------------------------- <visual> --------------------------------------- -->

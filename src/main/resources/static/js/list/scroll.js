@@ -45,8 +45,8 @@ $(function(){
                  var rec = recommend.reclist[i];
                  $(".box-wrap").append(`
             <div class="box">
-                  <img src="/images/${rec.img1 }" class="rec-img">
-               <div class="name-sec">
+                  <a href="detail?id=${rec.id}"><img src="/images/${rec.img1 }" class="rec-img"></a>
+             <div class="name-sec">
                   <span class="rec-name"><i class="fas fa-map-signs">&nbsp;&nbsp;${rec.name }</i></span>
                </div>
                <div class="address-sec">

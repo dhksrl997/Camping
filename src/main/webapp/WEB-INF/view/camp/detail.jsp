@@ -12,7 +12,7 @@
 	<div class="name">${c.name }</div>
 	<section class="detail">
 		<div class="thumbnail">
-			<img class="main-img" src="/images/${c.img1 }" width ="1100px" height="740px">
+			<img class="main-img" src="/images/${c.img1 }" width ="1100px" height="740px"> 
 		</div>
 		<div class="sub-img">
 			<div class="img1 smallimg">

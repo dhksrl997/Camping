@@ -8,7 +8,6 @@ public class IndexController {
 
 	@GetMapping("/intro")
 	private String indexintro() {
-
 		return "intro";
 	}
 
@@ -16,5 +15,11 @@ public class IndexController {
 	private String index() {
 
 		return "root.index";
+	}
+
+	@GetMapping("/aboutUs")
+	private String makers() {
+
+		return "root.aboutUs";
 	}
 }
