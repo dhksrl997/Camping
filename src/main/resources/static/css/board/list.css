@@ -1,0 +1,71 @@
+@charset "UTF-8";
+@font-face {
+   font-family: 'S-CoreDream-3Light';
+   src:
+      url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff')
+      format('woff');
+   font-weight: normal;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'Recipekorea';
+   src:
+      url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/Recipekorea.woff')
+      format('woff');
+   font-weight: normal;
+   font-style: normal;
+}
+
+.table-box{
+	padding-right:15px;
+	padding-left:15px;
+	margin-right:auto;
+	margin-left:auto;
+	width:1170px;
+	z-index:100;
+}
+
+
+.table>thead>tr{
+	text-align: center;
+}
+.table>tbody tr td{
+	text-align: center;
+}
+.table{
+
+}
+.table>tbody tr td:nth-child(1){
+	width: 100px;
+}
+.table>tbody tr td:nth-child(2){
+	text-align: left;
+	/* overflow:hidden; */
+	/* text-overflow:ellipsis;
+	height: 37px;*/
+	/* white-space:nowrap; */
+	table-layout: fixed;
+	white-space:nowrap;
+	word-break: break-all;
+	width: 770px; 
+	font-size: 20px;
+	height: 37px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical; 
+}
+.table>tbody tr td:nth-child(3){
+	width: 100px;
+}
+.table>tbody tr td:nth-child(4){
+	width: 100px;
+}
+.table>tbody tr td:nth-child(5){
+	width: 100px;
+}
+
+
+
+

@@ -8,13 +8,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/items")
 public class ItemController {
 
-//	@Autowired
-//	private CampDao campDao;
-
-	@GetMapping("/checklist")
+	@GetMapping("campitem")
 	private String campitem() {
 
-		return "items.checklist";
+		return "items.campitem";
 	}
+	
+	@GetMapping("detail")
+	private String detail() {
+
+		return "items.detail";
+	}
+
 
 }

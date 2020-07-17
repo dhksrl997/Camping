@@ -1,12 +1,15 @@
 package com.camp.web.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -28,8 +31,8 @@ public class CampController {
 	private CampDao campDao;
 
 	@GetMapping("list")
-	private String getList(@RequestParam(name = "reg", defaultValue = "") String region, Model model,
-			String query) throws ClassNotFoundException, SQLException {
+	private String getList(@RequestParam(name = "reg", defaultValue = "") String region, Model model, String query)
+			throws ClassNotFoundException, SQLException {
 		if (query == null) {
 			if (region.equals("se"))
 				region = "서울";
@@ -89,14 +92,20 @@ public class CampController {
 
 	@PostMapping("detail")
 	public void regComment(@RequestParam(name = "id") int campId, String writer,
-			@RequestParam(name = "content") String content, String pub, Model model, HttpServletResponse response)
-			throws IOException {
-		writer = "wangi";
-		if (pub == null)
-			pub = "off";
-		Comment comment = new Comment(campId, writer, content, pub);
-		campDao.insertComment(comment);
-		response.sendRedirect("detail?id=" + campId);
+			@RequestParam(name = "content") String content, String pub, Model model, HttpServletResponse response,
+			HttpServletRequest request) throws IOException {
+		HttpSession session = request.getSession();
+		String userName = (String) session.getAttribute("userName");
+		if (userName != null) {
+			writer = userName;
+			if (pub == null)
+				pub = "off";
+			Comment comment = new Comment(campId, writer, content, pub);
+			campDao.insertComment(comment);
+			response.sendRedirect("detail?id=" + campId);
+		} else 
+			response.sendRedirect("/member/login");
+		
 	}
 
 }

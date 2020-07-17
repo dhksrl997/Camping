@@ -9,15 +9,26 @@
 		<a href="/index"><img class="logo" src="../images/indexlogo.png"
 			width="230px" alt="campnic_logo"></a>
 	</div>
-	<ul class="header_menu">
+	<ul class="header-menu">
 		<form action="/camp/list">
 			<input class="search-field" name="query" type="text" style="color: black;">
 			<input type="submit" value="" style="display:none;">
 		</form>
 		<i class="fas fa-search search-icon"></i>
-		<a href="/member/join"><li>회원가입</li></a>
-		<a href="/member/login"><li>로그인</li></a>
+		<s:authorize access="isAuthenticated()">
+			<li class="header-login"><a class="header-name">${sessionScope.userName}</a></li>
+		</s:authorize>
+		
+
+		<s:authorize access="isAnonymous()">
+		<li><a href="/member/join">회원가입</a></li>
+			<li><a href="/member/login">로그인</a></li>
+		</s:authorize>
 	</ul>
+		<ul class="header-mypage">
+			<li>정보수정</li>
+			<li><a href="/member/logout">로그아웃</a></li>
+		</ul>
 </section>
 
 

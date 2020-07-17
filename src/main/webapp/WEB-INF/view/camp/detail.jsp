@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<script defer src="/js/detail/detail.js"></script>
+<script defer src="/js/camp/detail.js"></script>
 <link rel="stylesheet" href="/css/camp/detail.css">
 <link rel="stylesheet"
 	href="https://use.fontawesome.com/releases/v5.13.1/css/all.css"
@@ -12,7 +12,7 @@
 	<div class="name">${c.name }</div>
 	<section class="detail">
 		<div class="thumbnail">
-			<img class="main-img" src="/images/${c.img1 }">
+			<img class="main-img" src="/images/${c.img1 }" width ="1100px" height="740px">
 		</div>
 		<div class="sub-img">
 			<div class="img1 smallimg">
@@ -78,6 +78,21 @@
 				</div>
 				<div class="data">${c.price }</div>
 			</div>
+			<div class="d-none">
+			<div class="latitude">${c.latitude}</div>
+			<div class="longitude">${c.longitude}</div>
+		</div>
+		</div>
+		<div class="detail-map">
+			<div>
+				<h2>찾아오시는길</h2>
+			</div>
+
+			<div id="map2" class="map2"></div>
+
+		</div>
+		<script type="text/javascript"
+			src="//dapi.kakao.com/v2/maps/sdk.js?appkey=6d381a3bf90a679a591c3eb39a8edfe8"></script>
 		</div>
 	</section>
 </c:forEach>

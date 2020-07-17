@@ -16,14 +16,20 @@
 	</definition>
 	
 	<definition name="member.*" template="/WEB-INF/view/inc/layout.jsp">
-		<put-attribute name="css" value="/css/member/login.css" />
+		<put-attribute name="css" value="/css/member/{1}.css" />
 		<put-attribute name="header" value="/WEB-INF/view/inc/header.jsp" />
 		<put-attribute name="main" value="/WEB-INF/view/member/{1}.jsp" />
 	</definition>
 	
 	<definition name="items.*" template="/WEB-INF/view/inc/layout.jsp">
-		<put-attribute name="css" value="/css/items/campitem.css" />
+		<put-attribute name="css" value="/css/items/{1}.css" />
 		<put-attribute name="header" value="/WEB-INF/view/inc/header.jsp" />
 		<put-attribute name="main" value="/WEB-INF/view/items/{1}.jsp" />
+	</definition>
+	
+	<definition name="board.*" template="/WEB-INF/view/inc/layout.jsp">
+		<put-attribute name="css" value="/css/board/reg.css" />
+		<put-attribute name="header" value="/WEB-INF/view/inc/header.jsp" />
+		<put-attribute name="main" value="/WEB-INF/view/board/{1}.jsp" />
 	</definition>
 </tiles-definitions>
