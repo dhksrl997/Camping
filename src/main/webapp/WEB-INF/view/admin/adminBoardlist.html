@@ -1,0 +1,246 @@
+<!-- <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Camping place list</title>
+    <link rel="stylesheet" href="../../../../resources/static/css/reset.css">
+    <link rel="stylesheet" href="../../../../resources/static/css/admin/adminBoardlist.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
+<body>
+    <header class="topMenu">
+        <ul class="gnb">
+            <li class="campniclogo">
+                <img src="../../../../resources/static/images/indexlogo.png" width="230px">
+            </li>
+            <li>
+                <a class="place-admin" href="adminCamplist.html">
+                    <i class="fa fa-campground"></i>
+                    캠핑장관리
+                </a>
+            </li>
+            <li>
+                <a class="user-admin" href="adminUserlist.html">
+                    <i class="fa fa-user-circle"></i>
+                    회원관리
+                </a>
+            </li>
+            <li>
+                <a class="board-admin" href="adminBoardlist.html">
+                    <!-- <span style="color: darkmagenta;">캠핑장관리</span> -->
+                    <i class="fa fa-tasks"></i>
+                    게시판관리
+                </a>
+            </li>
+            <li>
+                <a class="sns-admin" href="conectSns.html">
+                    <i class="fa fa-toggle-on"></i>
+                    SNS연동관리
+                </a>
+            </li>
+            <li>
+                <a class="customer-admin" href="customerCenter.html">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    고객센터
+                </a>
+            </li>
+        </ul>
+    </header>
+
+    <div class="adminConWrap">
+        <div class="infoWrap">
+            <h1 class="adminConTit">게시글 목록</h1>
+            <button type="button">등록하기</button>
+        </div>
+        <div class="conListWrap">
+            <section class="printCount">
+                총 게시글 수 : 0
+                <select id="listNum-select" name="listNum-select" mode="1">
+                    <option value="20">20개 보기</option>
+                    <option value="60">60개 보기</option>
+                    <option value="150">150개 보기</option>
+                    <option value="300">300개 보기</option>
+                </select>
+            </section>
+            <table class="boardList">
+                <thead class="placeList">
+                    <tr>
+                        <td>No.</td>
+                        <td>게시판명</td>
+                        <td>게시글 제목</td>
+                        <td>작성자</td>
+                        <td>작성시간</td>
+                        <td>조회수</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>No.</td>
+                        <!-- <a href="" onclick="window.open(this.href, '_blank', 'width=960px, height=700px, tollbars=no, scrollbars=no'); return false"> -->
+                        <td>자유게시판</td>
+                        <td><a href=""><b>게시글 제목 db 내용</b></a></td>
+                        <td>작성자명 db 내용</td>
+                        <td>작성시간 db 내용</td>
+                        <td>조회수 db 내용</td>
+                    </tr>
+                    <tr>
+                        <td>No.</td>
+                        <td>공지사항</td>
+                        <td><a href=""><b>게시글 제목 db 내용</b></a></td>
+                        <td>작성자명 db 내용</td>
+                        <td>작성시간 db 내용</td>
+                        <td>조회수 db 내용</td>
+                    </tr>
+                    <tr>
+                        <td>No.</td>
+                        <td>자유게시판</td>
+                        <td><a href=""><b>게시글 제목 db 내용</b></a></td>
+                        <td>작성자명 db 내용</td>
+                        <td>작성시간 db 내용</td>
+                        <td>조회수 db 내용</td>
+                    </tr>
+                    <tr>
+                        <td>No.</td>
+                        <td>공지사항</td>
+                        <td><a href=""><b>게시글 제목 db 내용</b></a></td>
+                        <td>작성자명 db 내용</td>
+                        <td>작성시간 db 내용</td>
+                        <td>조회수 db 내용</td>
+                    </tr>
+                    <tr>
+                        <td>No.</td>
+                        <td>자유게시판</td>
+                        <td><a href=""><b>게시글 제목 db 내용</b></a></td>
+                        <td>작성자명 db 내용</td>
+                        <td>작성시간 db 내용</td>
+                        <td>조회수 db 내용</td>
+                    </tr>
+                    <tr>
+                        <td>No.</td>
+                        <td>자유게시판</td>
+                        <td><a href=""><b>게시글 제목 db 내용</b></a></td>
+                        <td>작성자명 db 내용</td>
+                        <td>작성시간 db 내용</td>
+                        <td>조회수 db 내용</td>
+                    </tr>
+                    <tr>
+                        <td>No.</td>
+                        <td>공지사항</td>
+                        <td><a href=""><b>게시글 제목 db 내용</b></a></td>
+                        <td>작성자명 db 내용</td>
+                        <td>작성시간 db 내용</td>
+                        <td>조회수 db 내용</td>
+                    </tr>
+                    <tr>
+                        <td>No.</td>
+                        <td>자유게시판</td>
+                        <td><a href=""><b>게시글 제목 db 내용</b></a></td>
+                        <td>작성자명 db 내용</td>
+                        <td>작성시간 db 내용</td>
+                        <td>조회수 db 내용</td>
+                    </tr>
+                    <tr>
+                        <td>No.</td>
+                        <td>공지사항</td>
+                        <td><a href=""><b>게시글 제목 db 내용</b></a></td>
+                        <td>작성자명 db 내용</td>
+                        <td>작성시간 db 내용</td>
+                        <td>조회수 db 내용</td>
+                    </tr>
+                    <tr>
+                        <td>No.</td>
+                        <td>자유게시판</td>
+                        <td><a href=""><b>게시글 제목 db 내용</b></a></td>
+                        <td>작성자명 db 내용</td>
+                        <td>작성시간 db 내용</td>
+                        <td>조회수 db 내용</td>
+                    </tr>
+                    <tr>
+                        <td>No.</td>
+                        <td>자유게시판</td>
+                        <td><a href=""><b>게시글 제목 db 내용</b></a></td>
+                        <td>작성자명 db 내용</td>
+                        <td>작성시간 db 내용</td>
+                        <td>조회수 db 내용</td>
+                    </tr>
+                    <tr>
+                        <td>No.</td>
+                        <td>자유게시판</td>
+                        <td><a href=""><b>게시글 제목 db 내용</b></a></td>
+                        <td>작성자명 db 내용</td>
+                        <td>작성시간 db 내용</td>
+                        <td>조회수 db 내용</td>
+                    </tr>
+                    <tr>
+                        <td>No.</td>
+                        <td>자유게시판</td>
+                        <td><a href=""><b>게시글 제목 db 내용</b></a></td>
+                        <td>작성자명 db 내용</td>
+                        <td>작성시간 db 내용</td>
+                        <td>조회수 db 내용</td>
+                    </tr>
+                    <tr>
+                        <td>No.</td>
+                        <td>자유게시판</td>
+                        <td><a href=""><b>게시글 제목 db 내용</b></a></td>
+                        <td>작성자명 db 내용</td>
+                        <td>작성시간 db 내용</td>
+                        <td>조회수 db 내용</td>
+                    </tr>
+                    <tr>
+                        <td>No.</td>
+                        <td>자유게시판</td>
+                        <td><a href=""><b>게시글 제목 db 내용</b></a></td>
+                        <td>작성자명 db 내용</td>
+                        <td>작성시간 db 내용</td>
+                        <td>조회수 db 내용</td>
+                    </tr>
+                    <tr>
+                        <td>No.</td>
+                        <td>자유게시판</td>
+                        <td><a href=""><b>게시글 제목 db 내용</b></a></td>
+                        <td>작성자명 db 내용</td>
+                        <td>작성시간 db 내용</td>
+                        <td>조회수 db 내용</td>
+                    </tr>
+                    <tr>
+                        <td>No.</td>
+                        <td>자유게시판</td>
+                        <td><a href=""><b>게시글 제목 db 내용</b></a></td>
+                        <td>작성자명 db 내용</td>
+                        <td>작성시간 db 내용</td>
+                        <td>조회수 db 내용</td>
+                    </tr>
+                    <tr>
+                        <td>No.</td>
+                        <td>자유게시판</td>
+                        <td><a href=""><b>게시글 제목 db 내용</b></a></td>
+                        <td>작성자명 db 내용</td>
+                        <td>작성시간 db 내용</td>
+                        <td>조회수 db 내용</td>
+                    </tr>
+                    <tr>
+                        <td>No.</td>
+                        <td>자유게시판</td>
+                        <td><a href=""><b>게시글 제목 db 내용</b></a></td>
+                        <td>작성자명 db 내용</td>
+                        <td>작성시간 db 내용</td>
+                        <td>조회수 db 내용</td>
+                    </tr>
+                    <tr>
+                        <td>No.</td>
+                        <td>자유게시판</td>
+                        <td><a href=""><b>게시글 제목 db 내용</b></a></td>
+                        <td>작성자명 db 내용</td>
+                        <td>작성시간 db 내용</td>
+                        <td>조회수 db 내용</td>
+                    </tr>
+                </tbody>
+              </table>
+        </div>
+        
+    </div>
+</body>
+</html>

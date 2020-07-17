@@ -95,16 +95,12 @@ a {
         }
             .boardList thead tr {
                 color: white;
-                background-color: darkslategrey;
-                border-right: darkslategrey solid 2px; 
+                background-color: dimgray;
+                border-right: dimgray solid 2px; 
             }
                 .boardList>thead>tr>td {
                     border-right: 1px solid white;  
                 }
-            /* .boardList tbody tr {
-                --border: 1px solid gray;
-            }    */
                 .boardList tbody tr td {
-                    border: 1px solid darkslategrey;  
+                    border: 1px solid dimgray;  
                 }
-        
