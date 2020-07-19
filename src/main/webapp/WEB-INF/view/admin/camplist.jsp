@@ -1,53 +1,8 @@
-<!-- <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>-->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Camping place list</title>
-    <link rel="stylesheet" href="../../../../resources/static/css/reset.css">
-    <link rel="stylesheet" href="../../../../resources/static/css/admin/adminCamplist.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-</head>
-<body>
-    <header class="topMenu">
-        <ul class="gnb">
-            <li class="campniclogo">
-                <img src="../../../../resources/static/images/indexlogo.png" width="230px">
-            </li>
-            <li>
-                <a class="place-admin" href="adminCamplist.html">
-                    <i class="fa fa-campground"></i>
-                    <!-- <span style="color: darkmagenta;">캠핑장관리</span> -->
-                    캠핑장관리
-                </a>
-            </li>
-            <li>
-                <a class="user-admin" href="adminUserlist.html">
-                    <i class="fa fa-user-circle"></i>
-                    회원관리
-                </a>
-            </li>
-            <li>
-                <a class="board-admin" href="adminBoardlist.html">
-                    <i class="fa fa-tasks"></i>
-                    게시판관리
-                </a>
-            </li>
-            <li>
-                <a class="sns-admin" href="conectSns.html">
-                    <i class="fa fa-toggle-on"></i>
-                    SNS연동관리
-                </a>
-            </li>
-            <li>
-                <a class="customer-admin" href="customerCenter.html">
-                    <i class="fas fa-chalkboard-teacher"></i>
-                    고객센터
-                </a>
-            </li>
-        </ul>
-    </header>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!--<link rel="stylesheet" href="/css/reset.css">
+ <link rel="stylesheet" href="/css/admin/camplist.css"> -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" 
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
     <div class="adminConWrap">
         <div class="infoWrap">
@@ -179,5 +134,3 @@
         </div>
         
     </div>
-</body>
-</html>

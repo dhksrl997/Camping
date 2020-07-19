@@ -8,7 +8,8 @@ a {
 	text-decoration: none;
 	color: black;
 }
-.topMenu {
+
+.header {
     width: 100%;
     top: 0;
 }
@@ -49,51 +50,3 @@ a {
             font-size: 26px;
             color: #2d3546;
         }
-
-.adminConWrap {
-    margin: 100px auto;
-    width: 1200px;
-}   
-    .adminConTit {
-        font-family: 'Noto Sans KR', sans-serif;
-        font-size: 34px;
-        margin-bottom: 40px;
-    }
-    .conListWrap {
-        margin-bottom: 40px;
-    }
-    .printCount {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 10px;
-        border: 1px solid gray;
-    }
-        .listNum-select option {
-            font-weight: normal;
-            display: block;
-        }
-    .boardList {
-        width: 1200px;
-    }
-    tr {
-        height: 50px;
-    }
-    td {
-        padding: 0 15px;
-    }
-        .boardList thead tr {
-            color: white;
-            background-color: gray;
-            border-right: gray solid 2px; 
-        }
-            .boardList>thead>tr>td {
-                border-right: 1px solid white;  
-            }
-        .boardList tbody tr {
-            --border: 1px solid gray;
-        }   
-            .boardList tbody tr td {
-                border: 1px solid gray;  
-            }
-    
