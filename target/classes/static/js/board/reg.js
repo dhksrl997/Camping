@@ -1,19 +1,8 @@
 
 $(function(){
-	
-	
-$("#submit").click(function(){
-//	e.preventDefault();
-//	let data = regData.serialize();
-//	alert(data);
-//	e.preventDefault();
-//   alert(regData);
-	
-	
+$("#submit").click(function(){		
     sendRegData();
-
 })
-//,title:$(".title").html()
 function sendRegData(){
 	   $.ajax({
            type: "POST",
@@ -22,14 +11,13 @@ function sendRegData(){
            dataType:"json",
            async:"true",
            success: function() {
-//               alert($(".regData").serialize());
         	   console.log("asdasd")
            }
            })
       };
 });
 
-
+1
 
 document.execCommand('styleWithCSS', false, true);
 document.execCommand('insertBrOnReturn', false, true);

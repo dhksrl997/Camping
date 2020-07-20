@@ -4,7 +4,8 @@
 
 <div class="reg-message">당신의 후기를 모아모아</div>
 <div class="reg-message2">*후기 입력란*</div>
-
+<span class="side-message1">CampNic</span>
+<span class="side-message2">Board</span>
 <section class="reg-box">
 	<form>
 	
@@ -47,7 +48,7 @@
 		<div class="content" name="content" contenteditable="true"></div>
 		<!-- <textarea rows="10" cols="10" class="content" name="content">gsfjkgnfsjkghsjkdfhkjsdf</textarea> -->
 		<!-- <textarea rows="10" cols="10" name="content" class="content"></textarea> -->
-		<a id="submit" href="/board/list">등록</a>
+	 <div class="submit-box"><a id="submit" href="/board/list">등록</a></div>
 		<!-- <input type="submit" id="submit" value="등록"> -->
 	</form>
 

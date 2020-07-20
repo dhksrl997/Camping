@@ -271,6 +271,7 @@ body {
   margin: 0 -.05em;
   animation: Message1 1s infinite;
 }
+
 .Message1 span:nth-child(2) {
   animation-delay: .1s;
 }

@@ -29,7 +29,7 @@
 .reg-title{
 	width:300px;
 	height:30px;
-	background-color:gray;
+	background-color:#f1f1f1;
 }
 
 
@@ -51,6 +51,28 @@
 	display:flex;
 	justify-content:center;
 	align-items:center;
+}
+
+.side-message1{
+	position : absolute;
+	font-size: 100px;
+	font-family: S-CoreDream-3Light;
+	font-weight:bold;
+	right: 120px;
+	top: 400px;  
+	writing-mode: vertical-rl;
+	width:1000px;
+}
+
+.side-message2{
+	position : absolute;
+	font-size: 100px;
+	font-family: S-CoreDream-3Light;
+	font-weight:bold;
+	right: 240px;
+	top: 600px;  
+	writing-mode: vertical-rl;
+	width:1000px;
 }
 
 .reg-box{
@@ -114,10 +136,20 @@
 	  z-index:100;
   }
   
+.submit-box{
+	
+	display:flex;
+	justify-content:center;
+	margin-left:auto;
+	margin-right:auto;
+	
+}  
   
 #submit{
 	width:50px;
 	height:30px;
+	font-size:20px;
+	margin-left:350px;
   }
 
 .bs3-primary{

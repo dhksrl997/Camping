@@ -17,6 +17,10 @@
    font-style: normal;
 }
 
+.board-background{
+	margin-top: 100px;
+}
+
 .table-box{
 	padding-right:15px;
 	padding-left:15px;
@@ -41,10 +45,6 @@
 }
 .table>tbody tr td:nth-child(2){
 	text-align: left;
-	/* overflow:hidden; */
-	/* text-overflow:ellipsis;
-	height: 37px;*/
-	/* white-space:nowrap; */
 	table-layout: fixed;
 	white-space:nowrap;
 	word-break: break-all;
@@ -67,5 +67,148 @@
 }
 
 
+.list-title{
+	width:100%;
+	height:500px;
+     font-size: 50px;
+     background-size:contain;
+}
+
+.list-message1{
+	position:absolute;
+	left:100px;
+	top:150px;
+	font-size:90px;
+	font-family: 'Recipekorea';
+}
+
+.list-message2{
+	position:absolute;
+	left:230px;
+	top:300px;
+	font-size:90px;
+	font-family: 'Recipekorea';
+}
+
+.list-message3{
+	position:absolute;
+	right:150px;
+	top:150px;
+	font-size:140px;
+	font-family: 'Recipekorea';
+}
+
+.list-message4 {
+	position:absolute;
+	right:330px;
+	top:300px;
+	font-size:140px;
+	font-family: 'Recipekorea';
+	
+}
+.list-message3{
+  display: inline-block;
+  margin: 0 -.05em;
+  animation: list-message3 1.2s infinite;
+}
+
+.list-message3 {
+  animation-delay: .8s;
+}
+
+@keyframes list-message3 {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(30px);
+  }
+}
 
 
+.list-message4{
+  display: inline-block;
+  margin: 0 -.05em;
+  animation: list-message4 1.2s infinite;
+}
+
+.list-message4 {
+  animation-delay: .1s;
+}
+
+
+@keyframes list-message4 {
+  0%, 100% {
+  
+    transform: translateX(0);
+  }
+  50% {
+  
+    transform: translateX(30px);
+  }
+}
+
+
+.best-list{
+	/* background-color:blue; */
+	width:80%;
+	height:200px;
+	margin-top: 300px;
+	margin-left:auto;
+	margin-right:auto;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+
+
+
+.best-title{
+	font-size:30px;
+	font-family: 'S-CoreDream-3Light';
+	
+}
+.click-here{
+	position:absolute;
+    left: 680px;
+    top: 990px;
+    font-size: 20px;
+}
+
+.click-here{
+  display: inline-block;
+  margin: 0 -.05em;
+  animation: click-here 1.2s infinite;
+}
+.click-here {
+  animation-delay: .1s;
+}
+
+@keyframes click-here {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+}
+
+
+
+.best-title2{
+	font-size:50px;
+	font-family: 'Recipekorea';
+	display:none;
+}
+.best-box{
+	font-family: 'S-CoreDream-3Light';
+	margin-left:auto;
+	margin-right:auto;
+	width:60%;
+	height:300px;
+	font-size:40px;
+	display:none;
+}
+.best-box>div{
+	margin-bottom:40px;
+}
