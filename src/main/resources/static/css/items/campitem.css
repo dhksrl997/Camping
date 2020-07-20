@@ -47,7 +47,6 @@ body {
 }
 
 .about-wrap .atitle {
-<<<<<<< HEAD
    font-family: 'SangSangShinb7',  �� ��고딕, 고딕;
    font-size: 84px; 
    --font-weight: bold;
@@ -56,16 +55,6 @@ body {
 
 .about-wrap .atitle .em { 
    --margin-bottom: 20px;
-=======
-   font-family: 'SangSangShinb7',  �� ��고딕, 고딕;
-   font-size: 84px; -
-   -font-weight: bold;
-   padding-bottom: 20px;
-}
-
-.about-wrap .atitle .em { -
-   -margin-bottom: 20px;
->>>>>>> 99a0c7ee39b36fe2354a1b95af18bd129792c201
    width: 54px;
 }
 
@@ -251,13 +240,8 @@ body {
 }
 
 .checklist-wrap .listcontent {
-<<<<<<< HEAD
    background-color: white; 
    --border-left: 4px solid #fd5225;
-=======
-   background-color: white; -
-   -border-left: 4px solid #fd5225;
->>>>>>> 99a0c7ee39b36fe2354a1b95af18bd129792c201
 }
 
 .listcontent .checkbox {

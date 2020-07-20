@@ -1,5 +1,7 @@
 package com.camp.web.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
@@ -15,6 +17,11 @@ public interface MemberDao {
 	String getName(String userName);
 
 	@Select("SELECT count(*) from member Where uid='${userId}'")
-	int userIdCheck(String userId);	
+	int userIdCheck(String userId);
+
+	@Select("select *from member where uid = '${userId}';")
+	List<Member> selectProfile(String userId);	
+	
+	
 	
 }

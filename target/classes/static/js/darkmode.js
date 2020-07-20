@@ -28,7 +28,7 @@ $(function() {
     	 $(".comment-Line").css("border","1px solid lightgrey");
          logo.attr("src", "/images/indexlogo-w.png");
          $(".header").css("background-color","rgb(47, 47, 47)");
-         $("body").css("color", "rgb(166,170,175)");
+         $("body").css("background-color","rgb(15,15,15)").css("color", "rgb(166,170,175)");
          $("html").css("background-color","rgb(15,15,15)");
          darkBtn.style.backgroundImage = "url('https://png.pngtree.com/png-vector/20190115/ourmid/pngtree-vector-stars-and-moon-icon-png-image_317944.jpg')";
          $(".sidemenu").css("color", "white");
@@ -51,7 +51,7 @@ $(function() {
     	  $(".comment-Line").css("border","1px solid black");
          logo.attr("src", "/images/indexlogo-b.png");
          $(".header").css("background-color", "white");
-         $("body").css("color", "black");
+         $("body").css("background-color","white").css("color", "black");
          $("html").css("background-color","white");
          darkBtn.style.backgroundImage = "url('/images/night.png')";
          $(".sidemenu").css("color", "black");
@@ -84,8 +84,8 @@ $(function() {
     	  $(".comment-Line").css("transition", "0.7s").css("border","1px solid lightgrey");
          logo.attr("src", "/images/indexlogo-w.png");
          $(".header").css("transition", "0.7s").css("background-color","rgb(47, 47, 47)").css("color","rgb(166,170,175)");
-         $("body").css("transition", "0.7s").css("color", "rgb(166,170,175)");
          $("html").css("transition", "0.7s").css("background-color","rgb(15,15,15)");
+         $("body").css("transition", "0.7s").css("background-color","rgb(15,15,15)").css("color", "rgb(166,170,175)");
          darkBtn.style.backgroundImage = "url('https://png.pngtree.com/png-vector/20190115/ourmid/pngtree-vector-stars-and-moon-icon-png-image_317944.jpg')";
          $(".sidemenu").css("color", "white");
          $(".aside-list").css("transition", "0.7s").css("background-color","rgb(47, 47, 47)").find("li").css("transition", "0.7s").css("background-color", "rgb(47, 47, 47)").css("color", "white").hover(
@@ -109,7 +109,7 @@ $(function() {
          $(".comment-Line").css("transition", "0.7s").css("border","1px solid black");
          logo.attr("src", "/images/indexlogo-b.png");
          $(".header").css("transition", "0.7s").css("background-color", "white").css("color","black");
-         $("body").css("transition", "0.7s").css("color", "black");
+         $("body").css("transition", "0.7s").css("background-color","white").css("color", "black");
          $("html").css("transition", "0.7s").css("background-color","white");
          darkBtn.style.backgroundImage = "url('/images/night.png')";
          $(".sidemenu").css("color", "black");

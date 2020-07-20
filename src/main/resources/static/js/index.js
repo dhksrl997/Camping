@@ -10,8 +10,7 @@ let myPage = document.querySelector(".header-mypage");
 let shield = document.querySelector(".shield");
 var flag = false;
 var flag2 = false;
-
-
+var test=document.querySelector("body");
 
 
 asideButton.addEventListener("click", function (e) {
@@ -31,8 +30,6 @@ asideButton.addEventListener("click", function (e) {
 
 var imgs = document.querySelectorAll(".img");
 var nums = document.querySelectorAll(".number");
-console.log(nums);
-console.log(imgs)
 // var boxs = document.querySelector(".box");
 nums[0].onclick = function () {
     console.log("1번째");
@@ -65,13 +62,12 @@ nums[3].onclick = function () {
 
 
 login.addEventListener("click", function (e) {
-	flag2 = !flag2;
-	e.preventDefault();
-	if (flag2) {
-		myPage.classList.add("show2");
-	}
-	else {
-		myPage.classList.remove("show2");
-	}
+   flag2 = !flag2;
+   e.preventDefault();
+   if (flag2) {
+      myPage.classList.add("show2");
+   }
+   else {
+      myPage.classList.remove("show2");
+   }
 });
-

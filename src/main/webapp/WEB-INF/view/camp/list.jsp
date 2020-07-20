@@ -20,7 +20,7 @@
 							src="/images/${rs.img1 }" width="200" height="150"></a>
 					</div>
 					<div class="content-container">
-						<div class="title">
+						<div class="title map-title">
 							<a href="detail?id=${rs.id }">${rs.name }</a>
 						</div>
 						<div style="color: rgb(0, 140, 236);" class="local">${rs.address }</div>
@@ -104,7 +104,7 @@
 							src="/images/${camp.img1 }" width="200" height="150"></a>
 					</div>
 					<div class="content-container">
-						<div class="title">
+						<div class="title map-title">
 							<a style="color: rgb(255, 72, 82);" href="detail?id=${camp.id }">${camp.name }</a>
 						</div>
 						<div style="color: rgb(0, 140, 236);" class="local">${camp.address }</div>
