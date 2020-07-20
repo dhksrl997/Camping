@@ -5,10 +5,7 @@ $(function(){
    let flag = true;
    let para = document.location.href.split("?");
    console.log(para[1]);
-
- 
-   
-   // ///////////////////////////////////////////////////////////
+   console.log(flag)
    function message1(){
       $(".Message1").css("transition","1.2s").css("left","350px");
    }
@@ -45,8 +42,8 @@ $(function(){
                  var rec = recommend.reclist[i];
                  $(".box-wrap").append(`
             <div class="box">
-                  <img src="/images/${rec.img1 }" class="rec-img">
-               <div class="name-sec">
+                  <a href="detail?id=${rec.id}"><img src="/images/${rec.img1 }" class="rec-img"></a>
+             <div class="name-sec">
                   <span class="rec-name"><i class="fas fa-map-signs">&nbsp;&nbsp;${rec.name }</i></span>
                </div>
                <div class="address-sec">
@@ -94,12 +91,9 @@ $(function(){
               fetchImage();
            };
            setTimeout(vanishImage,500);
-           
-
            if (para[1].indexOf('reg') != -1) {
               setTimeout(fetchlist,500);
            };
-
            if (para[1].indexOf('query') != -1) {
               setTimeout(fetchsearchlist,500); 
            };
@@ -107,7 +101,6 @@ $(function(){
         
         
         function fetchsearchlist(){
-// console.log(searchParam('query'));
             $.ajax({
                 type: "get",
                 url : "/camp/searchlist?query="+searchParam('query')+"&index="+index,
@@ -123,7 +116,6 @@ $(function(){
                       else{
                    for(var i=0; i<searched.searchlist.length; i++){
                       var search = searched.searchlist[i];
-                      
                         $(".camp-list").append(`
                         <section class="list">
                         <div class="list-container">
@@ -132,7 +124,7 @@ $(function(){
                      src="/images/${search.img1 }" width="200" height="150"></a>
                </div>
                <div class="content-container">
-                  <div class="title">
+                  <div class="title map-title">
                      <a style="color:black"; href="detail?id=${search.id }">${search.name }</a>
                   </div>
                   <div style="color: rgb(0, 140, 236);" class="local">${search.address }</div>
@@ -199,7 +191,7 @@ $(function(){
                               height="150">
                         </div>
                         <div class="content-container">
-                           <div class="${title}">
+                           <div class="${title} map-title">
                            <a href="detail?id=${camping.id }">${camping.name }</a>
                            </div>
                            <div class="local" style="color: rgb(0, 140, 236);">${camping.address }</div>
@@ -243,9 +235,6 @@ $(function(){
 });
 
 
-
-
-        
   
 
 window.addEventListener("load",function(){
@@ -265,106 +254,22 @@ campList.addEventListener("click",function(e){
 // ||"icon"
 // ||"map-span") {
 
-        var btnMap = event.target.parentElement;
-        var latitudeText = btnMap.querySelector(".latitude");
-        var longitudeText = btnMap.querySelector(".longitude");
-
+	  var target = event.target;
       
-        var latitude = parseFloat(latitudeText.innerText);
-        var longitude = parseFloat(longitudeText.innerText);
-
-        console.log(latitude);
-        console.log(longitude);
-
-        mapTest.classList.remove("hide");
-
-
-            var mapContainer = document.getElementById('map'), // 지도를 표시할 div
-        
-                mapOption = {
-                    center: new kakao.maps.LatLng(latitude, longitude), // 지도의
-																		// 중심좌표
-                    level: 3 // 지도의 확대 레벨
-                };
-        
-            var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
-            var arriveSrc = 'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/blue_b.png', // 도착
-																									// 마커이미지
-																									// 주소입니다
-                arriveSize = new kakao.maps.Size(50, 45), // 도착 마커이미지의 크기입니다
-                arriveOption = {
-                    offset: new kakao.maps.Point(15, 43) // 도착 마커이미지에서 마커의
-															// 좌표에 일치시킬 좌표를
-															// 설정합니다 (기본값은 이미지의
-															// 가운데 아래입니다)
-                };
-        
-            // 도착 마커 이미지를 생성합니다
-            var arriveImage = new kakao.maps.MarkerImage(arriveSrc, arriveSize, arriveOption);
-        
-        
-            // 도착 마커가 표시될 위치입니다
-            var arrivePosition = new kakao.maps.LatLng(latitude, longitude);
-        
-            // 도착 마커를 생성합니다
-            var arriveMarker = new kakao.maps.Marker({
-                map: map, // 도착 마커가 지도 위에 표시되도록 설정합니다
-                position: arrivePosition,
-                draggable: true, // 도착 마커가 드래그 가능하도록 설정합니다
-                image: arriveImage // 도착 마커이미지를 설정합니다
-        
-            });
-        
-            var iwContent = '<div class="customoverlay">'
-                + '  <a href="" target="_blank">'
-                + '<span class="title">'+longitude+'</span>'
-                + '</div>';
-            iwPosition = new kakao.maps.LatLng(latitude, longitude); // 인포윈도우
-																		// 표시
-																		// 위치입니다
-        
-            // 인포윈도우를 생성합니다
-            var customOverlay = new kakao.maps.CustomOverlay({
-                map: map,
-                position: iwPosition,
-                content: iwContent,
-                yAnchor: 1
-            });
-        }
-        
-    // console.log(place);
-    // console.log(place.innerText);
-    });
-
-
-
-
-mapsExit.addEventListener("click", function (e) {
-        mapTest.classList.add("hide");
-});
-
-});
-
-window.addEventListener("load",function(){
-    var mapTest = document.querySelector(".map");
-    var mapsExit = document.querySelector(".maps-exit");
-    var campList = document.querySelector(".camp-list");
+      for(var i=0; i<4 ;i++){
+          target = target.parentElement; 
+          if(target.className=="icon-list")
+          i=4;
+  }
     
-campList.addEventListener("click",function(e){
-  if (event.target.className == "icons list-map"
-							  || event.target.className == "fas fa-map-marker-alt"
-							  || event.target.className == "icon"
-							  || event.target.className == "map-span") {
-	// if (event.target.className == "icons list-map"
-// ||"fas fa-map-marker-alt"
-// ||"icon"
-// ||"map-span") {
-
-        var btnMap = event.target.parentElement;
-        var latitudeText = btnMap.querySelector(".latitude");
-        var longitudeText = btnMap.querySelector(".longitude");
-
-      
+  var btnMap = event.target.parentElement;
+  var latitudeText = btnMap.querySelector(".latitude");
+  var longitudeText = btnMap.querySelector(".longitude");
+  
+  var targetSibling =target.previousElementSibling;
+  var title = targetSibling.querySelector(".map-title");
+  console.log(title);
+  var mapTitle=title.innerText;
         var latitude = parseFloat(latitudeText.innerText);
         var longitude = parseFloat(longitudeText.innerText);
 
@@ -409,10 +314,17 @@ campList.addEventListener("click",function(e){
                 image: arriveImage // 도착 마커이미지를 설정합니다
         
             });
+        //'<a href="https://map.kakao.com/link/to/'+mapTitle+','+latitude,longitude+'" target="_blank">'
         
             var iwContent = '<div class="customoverlay">'
-                + '  <a href="" target="_blank">'
-                + '<span class="title">'+longitude+'</span>'
+                + '  <a href="https://map.kakao.com/link/to/'
+                + mapTitle
+                +','
+                + latitude
+                +','
+                + longitude
+                + '" target="_blank">'
+                + '<span class="map-title">'+mapTitle+'</span>'
                 + '</div>';
             iwPosition = new kakao.maps.LatLng(latitude, longitude); // 인포윈도우
 																		// 표시
@@ -439,6 +351,7 @@ mapsExit.addEventListener("click", function (e) {
 });
 
 });
+
 
 
         

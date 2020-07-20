@@ -433,7 +433,7 @@ body {
       no-repeat right 14px center;
 }
 
-.customoverlay .title {
+.customoverlay .map-title {
    display: block;
    text-align: center;
    background: #fff;

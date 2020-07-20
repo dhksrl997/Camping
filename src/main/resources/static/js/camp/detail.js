@@ -1,3 +1,27 @@
+//댓글삭제
+$(".comment-delete").click(function(e) {
+	e.preventDefault();
+	console.log($(this).attr("data-rno"));
+	let commentId = $(this).attr("data-rno");
+	$.ajax({
+		type : "get",
+		url : "/camp/detail/delete?commentId="+commentId,
+		success : function(data) {
+			alert("삭제되었습니다.");
+			location.reload();
+
+			},
+			error: function(){
+				console.log("실패");
+			}
+	});
+});
+
+
+
+
+
+
 
 'use strict';
 
@@ -24,6 +48,7 @@ $(".img4").hover(function(){
 
 window.addEventListener("load",function(){
 
+
 var latitudeText = document.querySelector(".latitude");
 var longitudeText = document.querySelector(".longitude");
 var latitude = parseFloat(latitudeText.innerText);
@@ -31,7 +56,7 @@ var longitude = parseFloat(longitudeText.innerText);
 
 
 
-var mapContainer = document.getElementById('map2'), // 지도를 표시할 div 
+var mapContainer = document.getElementById('map2'), // 지도를 표시할 div
     mapOption = { 
         center: new kakao.maps.LatLng(latitude, longitude),
         level: 11 // 지도의 확대 레벨
@@ -47,9 +72,17 @@ if (navigator.geolocation) {
         var lat = position.coords.latitude, // 위도
             lon = position.coords.longitude; // 경도
         
-        var locPosition = new kakao.maps.LatLng(lat, lon); // 마커가 표시될 위치를 geolocation으로 얻어온 좌표로 생성합니다
+        var locPosition = new kakao.maps.LatLng(lat, lon); // 마커가 표시될 위치를
+															// geolocation으로 얻어온
+															// 좌표로 생성합니다
     
-        var locPosition2 = new kakao.maps.LatLng(latitude, longitude); // 마커가 표시될 위치를 geolocation으로 얻어온 좌표로 생성합니다
+        var locPosition2 = new kakao.maps.LatLng(latitude, longitude); // 마커가
+																		// 표시될
+																		// 위치를
+																		// geolocation으로
+																		// 얻어온
+																		// 좌표로
+																		// 생성합니다
       
         var startPosition = new kakao.maps.LatLng(lat, lon); 
         
@@ -69,10 +102,10 @@ if (navigator.geolocation) {
              // 출발 마커의 드래그가 종료될 때 마커 이미지를 원래 이미지로 변경합니다
             startMarker.setImage(startImage);
         });
-     // 도착 마커가 표시될 위치입니다 
+     // 도착 마커가 표시될 위치입니다
         var arrivePosition = new kakao.maps.LatLng(latitude, longitude);    
          
-        // 도착 마커를 생성합니다 
+        // 도착 마커를 생성합니다
         var arriveMarker = new kakao.maps.Marker({  
             map: map, // 도착 마커가 지도 위에 표시되도록 설정합니다
             position: arrivePosition,
@@ -107,7 +140,7 @@ if (navigator.geolocation) {
         });
        
   
-        // 지도에 선을 표시합니다 
+        // 지도에 선을 표시합니다
         polyline.setMap(map); 
         
         map.setCenter(locPosition);   
@@ -120,25 +153,34 @@ if (navigator.geolocation) {
     displayMarker(locPosition, message);
 }
 
-var startSrc = 'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/red_b.png', // 출발 마커이미지의 주소입니다    
-    startSize = new kakao.maps.Size(50, 45), // 출발 마커이미지의 크기입니다 
+var startSrc = 'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/red_b.png', // 출발
+																						// 마커이미지의
+																						// 주소입니다
+    startSize = new kakao.maps.Size(50, 45), // 출발 마커이미지의 크기입니다
     startOption = { 
-        offset: new kakao.maps.Point(15, 43) // 출발 마커이미지에서 마커의 좌표에 일치시킬 좌표를 설정합니다 (기본값은 이미지의 가운데 아래입니다)
+        offset: new kakao.maps.Point(15, 43) // 출발 마커이미지에서 마커의 좌표에 일치시킬 좌표를
+												// 설정합니다 (기본값은 이미지의 가운데 아래입니다)
     };
 
 // 출발 마커 이미지를 생성합니다
 var startImage = new kakao.maps.MarkerImage(startSrc, startSize, startOption);
 
-var startDragSrc = 'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/red_drag.png', // 출발 마커의 드래그 이미지 주소입니다    
-    startDragSize = new kakao.maps.Size(50, 64), // 출발 마커의 드래그 이미지 크기입니다 
+var startDragSrc = 'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/red_drag.png', // 출발
+																							// 마커의
+																							// 드래그
+																							// 이미지
+																							// 주소입니다
+    startDragSize = new kakao.maps.Size(50, 64), // 출발 마커의 드래그 이미지 크기입니다
     startDragOption = { 
-        offset: new kakao.maps.Point(15, 54) // 출발 마커의 드래그 이미지에서 마커의 좌표에 일치시킬 좌표를 설정합니다 (기본값은 이미지의 가운데 아래입니다)
+        offset: new kakao.maps.Point(15, 54) // 출발 마커의 드래그 이미지에서 마커의 좌표에 일치시킬
+												// 좌표를 설정합니다 (기본값은 이미지의 가운데
+												// 아래입니다)
     };
 
 // 출발 마커의 드래그 이미지를 생성합니다
 var startDragImage = new kakao.maps.MarkerImage(startDragSrc, startDragSize, startDragOption);
 
-// 출발 마커가 표시될 위치입니다 
+// 출발 마커가 표시될 위치입니다
 
 
 // 출발 마커를 생성합니다
@@ -147,19 +189,28 @@ var startDragImage = new kakao.maps.MarkerImage(startDragSrc, startDragSize, sta
 // 출발 마커에 dragstart 이벤트를 등록합니다
 
 
-var arriveSrc = 'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/blue_b.png', // 도착 마커이미지 주소입니다    
-arriveSize = new kakao.maps.Size(50, 45), // 도착 마커이미지의 크기입니다 
+var arriveSrc = 'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/blue_b.png', // 도착
+																						// 마커이미지
+																						// 주소입니다
+arriveSize = new kakao.maps.Size(50, 45), // 도착 마커이미지의 크기입니다
 arriveOption = { 
-    offset: new kakao.maps.Point(15, 43) // 도착 마커이미지에서 마커의 좌표에 일치시킬 좌표를 설정합니다 (기본값은 이미지의 가운데 아래입니다)
+    offset: new kakao.maps.Point(15, 43) // 도착 마커이미지에서 마커의 좌표에 일치시킬 좌표를 설정합니다
+											// (기본값은 이미지의 가운데 아래입니다)
 };
 
 // 도착 마커 이미지를 생성합니다
 var arriveImage = new kakao.maps.MarkerImage(arriveSrc, arriveSize, arriveOption);
 
-var arriveDragSrc = 'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/blue_drag.png', // 도착 마커의 드래그 이미지 주소입니다    
-    arriveDragSize = new kakao.maps.Size(50, 64), // 도착 마커의 드래그 이미지 크기입니다 
+var arriveDragSrc = 'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/blue_drag.png', // 도착
+																								// 마커의
+																								// 드래그
+																								// 이미지
+																								// 주소입니다
+    arriveDragSize = new kakao.maps.Size(50, 64), // 도착 마커의 드래그 이미지 크기입니다
     arriveDragOption = { 
-        offset: new kakao.maps.Point(15, 54) // 도착 마커의 드래그 이미지에서 마커의 좌표에 일치시킬 좌표를 설정합니다 (기본값은 이미지의 가운데 아래입니다)
+        offset: new kakao.maps.Point(15, 54) // 도착 마커의 드래그 이미지에서 마커의 좌표에 일치시킬
+												// 좌표를 설정합니다 (기본값은 이미지의 가운데
+												// 아래입니다)
     };
  
 // 도착 마커의 드래그 이미지를 생성합니다

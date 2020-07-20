@@ -26,7 +26,7 @@
 		</s:authorize>
 	</ul>
 		<ul class="header-mypage">
-			<li>정보수정</li>
+			<li><a href="/member/editProfile">정보수정</a></li>
 			<li><a href="/member/logout">로그아웃</a></li>
 		</ul>
 </section>

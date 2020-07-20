@@ -1,13 +1,11 @@
 package com.camp.web.dao;
 
-import java.sql.SQLException;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
-import com.camp.web.entity.Camp;
 import com.camp.web.entity.Member;
 @Mapper
 public interface MemberDao {
@@ -19,6 +17,11 @@ public interface MemberDao {
 	String getName(String userName);
 
 	@Select("SELECT count(*) from member Where uid='${userId}'")
-	int userIdCheck(String userId);	
+	int userIdCheck(String userId);
+
+	@Select("select *from member where uid = '${userId}';")
+	List<Member> selectProfile(String userId);	
+	
+	
 	
 }

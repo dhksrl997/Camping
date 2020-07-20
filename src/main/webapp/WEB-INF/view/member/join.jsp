@@ -17,8 +17,8 @@
 								<tr style="display: block">
 									<td colspan="3" class="text-align-left indent"><input
 										id="id-text" type="text"  autocomplete="off" name="uid" autocomplete="off" class="width-half"
-										required="required" value="" placeholder="영문과 숫자 6~20자 이내"
-										pattern="^\w{6,20}$" /></td>
+										required="required" value="" placeholder="영문과 숫자 4~11자 이내"
+										pattern="^\w{4,11}$" /></td>
 								</tr>
 								<tr>
 									<td id="id-danger" style="color: #d92742; font-weight: bold;">아이디가
