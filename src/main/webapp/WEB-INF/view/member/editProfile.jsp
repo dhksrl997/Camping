@@ -5,11 +5,12 @@
 
 <main>
 	<div class="login-background">
-
+<c:forEach var="p" items="${proFile}">
 		<div class="join">
 			<form id="form1" method="post" action="join">
 				<div class="join-form">
 					<fieldset>
+				<h1>개인 정보 </h1>
 						<legend class="d-none">회원정보</legend>
 						<table class="table margin-top first">
 							<tbody class="signup-body">
@@ -17,7 +18,7 @@
 								<tr style="display: block">
 									<td colspan="3" class="text-align-left indent"><input
 										id="id-text" type="text"  autocomplete="off" name="uid" autocomplete="off" class="width-half"
-										required="required" value="" placeholder="영문과 숫자 4~11자 이내"
+										required="required" value="${p.uid}" 
 										pattern="^\w{4,11}$" /></td>
 								</tr>
 								<tr>
@@ -29,14 +30,15 @@
 
 									<td colspan="3" class="text-align-left indent"><input
 										type="password" name="pwd" class="pwd1" required
-										placeholder="비밀번호 입력" /></td>
+										value = "${p.pwd}"
+										 /></td>
 
 								</tr>
 								<th class="body-th"><label>비밀번호 확인</label></th>
 								<tr>
 									<td colspan="3" class="text-align-left indent ">
 										<!-- <span id="alert-success" style="display: none;">비밀번호가 일치합니다.</span> -->
-										<input name="pwd2" type="password" class="pwd2" required /> 
+										<input name="pwd2" type="password" class="pwd2" value = "${p.pwd}" required /> 
 									</td>
 								</tr>
 								<tr>
@@ -45,7 +47,7 @@
 								<th class="body-th"><label>이름</label></th>
 								<tr>
 									<td colspan="3" class="text-align-left indent"><input
-										class="width-half" name="name" type="text" value=""
+										class="width-half" name="name" type="text" value="${p.name}"
 										required="required" /></td>
 
 								</tr>
@@ -56,13 +58,13 @@
 									<td colspan="3" class="text-align-left indent"><input
 										name="phone" type="text" class="width-half"
 										pattern="^01[016789]-\d{3,4}-\d{4}$"
-										placeholder="예) 010-1111-2222" required value="" /></td>
+										 required value="${p.phone}" /></td>
 								</tr>
 
 
 								<tr>
 									<td colspan="4"><input id="submit-Button" type="submit"
-										name="btn" value="가입하기" class="btn-text btn-default" /></td>
+										name="btn" value="수정하기" class="btn-text btn-default" /></td>
 								</tr>
 							</tbody>
 						</table>
@@ -70,4 +72,5 @@
 				</div>
 			</form>
 		</div>
+	</c:forEach>
 </main>

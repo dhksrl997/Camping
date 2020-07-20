@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="s" uri="http://www.springframework.org/security/tags"%>
 <script defer src="/js/camp/detail.js"></script>
 <link rel="stylesheet" href="/css/camp/detail.css">
 <link rel="stylesheet"
@@ -107,12 +108,12 @@
 			<div class="pub">
 				비공개<input name="pub" type="checkbox">
 			</div>
-			<div class="reservation">
+			<!-- <div class="reservation">
 				예약<input name="reservation" type="checkbox">
-			</div>
+			</div> -->
 		</div>
 		<div class="comment-section">
-			<div class="writer" name="writer">${sessionScope.userName}</div>
+			<div class="writer" name="writer">${sessionScope.userId}</div>
 		
 		<textarea name="content"  maxlength="100" rows="5" cols="90" placeholder="후기를 남기거나 비공개로 예약을 신청할 수 있습니다."></textarea> 
 		<%-- <textarea name="content reservation-check"  rows="5" cols="90" placeholder="">아이디 : ${m.uid}   이름 : ${m.name}
@@ -125,37 +126,76 @@
 	</form>
 </div>
 		</c:forEach>	
-<!-- 기존 댓글들   -->
+<!-- 기존 댓글들(USER일 때)   -->
+<s:authorize access="hasRole('ROLE_USER')">			
 <c:forEach var="com" items="${getComment }">
 	<div class="comment" style="margin-top:10px;height: 100px;">
-		<div style=" border-top: 1px solid lightgrey;">
-
+		<div style=" border-top: 1px solid lightgrey;width: 800px;">
+		
 		<form class="comment-form" action="comment" method="get">
-					<div class="regDate" style="font-size: 13px;">${com.regDate }</div>
+					<fmt:formatDate var="dateTempParse" pattern="yyyy-MM-dd-hh-mm" value = "${com.regDate}"/>
+					<div class="regDate" style="font-size: 13px;">${dateTempParse}</div>
 			<div class="comment-section" ">
 				<div class="writer">${com.writer }</div>
 				<c:choose>
 					<c:when test="${com.pub == 'on' }">
-						<c:if test="${com.writer!=sessionScope.userName}">
+						<c:if test="${com.writer!=sessionScope.userId && sessionScope.userId != 'admin'}">
 						<div style="font-weight:bold;font-size:22px;">비공개 댓글입니다.</div>
 						</c:if>
-						<c:if test="${com.writer==sessionScope.userName}">
+						<c:if test="${com.writer==sessionScope.userId || sessionScope.userId == 'admin'}">
 						<div class="comment-content">${com.content }</div>
 						</c:if>
 					</c:when>
 					<c:otherwise>
 						<div class="comment-content">${com.content }</div>
 					</c:otherwise>
+					
 				</c:choose>
 			</div>
-			<c:if test="${com.writer==sessionScope.userName}">
-			<button class="comment-delete">삭제</button>
+			
+			<c:if test="${com.writer==sessionScope.userId}">
+			<button class="comment-delete" data-rno="${com.id}">삭제</button>
 			</c:if>
+			<s:authorize access="hasRole('ROLE_ADMIN')">			
+			<button class="comment-delete" data-rno="${com.id}">삭제</button>
+			</s:authorize>
+			
+
+		</form>
+		</div> 
+	</div>
+</c:forEach>
+</s:authorize>
+			<s:authorize access="hasRole('ROLE_ADMIN')">			
+			<div class="comment-content">${com.content }</div>
+			</s:authorize>
+			
+			<!-- admin일 때 댓글 -->
+			<s:authorize access="hasRole('ROLE_ADMIN')">			
+<c:forEach var="com" items="${getComment }">
+	<div class="comment" style="margin-top:10px;height: 100px;">
+		<div style=" border-top: 1px solid lightgrey;width: 800px;">
+		
+		<form class="comment-form" action="comment" method="get">
+					<fmt:formatDate var="dateTempParse" pattern="yyyy-MM-dd-hh-mm" value = "${com.regDate}"/>
+					<div class="regDate" style="font-size: 13px;">${dateTempParse}</div>
+			<div class="comment-section" ">
+				<div class="writer">${com.writer }</div>
+						<div class="comment-content">${com.content }</div>	
+			</div>
+			
+			<s:authorize access="hasRole('ROLE_ADMIN')">			
+			<button class="comment-delete" data-rno="${com.id}">삭제</button>
+			</s:authorize>
+			
+
 		</form>
 		</div>
 	</div>
 </c:forEach>
-
-<div
-	style="border-bottom: 1px solid lightgrey; margin-top: 20px; width: 55%; margin-left: auto; margin-right: auto;"></div>
+			</s:authorize>
+			
+			
+<!-- <div
+	style="border-bottom: 1px solid lightgrey; margin-top: 20px; width: 800px; margin-left: auto; margin-right: auto;"></div> -->
 <div style="border-bottom: 1px solid lightgrey; margin-top: 100px;"></div>

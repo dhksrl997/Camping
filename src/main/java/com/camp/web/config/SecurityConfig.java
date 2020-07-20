@@ -28,7 +28,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
 		//.antMatchers("/admin/**").authenticated()
-			.antMatchers("/admin/**").hasRole("ADMIN")
+			//.antMatchers("/camp/**").authenticated()
 			.antMatchers("/teacher/**").hasAnyRole("TEACHER" , "ADMIN")
 			.antMatchers("/student/**").hasAnyRole("STUDENT" , "ADMIN")
 			.antMatchers("/member/home").authenticated()
@@ -74,7 +74,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 			.jdbcAuthentication()
 			.dataSource(dataSource)
 			.usersByUsernameQuery("select uid id, pwd password , 1 enabled from member where uid=?")
-			.authoritiesByUsernameQuery("SELECT uid id, 'ROLE_ADMIN' roleId from member where uid=?")
+			.authoritiesByUsernameQuery("SELECT uid id, roleId from member where uid=?")
 			.passwordEncoder(new BCryptPasswordEncoder());
 		
 		

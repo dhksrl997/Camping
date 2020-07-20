@@ -47,6 +47,6 @@
 			<tiles:insertAttribute name="main" />
 
 </body>
-<script defer src="/js/index.js"></script>
+<script defer src="/js/header.js"></script>
 <script defer src="/js/darkmode.js"></script>
 </html>

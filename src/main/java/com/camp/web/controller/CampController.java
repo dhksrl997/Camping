@@ -16,9 +16,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.camp.web.dao.CampDao;
+import com.camp.web.dao.MemberDao;
 import com.camp.web.entity.Camp;
 import com.camp.web.entity.Comment;
 import com.camp.web.entity.Member;
@@ -105,7 +108,7 @@ public class CampController {
 			@RequestParam(name = "content") String content, String pub, Model model, HttpServletResponse response,
 			HttpServletRequest request) throws IOException {
 		HttpSession session = request.getSession();
-		String userName = (String) session.getAttribute("userName");
+		String userName = (String) session.getAttribute("userId");
 		if (userName != null) {
 			writer = userName;
 			if (pub == null)
@@ -116,6 +119,16 @@ public class CampController {
 		} else 
 			response.sendRedirect("/member/login");
 		
+	}
+	
+	//댓글삭제
+
+	@GetMapping("detail/delete")
+	@ResponseBody
+	public int deletComment(@RequestParam("commentId") String commentId) {
+
+		System.out.println(commentId);
+		return campDao.deleteComment(commentId);
 	}
 
 }

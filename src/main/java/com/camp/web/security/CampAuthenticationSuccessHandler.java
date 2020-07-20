@@ -35,7 +35,7 @@ public class CampAuthenticationSuccessHandler implements AuthenticationSuccessHa
 		//System.out.println(userId);
 		session.setAttribute("userId", userId);
 
-		//System.out.println(authentication.getPrincipal());
+		System.out.println(authentication.getPrincipal());
 		System.out.println(session.getAttribute("userId"));
 		
 
