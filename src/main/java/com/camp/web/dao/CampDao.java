@@ -47,6 +47,6 @@ public interface CampDao {
    
    @Delete("DELETE from comment where id = '${commentId}';")
    int deleteComment(String commentId);
-   
+//   
    
 }	
