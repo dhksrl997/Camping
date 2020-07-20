@@ -6,10 +6,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class IndexController {
 
-	@GetMapping("/intro")
-	private String indexintro() {
-		return "intro";
-	}
+//	@GetMapping("/intro")
+//	private String indexintro() {
+//		return "intro";
+//	}
 
 	@GetMapping("/index")
 	private String index() {

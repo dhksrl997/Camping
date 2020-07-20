@@ -5,10 +5,7 @@ $(function(){
    let flag = true;
    let para = document.location.href.split("?");
    console.log(para[1]);
-
- 
-   
-   // ///////////////////////////////////////////////////////////
+   console.log(flag)
    function message1(){
       $(".Message1").css("transition","1.2s").css("left","350px");
    }
@@ -94,12 +91,9 @@ $(function(){
               fetchImage();
            };
            setTimeout(vanishImage,500);
-           
-
            if (para[1].indexOf('reg') != -1) {
               setTimeout(fetchlist,500);
            };
-
            if (para[1].indexOf('query') != -1) {
               setTimeout(fetchsearchlist,500); 
            };
@@ -107,7 +101,6 @@ $(function(){
         
         
         function fetchsearchlist(){
-// console.log(searchParam('query'));
             $.ajax({
                 type: "get",
                 url : "/camp/searchlist?query="+searchParam('query')+"&index="+index,
@@ -123,7 +116,6 @@ $(function(){
                       else{
                    for(var i=0; i<searched.searchlist.length; i++){
                       var search = searched.searchlist[i];
-                      
                         $(".camp-list").append(`
                         <section class="list">
                         <div class="list-container">
@@ -243,9 +235,6 @@ $(function(){
 });
 
 
-
-
-        
   
 
 window.addEventListener("load",function(){

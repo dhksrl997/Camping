@@ -37,8 +37,6 @@
 			<a href="/board/freeBoard"><li><i class="fas fa-comments"></i><div>자유 게시판</div></li></a>
 			<li><i class="far fa-question-circle"></i><div>문의하기</div></li>
 			<a href="/aboutUs"><li><i class="fas fa-laptop-code"></i><div>만든사람들</div></li></a>
-
-			
 		</nav>
 	<input type="button" value="" class="dark-mode-btn">
 	<!-- --------------------------- <visual> --------------------------------------- -->

@@ -77,7 +77,6 @@ public class AsyncController {
       index = ((index) * 10) + 1;
       Map<String, Object> map = new HashMap<>();
       List<Camp> list = campDao.getSearchScroll(query,index);
-      
       map.put("searchlist", list);
       
       return map;
