@@ -18,9 +18,15 @@ public interface CampDao {
    @Select("SELECT * FROM camper Where address LIKE '%${reg}%' LIMIT 10")
    List<Camp> getList(String reg) throws ClassNotFoundException, SQLException;
    
-   @Select("SELECT * FROM camper LIMIT 20")
-   List<Camp> getList() throws ClassNotFoundException, SQLException;
+   
+   @Select("SELECT * FROM camper LIMIT 10")
+   List<Camp> List() throws ClassNotFoundException, SQLException;
+   
+   
+   @Select("SELECT COUNT(*) FROM camper")
+   int campIndex() throws ClassNotFoundException, SQLException;
 
+   
    @Select("SELECT * FROM camper")
    List<Camp> recommend() throws ClassNotFoundException, SQLException;
 

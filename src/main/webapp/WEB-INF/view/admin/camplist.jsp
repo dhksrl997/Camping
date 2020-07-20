@@ -10,7 +10,7 @@
         </div>
         <div class="conListWrap">
             <section class="printCount">
-                총 캠핑장 수 : 0
+                총 캠핑장 수 : ${index}
                 <select id="listNum-select" name="listNum-select" mode="1">
                     <option value="20">20개 보기</option>
                     <option value="60">60개 보기</option>

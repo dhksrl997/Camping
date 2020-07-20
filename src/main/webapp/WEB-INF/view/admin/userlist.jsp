@@ -9,7 +9,7 @@
     </div>
     <div class="conListWrap">
         <section class="printCount">
-            총 회원 수 : 0
+            총 회원 수 : ${index}
             <select id="listNum-select" name="listNum-select" mode="1">
                 <option value="20">20개 보기</option>
                 <option value="60">60개 보기</option>
@@ -22,21 +22,23 @@
                 <tr>
                     <td>No.</td>
                     <td>회원 아이디</td>
+                    <td>게시글 등록일</td>
                     <td>이름</td>
                     <td>연락처</td>
-                    <td>최종 접속일</td>
-                    <td>가입일</td>
+                    <td>이메일</td>
+                    <td>나이</td>
                 </tr>
             </thead>
             <tbody>
-            <c:forEach var="user" items="${userlist}">
+            <c:forEach var="member" items="${userlist}">
                 <tr>
                     <td>${member.id}</td>
                     <td><a href="" target="_blank"><b>${member.uid}</b></a></td>
+                    <td>${member.regDate}</td>
                     <td>${member.name}</td>
                     <td>${member.phone}</td>
-                    <td>${member.modifiDate}</td>
-                    <td>${member.regDate}</td>
+                    <td>${member.email}</td>
+                    <td>${member.age}</td>
                 </tr>
             </c:forEach>    
             </tbody>

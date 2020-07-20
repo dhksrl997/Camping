@@ -24,16 +24,16 @@ import com.camp.web.entity.Board;
 public class BoardController {
 
 	@Autowired
-	private BoardDao boarddao;
+	private BoardDao boardDao;
 
 	@GetMapping("list")
 	public String list(String title, String content, String writer, Model model,
 			@RequestParam(name = "cate") String category) throws ClassNotFoundException, SQLException {
 		if (category.equals("review")) {  //review 게시판 불러옴 
-			List<Board> list = boarddao.getBoard(writer, title, content);
+			List<Board> list = boardDao.getBoard(writer, title, content);
 			model.addAttribute("content", list);
 		} else if (category.equals("free")) {//자유 게시판 불러옴 
-			List<Board> list = boarddao.getBoard(writer, title, content);
+			List<Board> list = boardDao.getBoard(writer, title, content);
 			model.addAttribute("content", list);
 		}
 		return "board.list";
@@ -51,7 +51,7 @@ public class BoardController {
 
 		String writer = (String) session.getAttribute("userId");
 //		System.out.println(writer);
-		boarddao.insertBoard(writer, title, content);
+		boardDao.insertBoard(writer, title, content);
 
 		System.out.println("title =" + title);
 		System.out.println("content = " + content);

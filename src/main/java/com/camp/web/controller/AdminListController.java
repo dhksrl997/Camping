@@ -15,50 +15,55 @@ import com.camp.web.dao.MemberDao;
 import com.camp.web.entity.Board;
 import com.camp.web.entity.Camp;
 import com.camp.web.entity.Member;
-
-@Controller("adminlistController")
+@Controller
 @RequestMapping("/admin/")
 public class AdminListController {
+
+	
+	@Autowired
+	private CampDao campDao;
+
+	@GetMapping("camplist")
+	private String camplist(Model model) throws ClassNotFoundException, SQLException {
+		
+		List<Camp> camplist = campDao.List();
+		int index= campDao.campIndex();
+		model.addAttribute("camplist", camplist);
+		model.addAttribute("index", index);
+		
+		return "admin.camplist";
+	}
+
+	
 	
 	@Autowired
 	private BoardDao boardDao;
-
+	
+	@GetMapping("boardlist")
+	private String boardlist(Model model) throws ClassNotFoundException, SQLException  {
+		
+		List<Board> boardlist = boardDao.getBoardList();
+		int index= boardDao.boardindex();
+		model.addAttribute("boardlist", boardlist);
+		model.addAttribute("index", index);
+		
+		return "admin.boardlist";
+	}
+	
+	
 	
 	@Autowired
 	private MemberDao memberDao;
 	
-	@Autowired
-	private CampDao campDao;
-	
-	
-	@GetMapping("camplist")
-	private String camplist(Model model) throws ClassNotFoundException, SQLException {
-
-		List<Camp> camplist = campDao.getList();
-		model.addAttribute("camplist", camplist);
+	@GetMapping("userlist")
+	private String userlist(Model model) throws ClassNotFoundException, SQLException {
 		
-		return "admin.camplist";
+		List<Member> userlist = memberDao.getMemberList();
+		int index = memberDao.memberIndex();
+		model.addAttribute("userlist", userlist);
+		model.addAttribute("index", index);
+		
+		return "admin.userlist";
 	}
-	
-//	
-//	@GetMapping("boardlist")
-//	private String boardlist(Model model) throws ClassNotFoundException, SQLException  {
-//		
-//		List<Board> boardlist = boardlistDao.getBoardList();
-//		model.addAttribute("boardlist", boardlist);
-//		
-//		return "admin.boardlist";
-//	}
-//	
-//	
-//	@GetMapping("userlist")
-//	private String userlist(Model model) throws ClassNotFoundException, SQLException {
-//		
-//		List<Member> userlist = adminListDao.getUserList();
-//		model.addAttribute("userlist", userlist);
-//		
-//		return "admin.userlist";
-//	}
 
-	
 }

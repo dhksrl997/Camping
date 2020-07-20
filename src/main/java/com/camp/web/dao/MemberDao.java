@@ -23,5 +23,11 @@ public interface MemberDao {
 	List<Member> selectProfile(String userId);	
 	
 	
+	@Select("select *from member")
+	List<Member> getMemberList();	
+	
+	@Select("select COUNT(*) from member")
+	int memberIndex();	
+	
 	
 }

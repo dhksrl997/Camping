@@ -10,7 +10,7 @@
     </div>
     <div class="conListWrap">
         <section class="printCount">
-            총 게시글 수 : 0
+            총 게시글 수 : ${index}
             <select id="listNum-select" name="listNum-select" mode="1">
                 <option value="20">20개 보기</option>
                 <option value="60">60개 보기</option>
@@ -25,18 +25,18 @@
                     <!-- <td>게시판명</td> -->
                     <td>게시글 제목</td>
                     <td>작성자</td>
-                    <td>작성시간</td>
+                    <td>등록일자</td>
                     <td>조회수</td>
                 </tr>
             </thead>
             <tbody>
             <c:forEach var="board" items="${boardlist}">
                 <tr>
-                    <td>${freeBoard.id}</td>
-                    <td><a href=""><b>${freeboard.title}</b></a></td>
-                    <td>${freeBoard.writer}</td>
-                    <td>${freeBoard.writeDate}</td>
-                    <td>${freeBoard.hit}</td>
+                    <td>${board.id}</td>
+                    <td><a href=""><b>${board.title}</b></a></td>
+                    <td>${board.writer}</td>
+                    <td>${board.regDate}</td>
+                    <td>${board.hit}</td>
                 </tr>
             </c:forEach>
             </tbody>
