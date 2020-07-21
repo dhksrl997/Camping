@@ -15,7 +15,7 @@ a {
    margin-left: 500px;
 }
 
-/* ///////////////////////////////占쎈쐻占쎈짗占쎌굲占쎈쐻 뜝占 ///////////////////// */
+/* ************************************* */
 .container {
    position: relative;
    overflow: hidden;
@@ -61,7 +61,7 @@ a {
    width: 100%;
    height: 100%;
    position: absolute;
-   background: silver center;
+   background: url(https://s3.amazonaws.com/imagescloud/images/medias/camping/camping-groupe.jpg) no-repeat center;
    background-size: cover;
    top: 200%;
    transition: 1s;
@@ -81,7 +81,7 @@ a {
    padding-bottom: 24px;
 }
 
-/* ************ 而⑦뀗痢   궡 슜臾  異붽  **************** */
+/* ******************************* */
 
 .indexConWrap {
    position: absolute;
@@ -128,6 +128,26 @@ a {
          color: white;
       }
 
+   .instaConWrap {
+      position: absolute;
+      top: 20%;
+      left: 18%;
+   }
+      .txt-block-insta {
+         display: flex;
+      }
+      .instaCon-tit {
+         font-size: 50px;
+         font-family: cursive;
+         letter-spacing: -3.4px;
+         /* padding-bottom: 40px; */
+         opacity: 0.8;
+      }
+      .iconinsta {
+         padding-left: 12px;
+         opacity: 0.7;
+      }
+
    .instaWrap {
       margin-top: 290px;
       display: flex;
@@ -141,13 +161,10 @@ a {
       }
       .instaimg {
          width: 230px;
-         height: 230px;
-         --background-color: pink;   
+         height: 230px; 
       }
       
-      
-      
       .numbutton li{
-      cursor:pointer;
+         cursor:pointer;
       }
    

@@ -31,8 +31,8 @@
    <div class="img img2">
       <section class="indexConWrap">
          <div class="txt-block">
-            <h1 class="indexCon-tit" style="color:black;">Camping place</h1>
-            <div class="t1" style="color:black;">새로운 경험이 무한대로 늘어나는<br>캠핑장을 찾아보세요.</div>
+            <h1 class="indexCon-tit" >Camping place</h1>
+            <div class="t1" >새로운 경험이 무한대로 늘어나는<br>캠핑장을 찾아보세요.</div>
             <div class="t2">
                Campnic은 다양한 유형의 캠핑 장소와<br>
                유용한 팁을 소개합니다.<br> 
@@ -48,9 +48,9 @@
    <div class="img img3">
       <section class="indexConWrap">
          <div class="txt-block">
-            <h1 class="indexCon-tit" style="color:black;">Things to Check<br>Before Going on a Camping</h1>
-            <div class="t1" style="color:black;">캠핑 가기 전에 유용한 팁을 확인하고<br>체크리스트를 해보세요.</div>
-            <div class="t2" style="color:black;">
+            <h1 class="indexCon-tit" >Things to Check<br>Before Going on a Camping</h1>
+            <div class="t1" >캠핑 가기 전에 유용한 팁을 확인하고<br>체크리스트를 해보세요.</div>
+            <div class="t2" >
                Campnic은 캠핑 입문자를 위해 캠핑 장비에 대한 소개와<br>
                관리 하는 방법 등의 유용한 팁을 안내합니다.<br> 
                더불어 캠핑 준비를 돕도록 체크리스트를 제공합니다.
@@ -63,10 +63,11 @@
    </div>
       
    <div class="img img4">
-      <section class="indexConWrap">
-         <div class="txt-block">
-            <h1 class="indexCon-tit" style="color:black;">Connect on Campnic <img src="https://img.icons8.com/ios-glyphs/60/000000/instagram-new.png"/>
+      <section class="instaConWrap">
+         <div class="txt-block-insta">
+            <h1 class="instaCon-tit" style="color:white;">Connect on Campnic 
             </h1>
+            <img class="iconinsta" src="/images/insta-icon60px.png"/>
          </div> 
       </section>
       <div class="instaWrap">
@@ -104,13 +105,13 @@
                </a>
             </li>
             <li class="instaimg">
-               <a href="https://www.instagram.com/p/ByOjncqAIwS/" target="_blank" >
-                  <img width="230px" height="230px" src="https://scontent-ssn1-1.cdninstagram.com/v/t51.2885-15/e35/s1080x1080/62248681_292987331583534_4431949541096123014_n.jpg?_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_cat=106&_nc_ohc=URPgDrZrWGoAX-Wy0WV&oh=39c041fd9250df896367cb8ff28c9db7&oe=5F3883B5">
+               <a href="https://www.instagram.com/p/BxbeAbeBgLb/" target="_blank" >
+                  <img width="230px" height="230px" src="https://scontent-ssn1-1.cdninstagram.com/v/t51.2885-15/e35/p1080x1080/57853194_2334916270085228_8980145965414812499_n.jpg?_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_cat=108&_nc_ohc=F_xE0hIPmVMAX90Jwsm&oh=03bfa678c5f6c830de88f1f5065174d5&oe=5F3ED13B">
                </a>
             </li>
             <li class="instaimg">
-               <a href="https://www.instagram.com/p/BsrN6nFBImj/" target="_blank" >
-                  <img width="230px" height="230px" src="https://scontent-ssn1-1.cdninstagram.com/v/t51.2885-15/e35/49397929_228151838087073_8807373167380593257_n.jpg?_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_cat=109&_nc_ohc=W83viTMCFgMAX_a0X5s&oh=adf1b9b186debc6c51074a4dc5366bd3&oe=5F3A5388">
+               <a href="https://www.instagram.com/p/ByOjncqAIwS/" target="_blank" >
+                  <img width="230px" height="230px" src="https://scontent-ssn1-1.cdninstagram.com/v/t51.2885-15/e35/s1080x1080/62248681_292987331583534_4431949541096123014_n.jpg?_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_cat=106&_nc_ohc=URPgDrZrWGoAX-Wy0WV&oh=39c041fd9250df896367cb8ff28c9db7&oe=5F3883B5">
                </a>
             </li>
          </ul>
