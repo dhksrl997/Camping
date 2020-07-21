@@ -17,7 +17,7 @@ public interface BoardDao {
 	 @Select("SELECT * FROM freeBoard ")
 	List<Board>  getBoard(String writer, String title, String content);
 
-	@Select("SELECT img1, name, address from camper WHERE name LIKE '%${content}%'") 
+	@Select("SELECT img1, name, address from camper WHERE name LIKE '%${content}%' limit 5") 
 	List<Camp> getSearchResult(String content);
  
 }

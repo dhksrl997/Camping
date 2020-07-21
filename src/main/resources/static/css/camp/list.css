@@ -272,7 +272,6 @@ body {
   margin: 0 -.05em;
   animation: Message1 1s infinite;
 }
-
 .Message1 span:nth-child(2) {
   animation-delay: .1s;
 }
@@ -363,7 +362,7 @@ body {
 }
 
 .alert-text{
-   padding-top: 50px;
+   padding-top: 20px;
    border-top: 2px solid black;
    text-align:center;
    font-family: Recipekorea;

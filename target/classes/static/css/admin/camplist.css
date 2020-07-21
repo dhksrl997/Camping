@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap');
+
+body {
+    margin: 0;
+    min-height: 100vh;
+}
+a {
+	text-decoration: none;
+	color: black;
+}
+
+.adminConWrap {
+    margin: 100px auto;
+    width: 1200px;
+}   
+    .infoWrap {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 40px;
+    }    
+        .adminConTit {
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 34px;
+        }
+        .infoWrap button {
+            padding: 0 27px;
+            font-size: 15px;
+            font-weight: bold;
+            border: 0px solid black;
+            background: dimgray;
+            color: white;
+        }
+        .conListWrap {
+            margin-bottom: 40px;
+        }
+        .printCount {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 15px 0;
+            border-top: 2px dotted dimgray;
+        }
+            .listNum-select option {
+                font-weight: normal;
+                display: block;
+            }
+        .boardList {
+            width: 1200px;
+        }
+        tr {
+            height: 50px;
+        }
+        td {
+            padding: 0 15px;
+        }
+            .boardList thead tr {
+                color: white;
+                background-color: darkslategrey;
+                border-right: darkslategrey solid 2px; 
+            }
+                .boardList>thead>tr>td {
+                    border-right: 1px solid white;  
+                }
+            /* .boardList tbody tr {
+                --border: 1px solid gray;
+            }    */
+                .boardList tbody tr td {
+                    border: 1px solid darkslategrey;  
+                }
+        

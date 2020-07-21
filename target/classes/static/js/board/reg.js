@@ -5,7 +5,8 @@ $(function(){
 	$(".btn-search").click(function(e){
 //		console.log("asdasd");
 		fetchSearchResult();
-	})	
+	});
+	
 	$("#submit").click(function(){		
     sendRegData();
 })
@@ -24,13 +25,18 @@ function fetchSearchResult(){
 	        	   }
 	        	   else{
 	        		   for(var i = 0; i<list.regSearch.length; i++){
-	        			   var search
+	        			   var searchedname = list.regSearch[i];
+	        			   
+	        			   $(".content").append(`
+	        				<div style="font-size:20px; font-weight:bold">
+	        	
+	        			<span>이름: ${searchedname.name}</span> 	 
+	        				 
+	        				 </div>	
+	        				
+	        			   `);
 	        		   }
-	        		  	  $(".content").append(`
-	        		        	  
-	        		  			<span>asdasdasdasd</span>	        	  
-	        		  				        	  `
-	        		  				        	  )
+
 	        	   }
 	           }
 	           })

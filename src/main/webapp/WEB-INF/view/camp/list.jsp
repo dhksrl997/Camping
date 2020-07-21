@@ -3,11 +3,14 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <script defer src="/js/list/scroll.js"></script>
 <script defer src="/js/camp/list.js"></script>
-
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.13.1/css/all.css"
+	integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q"
+	crossorigin="anonymous">
 	<div class="top-btn" ><i class="fas fa-arrow-up"></i> </div>
 
 <c:if test="${param.query!=null }">
-<div style="margin-top:50px;text-align:center;margin-bottom:50px;font-size:24px;">${param.query }에 대한 ${index }개의 검색결과 입니다.</div>
+<div style="padding-top:50px;text-align:center;padding-bottom:50px;font-size:24px;">${param.query }에 대한 ${index }개의 검색결과 입니다.</div>
 	<div class="camp-list">
 		<c:forEach var="rs" items="${result }">
 			<section class="list">
@@ -50,7 +53,6 @@
 			
 		</c:forEach>
 		</div>
-		</div>
 </c:if>
 
 
@@ -76,12 +78,12 @@
 		<div class="box-wrap">
 			<c:forEach var="r" items="${recommend }">
 				<div class="box">
-						<img src="/images/${r.img1 }" class="rec-img">
+						<a href="detail?id=${r.id }"><img src="/images/${r.img1 }" class="rec-img"></a>
 					<div class="name-sec">
-						<span class="rec-name"><i class="fas fa-map-signs">&nbsp;&nbsp;${r.name }</i></span>
+						<a href="detail?id=${r.id }"><span class="rec-name"><i class="fas fa-map-signs">&nbsp;&nbsp;${r.name }</i></span></a>
 					</div>
 					<div class="address-sec">
-						<span class="rec-address"> ${r.address } </span>
+						<a href="detail?id=${r.id }"><span class="rec-address"> ${r.address } </span></a>
 					</div>
 				</div>
 			</c:forEach>

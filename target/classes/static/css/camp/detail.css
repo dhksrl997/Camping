@@ -108,7 +108,7 @@ body {
 
 .comments-text {
 	margin-top: 50px;
-	margin-left: 24%;
+	margin-left: 28%;
 	font-family: Recipekorea;
 	font-size: 25px;
 }
@@ -126,6 +126,7 @@ body {
 }
 
 .writer {
+	font-family: Recipekorea;
 	text-align: center;
 	width: 120px;
 	margin-top:auto;
@@ -134,14 +135,21 @@ body {
 
 .pub-section {
 	display: flex;
-	justify-content: flex-end;
+    padding-left: 725px;
+    width: 100px;
+	
+}
+.pub{
+	width:80px;
+	margin-bottom:10px;
 }
 
 .comment {
-	width: 55%;
+	width: 45%;
 	hegith: max-contnet;
 	margin-left: auto;
 	margin-right: auto;
+	
 }
 .detail-map{
 	font-size: 30px;
@@ -162,6 +170,36 @@ body {
 	width: 900px;
 	height: 400px;
 	background-color: yellow;
+}
+.d-none{
+	display:none;
+}
 
+.comment-delete{
+	
+	float:right;
+	text-align:center;
+	font-family: Recipekorea;
+}
+.comment-form{
+	width:800px;
+	height: 90px;
+	
+}
 
+.regDate{
+	padding-top:10px;
+	width: 800px;
+	height:20px;
+	text-align:right;
+}
+.comment-content{
+	width:550px;
+	height:50px;
+	word-break:break-all;
+}
+textarea{
+	width:570px;
+	height:98px;
+	resize:none;
 }
