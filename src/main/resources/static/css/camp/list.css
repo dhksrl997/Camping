@@ -124,6 +124,7 @@ body {
    font-size: 20px;
 }
 
+
 .title a {
    font-size: 30px;
    color: white;
@@ -434,11 +435,11 @@ body {
       no-repeat right 14px center;
 }
 
-.customoverlay .title {
+.customoverlay .map-title {
    display: block;
    text-align: center;
    background: #fff;
-   margin-right: 35px;
+   margin-right: 35px; 
    padding: 10px 15px;
    font-size: 14px;
    font-weight: bold;
@@ -455,4 +456,3 @@ body {
    background:
       url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png')
 }
-

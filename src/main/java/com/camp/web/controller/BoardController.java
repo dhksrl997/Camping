@@ -41,6 +41,13 @@ public class BoardController {
 	}
 
 	
+//	@PostMapping("reg-search")
+//	public void searchCamp(String content) {
+//		boarddao.getSearchResult(content);
+//		
+//		System.out.println(content);
+//	}
+	
 	@PostMapping("reg")
 	public void regData(HttpServletResponse response, HttpServletRequest request,
 				String title,String content,HttpSession session,Model model) throws IOException {

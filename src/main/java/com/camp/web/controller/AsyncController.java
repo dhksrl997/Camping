@@ -7,13 +7,20 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.camp.web.dao.BoardDao;
 import com.camp.web.dao.CampDao;
+import com.camp.web.entity.Board;
 import com.camp.web.entity.Camp;
 
 @RestController
@@ -21,7 +28,10 @@ public class AsyncController {
 
    @Autowired
    private CampDao campDao;
+   @Autowired
+   private BoardDao boarddao;
 
+   
    @RequestMapping("/camp/getlist")
    public Map<String, Object> list(@RequestParam(name = "index", defaultValue = "1") int index,
          @RequestParam(name = "reg", defaultValue = "") String region, Model model)
@@ -67,6 +77,7 @@ public class AsyncController {
          int index = rand.nextInt(99) + 1;
          indexlist.add(list.get(index));
       }
+      
       map.put("reclist", indexlist);
       return map;
    }
@@ -82,6 +93,19 @@ public class AsyncController {
       
       System.out.println(list);
       map.put("searchlist", list);
+      
+      return map;
+   }
+   
+//   @RequestMapping(value="/board/reg-search", method=RequestMethod.POST)
+   @PostMapping("/board/reg-search")
+   public Map<String, Object> regSearch(String content
+		   ) throws ClassNotFoundException, SQLException {
+      
+	   System.out.println(content);
+      Map<String, Object> map = new HashMap<>();
+      List<Camp> list = boarddao.getSearchResult(content);
+      map.put("regSearch", list);
       
       return map;
    }

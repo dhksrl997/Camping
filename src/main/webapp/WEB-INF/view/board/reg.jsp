@@ -13,6 +13,7 @@
 		<div style="width:90px;font-size:30px;font-family:S-CoreDream-3Light; ">제목 : </div>
 		<div class="reg-title" contenteditable="true"></div>
 		</div>
+		<div class="wrapper">
 		<div class="buttons">
 			<input type="button" class="BOLD" value="Bold"
 				onclick="document.execCommand('bold')" /> <input type="button"
@@ -40,11 +41,18 @@
 				<option value="6">20px</option>
 				<option value="7">30px</option>
 			</select>
-			<div class="filebox bs3-primary">
+			
+			<!-- <div class="filebox bs3-primary">
 				<label for="ex_file2">사진 업로드</label> <input type="file"
 					id="ex_file2" accept=".gif, .jpg, .png" name="images" id="imgaes" multiple>
-			</div>
+			</div> -->
 		</div>
+		<div class="reg-search"> 
+				<div>캠핑장 검색 :</div> 
+				<div class="reg-search-box" contenteditable="true"> </div>
+				<button type="button" class="btn-search" >찾기</button>
+			</div>
+			</div>
 		<div class="content" name="content" contenteditable="true"></div>
 		<!-- <textarea rows="10" cols="10" class="content" name="content">gsfjkgnfsjkghsjkdfhkjsdf</textarea> -->
 		<!-- <textarea rows="10" cols="10" name="content" class="content"></textarea> -->
