@@ -12,7 +12,21 @@ a {
 .adminConWrap {
     margin: 100px auto;
     width: 1200px;
-}   
+}
+    .searchWrap {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin: -20px 0 20px;
+    }
+        input[type="text"] {
+            border: none;
+            border-bottom: 2px solid black;
+        }
+        i.fas.fa-search.search-icon {
+            margin-left: 7px;
+        }
+        
     .infoWrap {
         display: flex;
         justify-content: space-between;
@@ -21,7 +35,7 @@ a {
         .adminConTit {
             font-family: 'Noto Sans KR', sans-serif;
             font-size: 34px;
-        }
+        }  
         .infoWrap button {
             padding: 0 27px;
             font-size: 15px;
@@ -30,9 +44,9 @@ a {
             background: dimgray;
             color: white;
         }
-        .conListWrap {
-            margin-bottom: 40px;
-        }
+    .conListWrap {
+        margin-bottom: 40px;
+    }
         .printCount {
             display: flex;
             flex-direction: row;
