@@ -28,7 +28,7 @@
    </definition>
    
    <definition name="board.*" template="/WEB-INF/view/inc/layout.jsp">
-      <put-attribute name="css" value="/css/board/reg.css" />
+      <put-attribute name="css" value="" />
       <put-attribute name="header" value="/WEB-INF/view/inc/header.jsp" />
       <put-attribute name="main" value="/WEB-INF/view/board/{1}.jsp" />
    </definition>

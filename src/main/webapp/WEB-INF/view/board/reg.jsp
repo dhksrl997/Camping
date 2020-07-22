@@ -1,14 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <script defer src="/js/board/reg.js"></script>
-
+<link rel="stylesheet" href="/css/board/reset.css"> 
 <div class="reg-message">당신의 후기를 모아모아</div>
 <div class="reg-message2">*후기 입력란*</div>
 <span class="side-message1">CampNic</span>
 <span class="side-message2">Board</span>
 <section class="reg-box">
 	<form>
-	
 		<div class="title-wrapper">
 		<div style="width:90px;font-size:30px;font-family:S-CoreDream-3Light; ">제목 : </div>
 		<div class="reg-title" contenteditable="true"></div>
