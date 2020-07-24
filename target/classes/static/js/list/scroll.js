@@ -268,7 +268,7 @@ campList.addEventListener("click",function(e){
 
   if (event.target.className == "icons list-map"
                        || event.target.className == "fas fa-map-marker-alt"
-                       || event.target.className == "icon"
+                       || event.target.className == "icon"  
                        || event.target.className == "map-span") {
    // if (event.target.className == "icons list-map"
 // ||"fas fa-map-marker-alt"
@@ -293,12 +293,10 @@ campList.addEventListener("click",function(e){
   var mapTitle=title.innerText;
         var latitude = parseFloat(latitudeText.innerText);
         var longitude = parseFloat(longitudeText.innerText);
-
         console.log(latitude);
         console.log(longitude);
 
         mapTest.classList.remove("hide");
-
 
             var mapContainer = document.getElementById('map'), // 지도를 표시할 div
         

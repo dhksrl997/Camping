@@ -48,5 +48,7 @@ public interface CampDao {
    @Delete("DELETE from comment where id = '${commentId}';")
    int deleteComment(String commentId);
 //   
+   @Select("SELECT * from camper where name = '${content}'")
+   List<Camp> getPopup(String content);
    
 }	

@@ -85,9 +85,13 @@ public class AsyncController {
    @RequestMapping("/camp/searchlist")
    public Map<String, Object> searchList(@RequestParam(name = "index", defaultValue = "1") int index,
          @RequestParam(name = "query", defaultValue = "") String query) throws ClassNotFoundException, SQLException {
+      System.out.println(query);
+      System.out.println(index);
       index = ((index) * 10) + 1;
       Map<String, Object> map = new HashMap<>();
       List<Camp> list = campDao.getSearchScroll(query,index);
+      
+      System.out.println(list);
       map.put("searchlist", list);
       
       return map;
@@ -99,6 +103,7 @@ public class AsyncController {
 		   ) throws ClassNotFoundException, SQLException {
       
 	   System.out.println(content);
+	   
       Map<String, Object> map = new HashMap<>();
       List<Camp> list = boarddao.getSearchResult(content);
       map.put("regSearch", list);
@@ -107,8 +112,15 @@ public class AsyncController {
    }
    
    
-   
-   
+   @PostMapping("/board/reg-popup")
+   public List<Camp> regPopup(String content){
+	   List<Camp> list = new ArrayList<>();
+	   System.out.println(content);
+	   
+	   list = campDao.getPopup(content);
+	   System.out.println(list);
+	   return list;
+   }
    
 
 }

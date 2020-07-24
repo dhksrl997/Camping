@@ -53,7 +53,7 @@
 				<button type="button" class="btn-search" >찾기</button>
 			</div>
 			</div>
-		<div class="content" name="content" contenteditable="true"></div>
+		<div class="content" contenteditable="true"></div>
 		<!-- <textarea rows="10" cols="10" class="content" name="content">gsfjkgnfsjkghsjkdfhkjsdf</textarea> -->
 		<!-- <textarea rows="10" cols="10" name="content" class="content"></textarea> -->
 	 <div class="submit-box"><a id="submit" href="/board/list">등록</a></div>
