@@ -6,8 +6,8 @@
 <div class="adminConWrap">
     <div class="infoWrap">
         <h1 class="adminConTit">게시글 목록</h1>
-        <button type="button">등록하기</button>
-    </div>
+        <button type="button" onclick="location.href='boardreg'">등록하기</button>
+	</div>
     <div class="conListWrap">
         <section class="printCount">
             총 게시글 수 : ${index}
@@ -33,7 +33,7 @@
             <c:forEach var="board" items="${boardlist}">
                 <tr>
                     <td>${board.id}</td>
-                    <td><a href=""><b>${board.title}</b></a></td>
+                    <td><a href="/board/list?cate=free?id=${board.id}" target="_blank"><b>${board.title}</b></a></td>
                     <td>${board.writer}</td>
                     <td>${board.regDate}</td>
                     <td>${board.hit}</td>

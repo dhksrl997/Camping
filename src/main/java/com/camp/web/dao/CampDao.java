@@ -18,14 +18,6 @@ public interface CampDao {
    @Select("SELECT * FROM camper Where address LIKE '%${reg}%' LIMIT 10")
    List<Camp> getList(String reg) throws ClassNotFoundException, SQLException;
    
-   
-   @Select("SELECT * FROM camper LIMIT 20")
-   List<Camp> List() throws ClassNotFoundException, SQLException;
-   
-   @Select("SELECT COUNT(*) FROM camper")
-   int campIndex() throws ClassNotFoundException, SQLException;
-
-   
    @Select("SELECT * FROM camper")
    List<Camp> recommend() throws ClassNotFoundException, SQLException;
 
@@ -44,11 +36,6 @@ public interface CampDao {
    @Select("SELECT * FROM camper Where name LIKE '%${query}%' || address LIKE '%${query}%'||phone LIKE '%${query}%' || faclity LIKE '%${query}%' LIMIT 10")
    List<Camp> search(String query) throws ClassNotFoundException, SQLException;
    
-   @Select("SELECT * FROM camper Where name LIKE '%${query}%' || address LIKE '%${query}%'||phone LIKE '%${query}%' || faclity LIKE '%${query}%' LIMIT 20")
-   List<Camp> adminSearch(String query) throws ClassNotFoundException, SQLException;
-   
-   
-   
    @Select("SELECT Count(*) FROM camper Where name LIKE '%${query}%' || address LIKE '%${query}%'||phone LIKE '%${query}%' || faclity LIKE '%${query}%'")
    int getSearchIndex(String query) throws ClassNotFoundException, SQLException;
    
@@ -61,7 +48,20 @@ public interface CampDao {
    @Delete("DELETE from comment where id = '${commentId}';")
    int deleteComment(String commentId);
    
+
+// admin
+   @Select("SELECT * FROM camper LIMIT 20")
+   List<Camp> list() throws ClassNotFoundException, SQLException;
    
-//   
+   
+   @Select("SELECT * FROM camper LIMIT ${index}")
+   List<Camp> listNum(int index) throws ClassNotFoundException, SQLException;
+   
+   @Select("SELECT COUNT(*) FROM camper")
+   int campIndex() throws ClassNotFoundException, SQLException;
+   
+   @Select("SELECT * FROM camper Where name LIKE '%${query}%' || address LIKE '%${query}%' ||phone LIKE '%${query}%'  || faclity LIKE '%${query}%'  LIMIT 20")
+   List<Camp> adminSearch(String query) throws ClassNotFoundException, SQLException;
+   
    
 }	

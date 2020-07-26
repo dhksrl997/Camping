@@ -19,15 +19,24 @@ public interface MemberDao {
 	@Select("SELECT count(*) from member Where uid='${userId}'")
 	int userIdCheck(String userId);
 
-	@Select("select *from member where uid = '${userId}';")
+	@Select("select * from member where uid = '${userId}';")
 	List<Member> selectProfile(String userId);	
 	
 	
-	@Select("select *from member")
+	@Select("select * from member")
 	List<Member> getMemberList();	
 	
 	@Select("select COUNT(*) from member")
 	int memberIndex();	
 	
 	
+//	admin
+	@Select("SELECT * FROM member Where uid LIKE '%${query}%' || name LIKE '%${query}%' ||phone LIKE '%${query}%'  || modifiDate LIKE '%${query}%' LIMIT 20")
+    List<Member> userSearch(String query);
+	
+	@Select("SELECT COUNT(*) FROM member Where uid LIKE '%${query}%' || name LIKE '%${query}%' ||phone LIKE '%${query}%'  || modifiDate LIKE '%${query}%' LIMIT 20")
+    int userSearchIndex(String query);
+	
+
+	   
 }

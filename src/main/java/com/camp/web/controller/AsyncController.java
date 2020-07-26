@@ -9,6 +9,7 @@ import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -83,6 +84,15 @@ public class AsyncController {
    }
    
    
+   @PostMapping("/admin/listSelect")
+	public Map<String, Object> list(int index, @RequestParam(name = "query", defaultValue = "") String query)
+			throws ClassNotFoundException, SQLException {
+		Map<String, Object> map = new HashMap<>();
+		List<Camp> list = campDao.listNum(index);
+		map.put("listSelect", list);
+
+		return map;
+	}
    
    
    

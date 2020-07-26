@@ -1,4 +1,3 @@
-
 $(function(){
    let index=0;
    let topBtn = $('.top-btn');

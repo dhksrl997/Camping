@@ -35,12 +35,13 @@
 				SNS연동관리
 			</a>
 		</li>
-		 -->
+		 
 		<li>
 			<a class="customer-admin" href="customerCenter">
 				<i class="fas fa-chalkboard-teacher"></i>
 				고객센터
 			</a>
 		</li>
+		-->
 	</ul>
 </header>

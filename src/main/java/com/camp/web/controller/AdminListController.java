@@ -1,7 +1,11 @@
 package com.camp.web.controller;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,6 +14,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.camp.web.dao.BoardDao;
 import com.camp.web.dao.CampDao;
@@ -27,7 +32,7 @@ public class AdminListController {
 
 	@GetMapping("camplist")
 	private String camplist(Model model) throws ClassNotFoundException, SQLException {
-		List<Camp> list = campDao.List();
+		List<Camp> list = campDao.list();
 		int index = campDao.campIndex();
 		model.addAttribute("camplist", list);
 		model.addAttribute("index", index);
@@ -44,22 +49,15 @@ public class AdminListController {
 		model.addAttribute("exist", "exist");
 		return "admin.camplist";
 	}
-
-	@Autowired
-	private BoardDao boardDao;
-
-	@GetMapping("boardlist")
-	private String boardlist(Model model) throws ClassNotFoundException, SQLException {
-
-		List<Board> boardlist = boardDao.getBoardList();
-		int index = boardDao.boardindex();
-		model.addAttribute("boardlist", boardlist);
-		model.addAttribute("index", index);
-
-		return "admin.boardlist";
+	
+	@GetMapping("reg")
+	private String reg() {
+		
+		return "admin.reg";
 	}
-
-	@Autowired
+	
+	
+	@Autowired	
 	private MemberDao memberDao;
 
 	@GetMapping("userlist")
@@ -72,5 +70,49 @@ public class AdminListController {
 
 		return "admin.userlist";
 	}
+	
+	@PostMapping("userlist")
+	private String userlist(Model model, @RequestParam(name="search") String search) 
+			throws ClassNotFoundException, SQLException {
+
+		List<Member> userlist = memberDao.userSearch(search);
+		int index = memberDao.userSearchIndex(search);
+		model.addAttribute("userlist", userlist);
+		model.addAttribute("index", index);
+
+		return "admin.userlist";
+	}
+	
+	
+	
+	@Autowired
+	private BoardDao boardDao;
+
+	@GetMapping("boardlist")
+	private String boardlist(Model model) throws ClassNotFoundException, SQLException {
+
+		List<Board> boardlist = boardDao.getBoardList();
+		int index = boardDao.boardindex();
+		model.addAttribute("boardlist", boardlist);
+		model.addAttribute("index", index);
+		model.addAttribute("exist", "exist");
+
+		return "admin.boardlist";
+	}
+	
+	@GetMapping("boardreg")
+	private String boardreg() {
+		
+		return "admin.boardreg";
+	}
+	
+	
+	@GetMapping("customerCenter")
+	public String customerCenter() {
+
+		return "admin.customerCenter";
+	}
+	
+	
 
 }
