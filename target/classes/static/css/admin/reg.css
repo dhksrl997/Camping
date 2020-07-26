@@ -125,14 +125,10 @@ a {
     width: 100%;
     height: auto;
 }
-
 /* upload end---------------------- */ 
-/* .selectCenter{
-    padding: 2px 14px 2px 7px;
-} */
+
 .info-con input[type="text"] {
     display: inline-block;
-    /* padding: .5em .75em; */
     line-height: 4;
     font-size: inherit;
     font-family: inherit;
@@ -165,9 +161,7 @@ input#input {
     width: -webkit-fill-available;
     border: none;
 }
-input#input:focus {
-    outline:none;
-}
+
 textarea{
     margin: 15px 0;
     padding: 5px;

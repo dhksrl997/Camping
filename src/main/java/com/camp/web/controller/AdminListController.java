@@ -84,7 +84,6 @@ public class AdminListController {
 	}
 	
 	
-	
 	@Autowired
 	private BoardDao boardDao;
 
@@ -112,7 +111,6 @@ public class AdminListController {
 
 		return "admin.customerCenter";
 	}
-	
 	
 
 }

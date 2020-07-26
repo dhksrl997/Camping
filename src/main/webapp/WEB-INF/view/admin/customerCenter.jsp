@@ -8,7 +8,7 @@
         <h1 class="adminConTit">고객 센터</h1>
     </div>
     <div class="conListWrap">
-          	문의하기 페이지를 어드민에서 관리?	
+          	<!-- 문의하기 페이지를 어드민에서 관리?	 -->
     </div>
 
 </div>

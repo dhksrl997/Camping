@@ -53,7 +53,6 @@ public interface CampDao {
    @Select("SELECT * FROM camper LIMIT 20")
    List<Camp> list() throws ClassNotFoundException, SQLException;
    
-   
    @Select("SELECT * FROM camper LIMIT ${index}")
    List<Camp> listNum(int index) throws ClassNotFoundException, SQLException;
    
