@@ -16,11 +16,11 @@
 				<tr>
 					<td class="info-tit">상호</td>
 					<td class="info-con">
-						<input type="text" name="name" id="input" required>
+						<input type="text" autocomplete="off" name="name" id="input" required >
 					</td>
 					<td class="info-tit">연락처</td>
 					<td class="info-con rightnone">
-						<input type="text" name="phone" id="input" required>
+						<input type="text" autocomplete="off" name="phone" id="input" required>
 					</td>
 				</tr>
 				<tr>     
@@ -36,19 +36,19 @@
 							<option value="충청도">충청도</option>
 							<option value="제주도">제주도</option>
 						</select> -->
-						<input type="text" name="address" id="input" required>
+						<input type="text" autocomplete="off" name="address" id="input" required>
 					</td>
 				</tr>
 				<tr>
 					<td class="info-tit">부대 시설</td>
 					<td class="info-con" colspan="4">
-						<input type="text" name="faclity" id="input" required>
+						<input type="text" autocomplete="off" name="faclity" id="input" required>
 					</td>
 				</tr>
 				<tr>
 					<td class="info-tit">이용 요금</td>
 					<td class="info-con" colspan="4">
-						<input  type="text" name="price" id="input" required>
+						<input  type="text" autocomplete="off" name="price" id="input" required>
 					</td>
 				</tr>
 				<tr>
@@ -64,17 +64,17 @@
 					</td>
 					<td class="info-tit">주차 시설 (최대 수용)</td>
 					<td class="info-con">
-						<input type="text" name="parking" id="input" required>
+						<input type="text" autocomplete="off" name="parking" id="input" required>
 					</td>
 				</tr>
 				<tr>
 					<td class="info-tit">위도/경도</td>
 					<td class="info-con">
-						<input type="text" name="latitude" id="input" required>
+						<input type="text" autocomplete="off" name="latitude" id="input" required>
 					</td>
 					<td class="info-tit">등록 일자</td>
 					<td class="info-con">
-						<input type="date" id="name" name="regdate" required minlength="5" maxlength="8" size="15">
+						<input type="date" autocomplete="off" id="name" name="regdate" required minlength="5" maxlength="8" size="15">
 					</td>
 				</tr>
 			</table> 
@@ -87,25 +87,25 @@
 				<tr>
 					<td class="info-tit"> 대표 이미지 등록 </td>
 					<td class="filebox info-con">
-						<input type="file" name="file" />
+						<input type="file" autocomplete="off" name="file" />
 					</td>
 				</tr>
 				<tr>
 					<td class="info-tit"> 이미지 등록 1 </td>
 					<td class="filebox info-con">
-						<input type="file" name="file" />
+						<input type="file" autocomplete="off" name="file" />
 					</td>
 				</tr>
 				<tr>
 					<td class="info-tit"> 이미지 등록 2 </td>
 					<td class="filebox info-con">
-						<input type="file" name="file" />
+						<input type="file" autocomplete="off" name="file" />
 					</td>
 				</tr>
 				<tr>
 					<td class="info-tit"> 이미지 등록 3 </td>
 					<td class="filebox info-con">
-						<input type="file" name="file" />
+						<input type="file" autocomplete="off" name="file" />
 					</td>
 				</tr>
 			

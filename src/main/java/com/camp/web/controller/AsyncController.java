@@ -14,8 +14,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.camp.web.dao.BoardDao;
 import com.camp.web.dao.CampDao;
 import com.camp.web.dao.MemberDao;
+import com.camp.web.entity.Board;
 import com.camp.web.entity.Camp;
 import com.camp.web.entity.Member;
 
@@ -96,13 +98,32 @@ public class AsyncController {
 		return map;
 	}
    
+   
+   @Autowired
+	private MemberDao memberDao;
+   
    @PostMapping("/admin/userlistSelect")
-	public Map<String, Object> userlist(int index, @RequestParam(name = "query", defaultValue = "") String query, MemberDao memberDao)
+	public Map<String, Object> userlist(int index, @RequestParam(name = "query", defaultValue = "") String query)
 			throws ClassNotFoundException, SQLException {
 	    System.out.println(index);
 		Map<String, Object> map = new HashMap<>();
 		List<Member> userlist = memberDao.userlistNum(index);
 		map.put("userlistSelect", userlist);
+
+		return map;
+	}
+   
+   
+   @Autowired
+	private BoardDao boardDao;
+   
+   @PostMapping("/admin/boardlistSelect")
+	public Map<String, Object> boardlist(int index, @RequestParam(name = "query", defaultValue = "") String query)
+			throws ClassNotFoundException, SQLException {
+	    System.out.println(index);
+		Map<String, Object> map = new HashMap<>();
+		List<Board> boardlist = boardDao.boardListNum(index);
+		map.put("boardlistSelect", boardlist);
 
 		return map;
 	}

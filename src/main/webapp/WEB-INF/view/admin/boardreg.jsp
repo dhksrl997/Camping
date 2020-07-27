@@ -24,13 +24,13 @@
 					</td>
 					<td class="info-tit">타이틀</td>
 					<td class="info-con">
-						<input type="text" name="title" id="input" required>
+						<input type="text" autocomplete="off" name="title" id="input" required>
 					</td>
 				</tr>
 				<tr>
 					<td class="info-tit">파일 선택</td>
 					<td class="filebox info-con" colspan="4">
-						<input type="file" name="file" id="input" required>
+						<input type="file" autocomplete="off" name="file" id="input" required>
 					</td>
 				</tr>
 				<tr>
@@ -43,9 +43,9 @@
 					<td class="info-tit">댓글 설정</td>
 					<td class="info-con" colspan="4">
 						<form>
-							<input type="radio" name="use" required>
+							<input type="radio" autocomplete="off" name="use" required>
 							<label for="comments">댓글 허용</label> 
-							<input type="radio" name="disable" required style="margin-left: 40px;">
+							<input type="radio" autocomplete="off" name="disable" required style="margin-left: 40px;">
 							<label for="comments">댓글 허용 안함</label> 
 						</form>
 					</td>
@@ -63,7 +63,7 @@
 					</td>
 					<td class="info-tit">등록 일자</td>
 					<td class="info-con">
-						<input type="date" id="name" name="regdate" required minlength="5" maxlength="8" size="15">
+						<input type="date" autocomplete="off" id="name" name="regdate" required minlength="5" maxlength="8" size="15">
 					</td>
 				</tr>
 			</table> 

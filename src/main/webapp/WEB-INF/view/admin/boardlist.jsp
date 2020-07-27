@@ -2,6 +2,7 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<script defer src="/js/admin/boardlistSelect.js"></script>
 
 <div class="adminConWrap">
     <div class="infoWrap">
@@ -24,7 +25,7 @@
 			검색 결과  : ${index}
 			</c:if>
 			
-            <select id="listNum-select" name="listNum-select" mode="1">
+            <select id="listNum" name="listNumSelect">
                 <option value="20">20개 보기</option>
                 <option value="60">60개 보기</option>
                 <option value="150">150개 보기</option>

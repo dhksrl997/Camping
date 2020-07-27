@@ -44,6 +44,9 @@ a {
         }
 
 /* ---------------- table ---------------- */
+input:focus {
+	outline:none;
+}
 
 .table-part1 td {
     border: 1px solid gray;

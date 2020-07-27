@@ -54,10 +54,6 @@ a {
             padding: 15px 0;
             border-top: 2px dotted dimgray;
         }
-            .listNum-select option {
-                font-weight: normal;
-                display: block;
-            }
         .boardList {
             width: 1200px;
         }
