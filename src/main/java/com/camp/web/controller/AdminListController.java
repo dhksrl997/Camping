@@ -86,10 +86,20 @@ public class AdminListController {
 	private String boardlist(Model model) throws ClassNotFoundException, SQLException {
 
 		List<Board> boardlist = boardDao.boardList();
-		int index = boardDao.boardListIndex();
+		int index = boardDao.boardindex();
 		model.addAttribute("boardlist", boardlist);
 		model.addAttribute("index", index);
-		model.addAttribute("exist", "exist");
+		
+		return "admin.boardlist";
+	}
+	
+	@PostMapping("boardlist")
+	private String boardlist(Model model, @RequestParam(name="search") String search) 
+			throws ClassNotFoundException, SQLException {
+		List<Board> boardlist = boardDao.boardSearch(search);
+		int index = boardDao.boardSearchIndex(search);
+		model.addAttribute("boardlist", boardlist);
+		model.addAttribute("index", index);
 		
 		return "admin.boardlist";
 	}

@@ -6,6 +6,13 @@
 <div class="adminConWrap">
     <div class="infoWrap">
         <h1 class="adminConTit">게시글 목록</h1>
+        <div class="searchWrap">
+			<form action="/admin/boardlist" method="POST">
+				<input type="text" name="search" value=""> 
+				<input type="submit" value="" style="display:none;">
+				<i class="fas fa-search search-icon"></i>
+			</form>
+		</div>
         <button type="button" onclick="location.href='boardreg'">등록하기</button>
 	</div>
     <div class="conListWrap">

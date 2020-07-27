@@ -37,8 +37,10 @@ public interface BoardDao {
 	@Select("SELECT * FROM free LIMIT ${index}")
     List<Board> boardListNum(int index) throws ClassNotFoundException, SQLException;
 	   
+	@Select("SELECT * FROM free Where writer LIKE '%${query}%' || title LIKE '%${query}%' || content LIKE '%${query}%'  || hit LIKE '%${query}%' LIMIT 20")
+	List<Board> boardSearch(String query);
 	
 	@Select("SELECT COUNT(*) FROM free Where writer LIKE '%${query}%' || title LIKE '%${query}%' || content LIKE '%${query}%'  || hit LIKE '%${query}%' LIMIT 20")
-	int boardSearch(String query);
+	int boardSearchIndex(String query);
 
 }
