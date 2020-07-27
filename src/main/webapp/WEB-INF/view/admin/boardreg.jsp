@@ -7,6 +7,7 @@
 <div class="adminConWrap">
 	<div class="infoWrap">
 		<h1 class="adminConTit">게시글 등록</h1>
+		<button type="button" class="regbtn" onclick="location.href='boardlist'">등록하기</button>
 		<button type="button" onclick="location.href='boardlist'">목록보기</button>
 	</div>
 	<div class="conListWrap">

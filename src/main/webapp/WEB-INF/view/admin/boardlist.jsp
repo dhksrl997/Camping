@@ -10,7 +10,13 @@
 	</div>
     <div class="conListWrap">
         <section class="printCount">
-            총 게시글 수 : ${index}
+            <c:if test="${exist == null}">
+			총 게시글 수 : ${index}  
+			</c:if>
+			<c:if test="${exist != null}">
+			검색 결과  : ${index}
+			</c:if>
+			
             <select id="listNum-select" name="listNum-select" mode="1">
                 <option value="20">20개 보기</option>
                 <option value="60">60개 보기</option>

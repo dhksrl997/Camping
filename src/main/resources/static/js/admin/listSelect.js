@@ -6,15 +6,12 @@ $(function() {
 			url:"/admin/listSelect",
 			async: "true",
 			data:{index:$("#listNum").val()},
-			//datatype: "json",
+			datatype: "json",
 			success: function(listNumSelect) {
-				//console.log(listNumSelect.listSelect);
 				$("tbody").find("tr").remove();
-				for(var i; i<listNumSelect.listSelect.length; i++){
+				for(var i=0; i<listNumSelect.listSelect.length; i++){
 					var linum = listNumSelect.listSelect[i];
 					//console.log(linum);
-					console.log(linum.id);
-					console.log(linum[i].id);
 					$("tbody").append(`
 					<tr>
 						<td>${linum.id}</td>
@@ -28,4 +25,6 @@ $(function() {
 					
 			}})
 	});
+	
+	
 });

@@ -15,7 +15,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.camp.web.dao.CampDao;
+import com.camp.web.dao.MemberDao;
 import com.camp.web.entity.Camp;
+import com.camp.web.entity.Member;
 
 @RestController
 public class AsyncController {
@@ -94,6 +96,19 @@ public class AsyncController {
 		return map;
 	}
    
+   @PostMapping("/admin/userlistSelect")
+	public Map<String, Object> userlist(int index, @RequestParam(name = "query", defaultValue = "") String query, MemberDao memberDao)
+			throws ClassNotFoundException, SQLException {
+	    System.out.println(index);
+		Map<String, Object> map = new HashMap<>();
+		List<Member> userlist = memberDao.userlistNum(index);
+		map.put("userlistSelect", userlist);
+
+		return map;
+	}
+   
+
+  
    
    
 

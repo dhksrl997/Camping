@@ -1,11 +1,13 @@
 package com.camp.web.dao;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
+import com.camp.web.entity.Camp;
 import com.camp.web.entity.Member;
 @Mapper
 public interface MemberDao {
@@ -31,6 +33,12 @@ public interface MemberDao {
 	
 	
 //	admin
+	@Select("select * from member LIMIT 20")
+	List<Member> memberList();	
+	
+	@Select("SELECT * FROM member LIMIT ${index}")
+	List<Member> userlistNum(int index);
+	   
 	@Select("SELECT * FROM member Where uid LIKE '%${query}%' || name LIKE '%${query}%' ||phone LIKE '%${query}%'  || modifiDate LIKE '%${query}%' LIMIT 20")
     List<Member> userSearch(String query);
 	

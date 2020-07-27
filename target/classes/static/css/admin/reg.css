@@ -30,6 +30,9 @@ a {
             background: dimgray;
             color: white;
         }
+        button.regbtn {
+            margin-left: 790px;
+        }
     .conListWrap {
         margin-bottom: 40px;
     }

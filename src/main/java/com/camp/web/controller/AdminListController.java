@@ -1,11 +1,7 @@
 package com.camp.web.controller;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,7 +10,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
 
 import com.camp.web.dao.BoardDao;
 import com.camp.web.dao.CampDao;
@@ -63,7 +58,7 @@ public class AdminListController {
 	@GetMapping("userlist")
 	private String userlist(Model model) throws ClassNotFoundException, SQLException {
 
-		List<Member> userlist = memberDao.getMemberList();
+		List<Member> userlist = memberDao.memberList();
 		int index = memberDao.memberIndex();
 		model.addAttribute("userlist", userlist);
 		model.addAttribute("index", index);
@@ -90,14 +85,16 @@ public class AdminListController {
 	@GetMapping("boardlist")
 	private String boardlist(Model model) throws ClassNotFoundException, SQLException {
 
-		List<Board> boardlist = boardDao.getBoardList();
-		int index = boardDao.boardindex();
+		List<Board> boardlist = boardDao.boardList();
+		int index = boardDao.boardListIndex();
 		model.addAttribute("boardlist", boardlist);
 		model.addAttribute("index", index);
 		model.addAttribute("exist", "exist");
-
+		
 		return "admin.boardlist";
 	}
+	
+	
 	
 	@GetMapping("boardreg")
 	private String boardreg() {

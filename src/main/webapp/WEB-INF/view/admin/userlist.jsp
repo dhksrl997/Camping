@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<script src="/js/admin/userlistSelect.js"></script>
 <div class="adminConWrap">
 	
     <div class="infoWrap">
@@ -26,6 +26,8 @@
 					<option value="60" >60개 보기</option>
 					<option value="150" >150개 보기</option>
 					<option value="300" >300개 보기</option>
+					<option value="500" >500개 보기</option>
+					<option value="800" >800개 보기</option>
 				</select>
 		</section>
         <table class="boardList">
