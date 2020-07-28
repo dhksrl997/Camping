@@ -2,8 +2,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
-<link rel="stylesheet" href="/css/admin/reg.css">
-
 <div class="adminConWrap">
 	<div class="infoWrap">
 		<h1 class="adminConTit">캠핑장 등록</h1>

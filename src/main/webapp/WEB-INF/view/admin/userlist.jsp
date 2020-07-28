@@ -44,7 +44,7 @@
             <c:forEach var="member" items="${userlist}">
                 <tr>
                     <td>${member.id}</td>
-                    <td><a href="" target="_blank"><b>${member.uid}</b></a></td>
+                    <td><a href=""><b>${member.uid}</b></a></td>
                     <td>${member.regDate}</td>
                     <td>${member.name}</td>
                     <td>${member.phone}</td>

@@ -6,6 +6,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 import com.camp.web.entity.Board;
 import com.camp.web.entity.Camp;
@@ -42,5 +43,14 @@ public interface BoardDao {
 	
 	@Select("SELECT COUNT(*) FROM free Where writer LIKE '%${query}%' || title LIKE '%${query}%' || content LIKE '%${query}%'  || hit LIKE '%${query}%' LIMIT 20")
 	int boardSearchIndex(String query);
+
+	
+	@Select("SELECT *FROM free where id= '${id}'")
+	List<Board> selectDetail(String id);
+
+	@Update("UPDATE free SET title='${title}', content='${content}' where id= '${id}';")
+	int updateBoard(Board board);
+
+	   
 
 }

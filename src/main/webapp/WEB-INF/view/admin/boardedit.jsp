@@ -4,12 +4,13 @@
 
 <div class="adminConWrap">
 	<div class="infoWrap">
-		<h1 class="adminConTit">게시글 등록</h1>
-		<button type="button" class="regbtn" onclick="location.href='boardlist'">등록하기</button>
+		<h1 class="adminConTit">게시글 수정</h1>
+		<button type="button" class="regbtn" onclick="location.href='boardlist'">수정하기</button>
 		<button type="button" onclick="location.href='boardlist'">목록보기</button>
 	</div>
 	<div class="conListWrap">
 		<div class="regTable">
+		<c:forEach var="board" items="${boardlist}">
 			<table class="table-part2">
 				<tr>  
 					<td class="info-tit">게시판 선택</td>
@@ -22,19 +23,19 @@
 					</td>
 					<td class="info-tit">타이틀</td>
 					<td class="info-con">
-						<input type="text" autocomplete="off" name="title" id="input" required>
+						<input type="text" autocomplete="off" name="title" id="input" required value="${board.title}">
 					</td>
 				</tr>
 				<tr>
 					<td class="info-tit">파일 선택</td>
 					<td class="filebox info-con" colspan="4">
-						<input type="file" autocomplete="off" name="file" id="input" required>
+						<input type="file" autocomplete="off" name="file" id="input" required value="">
 					</td>
 				</tr>
 				<tr>
 					<td class="info-tit">내용 입력</td>
 					<td class="info-con" colspan="4">
-						<textarea></textarea>
+						<textarea autocomplete="off" value="${board.content}"></textarea>
 					</td>
 				</tr>
 				<tr>
@@ -61,11 +62,11 @@
 					</td>
 					<td class="info-tit">등록 일자</td>
 					<td class="info-con">
-						<input type="date" autocomplete="off" id="name" name="regdate" required minlength="5" maxlength="8" size="15">
+						<input type="date" autocomplete="off" id="name" name="regdate" required minlength="5" maxlength="8" size="15" value="${board.regDate}">
 					</td>
 				</tr>
 			</table> 
-			
+			</c:forEach>
 		</div>  
 	</div>
 </div>

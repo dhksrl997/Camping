@@ -47,7 +47,7 @@
             <c:forEach var="board" items="${boardlist}">
                 <tr>
                     <td>${board.id}</td>
-                    <td><a href="/board/list?cate=free?id=${board.id}" target="_blank"><b>${board.title}</b></a></td>
+                    <td><a href="/admin/boardedit?id=${board.id}" ><b>${board.title}</b></a></td>
                     <td>${board.writer}</td>
                     <td>${board.regDate}</td>
                     <td>${board.hit}</td>

@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.camp.web.dao.BoardDao;
@@ -45,11 +46,30 @@ public class AdminListController {
 		return "admin.camplist";
 	}
 	
-	@GetMapping("reg")
-	private String reg() {
+	@GetMapping("campreg")
+	private String campreg() {
 		
-		return "admin.reg";
+		return "admin.campreg";
 	}
+	
+	@GetMapping("campedit")
+	   public String campedit(Model model,@RequestParam(name="id") String id) {
+
+	      List<Camp> campList = campDao.selectDetail(id);
+	      model.addAttribute("camplist", campList);
+	      
+	      return "admin.campedit";
+	}
+	
+	@RequestMapping(value = "campedit", method = RequestMethod.POST)
+	   public String campedit(Camp camp) {
+	      
+	      System.out.println(camp);
+	      campDao.updateCamp(camp);
+	      
+	      return "redirect:camplist";
+	   }
+
 	
 	
 	@Autowired	
@@ -104,13 +124,30 @@ public class AdminListController {
 		return "admin.boardlist";
 	}
 	
-	
-	
 	@GetMapping("boardreg")
 	private String boardreg() {
 		
 		return "admin.boardreg";
 	}
+	
+	@GetMapping("boardedit")
+	   public String boardedit(Model model,@RequestParam(name="id") String id) {
+
+	      List<Board> boardList = boardDao.selectDetail(id);
+	      model.addAttribute("boardList", boardList);
+	      
+	      return "admin.boardedit";
+	}
+	
+	@RequestMapping(value = "boardedit", method = RequestMethod.POST)
+	   public String boardedit(Board board) {
+	      
+	      System.out.println(board);
+	      boardDao.updateBoard(board);
+	      
+	      return "redirect:boardlist";
+	   }
+	
 	
 	
 	@GetMapping("customerCenter")
