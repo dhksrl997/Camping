@@ -38,8 +38,6 @@
                     <td>게시글 등록일</td>
                     <td>이름</td>
                     <td>연락처</td>
-                    <td>이메일</td>
-                    <td>나이</td>
                 </tr>
             </thead>
             <tbody>
@@ -50,8 +48,6 @@
                     <td>${member.regDate}</td>
                     <td>${member.name}</td>
                     <td>${member.phone}</td>
-                    <td>${member.email}</td>
-                    <td>${member.age}</td>
                 </tr>
             </c:forEach>    
             </tbody>
