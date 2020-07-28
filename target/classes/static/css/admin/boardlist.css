@@ -8,7 +8,9 @@ a {
 	text-decoration: none;
 	color: black;
 }
-
+input:focus {
+	outline:none;
+}
 .adminConWrap {
     margin: 100px auto;
     width: 1200px;
