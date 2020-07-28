@@ -34,7 +34,6 @@
 		<ul>
 			<li class="mail content"><i class="far fa-envelope icons"></i>&nbsp;&nbsp;znrlcl3@naver.com</li>
 			<li class="phone content"><i class="fas fa-mobile-alt icons"></i>&nbsp;&nbsp;&nbsp;&nbsp;010-5461-3548</li>
-			<li class="web content"><i class="far fa-window-maximize icons"></i></li>
 			<li class="git content"><a href="https://github.com/znrlcl3"
 				target="_blank"><i class="fab fa-github icons">&nbsp;&nbsp;&nbsp;Git
 						Hub</i></a></li>
