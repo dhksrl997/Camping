@@ -55,12 +55,11 @@ public class BoardController {
 	public String detail(@CookieValue(name = "view") String cookie, HttpServletResponse response,
 			@RequestParam(name = "cate") String category, @RequestParam(name = "id") int id, Model model)
 			throws ClassNotFoundException, SQLException {
-		System.out.println(cookie);
 		if (!(cookie.contains(String.valueOf(id)))) {
 			cookie += id + "/";
 			boarddao.hit(category, id);
 		}
-		response.addCookie(new Cookie("view", cookie));
+		response.addCookie(new Cookie("freeBoard", cookie));
 		List<Board> result = boarddao.getDetail(category, id);
 		model.addAttribute("result", result);
 		return "board.detail";
