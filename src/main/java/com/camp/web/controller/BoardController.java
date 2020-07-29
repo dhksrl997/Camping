@@ -37,7 +37,7 @@ public class BoardController {
 	private BoardDao boarddao;
 
 	@GetMapping("list")
-	public String list(@RequestParam(name = "index") int index, Model model,
+	public String list(@RequestParam(name = "index",defaultValue = "1") int index, Model model,
 			@RequestParam(name = "cate") String category) throws ClassNotFoundException, SQLException {
 		List<Board> list = boarddao.getBoard(category, index);
 		model.addAttribute("content", list);
@@ -52,28 +52,12 @@ public class BoardController {
 	}
 
 	@PostMapping("reg")
-	public void regData(HttpServletResponse response, HttpServletRequest request, String title, String content,
+	public String regData(@RequestParam(name = "cate")String category,String title, String content,
 			HttpSession session, Model model) throws IOException, ServletException {
-//		 Part filepart = request.getPart("file");
-//	      String filename = filepart.getSubmittedFileName();
-//	      InputStream fis = filepart.getInputStream();
-//
-//	      String realpath = request.getServletContext().getRealPath("/images");
-//	      System.out.println(realpath);
-//
-//	      String filepath = realpath + File.separator + filename;
-//	      System.out.println(filepath);
-//	      FileOutputStream fos = new FileOutputStream(filepath);
-//
-//	      byte[] buf = new byte[1024];
-//	      int sizeb = 0;
-//	      while ((sizeb = fis.read(buf)) != -1)
-//	         fos.write(buf, 0, sizeb);
-//	      fos.close();
-//	      fis.close();
 
 		String writer = (String) session.getAttribute("userId");
 		boarddao.insertBoard(writer, title, content);
+		return "detail?cate"+category+"&id=";
 	}
 
 	@GetMapping("detail")

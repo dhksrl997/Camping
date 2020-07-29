@@ -10,7 +10,7 @@
 	<!-- <span class="list-message1">캠핑족</span> <span class="list-message2">수다쉼터</span> -->
 	<span class="list-message3"><i class="fas fa-caravan"></i></span> <span
 		class="list-message4"><i class="fas fa-caravan"></i></span>
-	 <!-- <img style="margin:auto;" src="../../images/list.jpg" width='50%' height='500px' />  -->
+	<!-- <img style="margin:auto;" src="../../images/list.jpg" width='50%' height='500px' />  -->
 </div>
 
 <c:if test="${param.cate =='free' }">
@@ -23,8 +23,11 @@
 
 <div class="board-background">
 	<c:if test="${sessionScope.userName!=null}">
-		<input type="button" value="글쓰기" onclick="location.href='reg'"
-			style="margin-left: 77%; margin-bottom: 20px;">
+		<form action="/board/reg" method="post">
+			<input type="button" value="글쓰기" onclick="location.href='reg'"
+				style="margin-left: 77%; margin-bottom: 20px;"> <input
+				type="hidden" value="${param.cate }">
+		</form>
 	</c:if>
 	<div class="table-box">
 		<table class="table table-bordered table-hover">
