@@ -31,7 +31,7 @@
 			<button type="button" class="aignRight" value="오른쪽 정렬"
 				onclick="document.execCommand('justifyright')">
 				<i class="fas fa-align-right"></i>
-			</button>
+			</button> 
 			<select id="fontSize" width="50px">
 				<option value="">글자 크기</option>
 				<option value="3">10px</option>
@@ -41,13 +41,13 @@
 				<option value="7">30px</option>
 			</select>
 			
-			<!-- <div class="filebox bs3-primary">
-				<label for="ex_file2">사진 업로드</label> <input type="file"
+			
+				 <input type="file"
 					id="ex_file2" accept=".gif, .jpg, .png" name="images" id="imgaes" multiple>
-			</div> -->
+			 
 		</div>
 		<div class="reg-search"> 
-				<div>캠핑장 검색 :</div> 
+				<br><div>캠핑장 검색 :</div> 
 				<div class="reg-search-box" contenteditable="true"> </div>
 				<button type="button" class="btn-search" >찾기</button>
 			</div>
