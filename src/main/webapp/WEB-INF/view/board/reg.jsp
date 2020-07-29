@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <script defer src="/js/board/reg.js"></script>
-<link rel="stylesheet" href="/css/board/reset.css"> 
+<link rel="stylesheet" href="/css/board/reg.css"> 
 <div class="reg-message">당신의 후기를 모아모아</div>
 <div class="reg-message2">*후기 입력란*</div>
 <span class="side-message1">CampNic</span>
@@ -12,6 +12,7 @@
 		<div style="width:90px;font-size:30px;font-family:S-CoreDream-3Light; ">제목 : </div>
 		<div class="reg-title" contenteditable="true"></div>
 		</div>
+		<div class="wrapper">
 		<div class="buttons">
 			<input type="button" class="BOLD" value="Bold"
 				onclick="document.execCommand('bold')" /> <input type="button"
@@ -39,12 +40,19 @@
 				<option value="6">20px</option>
 				<option value="7">30px</option>
 			</select>
-			<div class="filebox bs3-primary">
+			
+			<!-- <div class="filebox bs3-primary">
 				<label for="ex_file2">사진 업로드</label> <input type="file"
 					id="ex_file2" accept=".gif, .jpg, .png" name="images" id="imgaes" multiple>
-			</div>
+			</div> -->
 		</div>
-		<div class="content" name="content" contenteditable="true"></div>
+		<div class="reg-search"> 
+				<div>캠핑장 검색 :</div> 
+				<div class="reg-search-box" contenteditable="true"> </div>
+				<button type="button" class="btn-search" >찾기</button>
+			</div>
+			</div>
+		<div class="content" contenteditable="true"></div>
 		<!-- <textarea rows="10" cols="10" class="content" name="content">gsfjkgnfsjkghsjkdfhkjsdf</textarea> -->
 		<!-- <textarea rows="10" cols="10" name="content" class="content"></textarea> -->
 	 <div class="submit-box"><a id="submit" href="/board/list">등록</a></div>

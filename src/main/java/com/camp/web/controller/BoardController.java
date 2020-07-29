@@ -43,6 +43,7 @@ public class BoardController {
 		return "board.reg";
 	}
 
+
 	@PostMapping("reg")
 	public void regData(HttpServletResponse response, HttpServletRequest request, String title, String content,
 			HttpSession session, Model model) throws IOException {
