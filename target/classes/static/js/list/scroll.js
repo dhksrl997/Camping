@@ -57,7 +57,6 @@ $(function(){
                   <span class="rec-address"> ${rec.address } </span>
                </div>
             </div>
-
    `);
                  
               };
@@ -105,7 +104,6 @@ $(function(){
               setTimeout(fetchsearchlist,500); 
            };
         }
-        
         
         function fetchsearchlist(){
 
@@ -191,6 +189,7 @@ $(function(){
                type: "get",
                url : "/camp/getlist?reg="+searchParam('reg')+"&index="+index,
                async:"true",
+               
                success : function(camps) {
             	   if (camps.lists.length <10){
                        if(flag == true){

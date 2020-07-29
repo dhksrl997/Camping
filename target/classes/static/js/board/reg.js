@@ -1,14 +1,96 @@
-
-'use strict';
 $(function(){
-
+	var fileNames="";
 	$(".btn-search").click(function(e){
 		searchPop();
 	});
 	
 	$("#submit").click(function(){		
     sendRegData();
-})
+});
+	
+// $("input[type=file]").change(function (e){
+// var filesTempArr = [];
+// var files = e.target.files;
+// var filesArr = Array.prototype.slice.call(files);
+// var filesArrLen = filesArr.length;
+// console.log(filesArrLen);
+// var filesTempArrLen = filesTempArr.length;
+// var formData = new FormData();
+// // 파일 데이터
+// for(var i=0, filesTempArrLen = filesTempArr.length; i<filesArrLen; i++) {
+// formData.append("files", filesTempArr[i]);
+// }
+// console.log(formData);
+// $.ajax({
+// type : "POST",
+// url : "/board/imgs-upload",
+// data : formData,
+// processData: false,
+// contentType: false,
+// success : function(data) {
+// // console.log(data);
+// if(data.result){
+// alert("Success");
+// }else{
+// alert(data.result);
+// }
+// },
+// err : function(err) {
+// alert(err.status);
+// }
+// });
+// });
+	
+	
+	
+// $("input[type=file]").change(function (){
+// var fileInput = document.getElementById("images");
+// var filess = fileInput.files;
+// console.log(filess);
+// var file;
+// for (var i = 0; i < filess.length; i++) {
+// file = filess[i];
+// console.log(file.name);
+// }
+// });
+
+	
+ 	$("input[type=file]").bind("input",function(){
+ 		var fileInput = $("input[type=file]");
+ 		var files = fileInput[0].files;
+ 		var forms=$("#forms")[0];
+ 		var formData=new FormData(forms);
+// for(var i=0; i<files.length;i++){
+// fileNames += files[i].name+",";
+// }
+ 		formData.append("file",$("#images")[0].files[0]);
+// for(var i=0; i<files.length; i++){
+// formData.append("regImages", files[i]);
+// }
+ 		console.log(formData);
+ 		$.ajax({
+ 			type: "POST",
+// enctype: 'multipart/form-data',
+ 			url: '/uploadImgs',
+// data:formData,
+ 			data:formData,
+ 			success:function(data){
+ 				console.log(data);
+ 				for(var i=0; i<data.length;i++){
+ 				$(".content").append(`<img src=/upload/${data[i]}>"`);
+ 				}
+ 				},
+            processData: false, 
+            contentType: false
+// cache: false,
+// success: function (result) {
+// console.log(result);
+// },
+ 			 });
+ 	});
+ 		
+ 
+ 	
 
   
 
@@ -77,38 +159,38 @@ $(function(){
         }
         })
 	}
-//function fetchSearchResult(){
-//		 $.ajax({
-//	           type: "POST",
-//	           url : "/board/reg-search",
-//	           data: {content:$(".reg-search-box").text()},     
-////	           datatype: "json",
-//	           async:"true",
-//	           success: function(list) {
-//	        	   console.log(list.regSearch);
-//	        	   if(list.regSearch[0] == null){
-//	        		   alert("검색된 결과가 없습니다! 다시 입력하숑");
-//	        	   }
-//	        	   else{
-//	        		   for(var i = 0; i<list.regSearch.length; i++){
-//	        			   var searched = list.regSearch[i];
+// function fetchSearchResult(){
+// $.ajax({
+// type: "POST",
+// url : "/board/reg-search",
+// data: {content:$(".reg-search-box").text()},
+// // datatype: "json",
+// async:"true",
+// success: function(list) {
+// console.log(list.regSearch);
+// if(list.regSearch[0] == null){
+// alert("검색된 결과가 없습니다! 다시 입력하숑");
+// }
+// else{
+// for(var i = 0; i<list.regSearch.length; i++){
+// var searched = list.regSearch[i];
 //	        			   
-//	        			   $(".content").append(`
-//	        				<div class="searched-list">
-//	        		<img src="/images/${searched.img1}" width="400px" height="300px" />
-//	        			<div class="searched-content">
-//	        			<div>* 이름 : ${searched.name}</div> 	 
-//	        			<div>* 주소 : ${searched.address} </div>
-//	        				 </div>
-//	        				 </div>	
-//	        			   `);
-//	        		   }
+// $(".content").append(`
+// <div class="searched-list">
+// <img src="/images/${searched.img1}" width="400px" height="300px" />
+// <div class="searched-content">
+// <div>* 이름 : ${searched.name}</div>
+// <div>* 주소 : ${searched.address} </div>
+// </div>
+// </div>
+// `);
+// }
 //
-//	        	   }
-//	           }
-//	           })
+// }
+// }
+// })
 //		
-//	}
+// }
 
 
 function sendRegData(){
