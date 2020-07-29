@@ -1,14 +1,20 @@
 package com.camp.web.controller;
 
+import java.io.File;
+import java.io.IOException;
+import java.security.Principal;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
+import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.swing.plaf.multi.MultiFileChooserUI;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
@@ -16,7 +22,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.camp.web.dao.BoardDao;
 import com.camp.web.dao.CampDao;
@@ -120,7 +129,17 @@ public class AsyncController {
 	   list = campDao.getPopup(content);
 	   System.out.println(list);
 	   return list;
-   }
+   };
    
 
+@RequestMapping(value = "/board/imgs-upload", method = RequestMethod.POST)
+   public String multipartUpload(HttpServletRequest request,
+		  String file) 
+		   throws Exception {
+	MultipartHttpServletRequest mpsrequest=(MultipartHttpServletRequest)request;
+//	Iterator<String> iter = files.getFileNames(); 
+		System.out.println(file);
+     return "redirect:/";
+   }
 }
+

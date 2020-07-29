@@ -7,7 +7,7 @@
 <span class="side-message1">CampNic</span>
 <span class="side-message2">Board</span>
 <section class="reg-box">
-	<form>
+
 		<div class="title-wrapper">
 		<div style="width:90px;font-size:30px;font-family:S-CoreDream-3Light; ">제목 : </div>
 		<div class="reg-title" contenteditable="true"></div>
@@ -41,10 +41,10 @@
 				<option value="7">30px</option>
 			</select>
 			
-			<!-- <div class="filebox bs3-primary">
-				<label for="ex_file2">사진 업로드</label> <input type="file"
-					id="ex_file2" accept=".gif, .jpg, .png" name="images" id="imgaes" multiple>
-			</div> -->
+				 <input type="file"	accept=".gif, .jpg, .png, .jpeg" 
+				 id="images" multiple />
+					<div class="file-btn">사진업로드</div>
+			
 		</div>
 		<div class="reg-search"> 
 				<div>캠핑장 검색 :</div> 
@@ -57,6 +57,6 @@
 		<!-- <textarea rows="10" cols="10" name="content" class="content"></textarea> -->
 	 <div class="submit-box"><a id="submit" href="/board/list">등록</a></div>
 		<!-- <input type="submit" id="submit" value="등록"> -->
-	</form>
+	
 
 </section>
