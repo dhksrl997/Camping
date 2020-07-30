@@ -134,12 +134,34 @@ public class AsyncController {
 
 @RequestMapping(value = "/board/imgs-upload", method = RequestMethod.POST)
    public String multipartUpload(HttpServletRequest request,
-		  String file) 
+		   MultipartHttpServletRequest mtfRequest) 
 		   throws Exception {
-	MultipartHttpServletRequest mpsrequest=(MultipartHttpServletRequest)request;
-//	Iterator<String> iter = files.getFileNames(); 
-		System.out.println(file);
-     return "redirect:/";
+	 List<MultipartFile> fileList = mtfRequest.getFiles("file");
+     Iterator<String> filenames = mtfRequest.getFileNames();
+     System.out.println("src value : " + filenames);
+     String path = "C:\\image\\";
+
+     for (MultipartFile mf : fileList) {
+         String originFileName = mf.getOriginalFilename(); // 원본 파일 명
+         long fileSize = mf.getSize(); // 파일 사이즈
+
+         System.out.println("originFileName : " + originFileName);
+         System.out.println("fileSize : " + fileSize);
+         String safeFile = path + System.currentTimeMillis() + originFileName;
+         try {
+             mf.transferTo(new File(safeFile));
+         } catch (IllegalStateException e) {
+             // TODO Auto-generated catch block
+             e.printStackTrace();
+         } catch (IOException e) {
+             // TODO Auto-generated catch block
+             e.printStackTrace();
+         }
+     }
+	return "redirect:reg";
+
+
+
    }
 }
 

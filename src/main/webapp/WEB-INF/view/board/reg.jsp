@@ -7,7 +7,6 @@
 <span class="side-message1">CampNic</span>
 <span class="side-message2">Board</span>
 <section class="reg-box">
-
 		<div class="title-wrapper">
 		<div style="width:90px;font-size:30px;font-family:S-CoreDream-3Light; ">제목 : </div>
 		<div class="reg-title" contenteditable="true"></div>

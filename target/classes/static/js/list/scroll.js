@@ -8,10 +8,6 @@ $(function(){
 //   console.log(para[1]);
  
    
-   
-
-   
-   
    // ///////////////////////////////////////////////////////////
    function message1(){
       $(".Message1").css("transition","1.2s").css("left","350px");
