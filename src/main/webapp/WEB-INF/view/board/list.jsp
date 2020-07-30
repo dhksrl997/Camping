@@ -7,27 +7,28 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <div class="list-title">
-	<span class="list-message1">캠핑족</span> <span class="list-message2">수다쉼터</span>
+	<!-- <span class="list-message1">캠핑족</span> <span class="list-message2">수다쉼터</span> -->
 	<span class="list-message3"><i class="fas fa-caravan"></i></span> <span
-		class="list-message4"><i class="fas fa-caravan"></i></span> <img
-		src="../../images/list.jpg" width='100%' height='700px' />
+		class="list-message4"><i class="fas fa-caravan"></i></span>
+	<!-- <img style="margin:auto;" src="../../images/list.jpg" width='50%' height='500px' />  -->
 </div>
 
+<c:if test="${param.cate =='free' }">
+	<h1 style="text-align: center;">자유 게시판</h1>
+</c:if>
 
-<section class="best-list">
-	<span class="click-here">클릭<i class="fas fa-location-arrow"></i></span>
-	<span class="best-title">이달의 인기글이 보고싶다면?</span> <span
-		class="best-title2">사랑합니당 제주 한라 글램핑</span>
-</section>
-
-<div class="best-box">
-	<div>작성자 : (상훈쿤)</div>
-	<span>어제는 제가 하루종일 프로젝트를 했는뎁숑 커피를 2번이나 리필을 한거에용 근데 너무너무 맛있는거
-		있쭁!!>< </span>
-</div>
-
+<c:if test="${param.cate =='review' }">
+	<h1 style="text-align: center;">후기 게시판</h1>
+</c:if>
 
 <div class="board-background">
+	<c:if test="${sessionScope.userName!=null}">
+		<form action="/board/reg" method="post">
+			<input type="button" value="글쓰기" onclick="location.href='reg'"
+				style="margin-left: 77%; margin-bottom: 20px;"> <input
+				type="hidden" value="${param.cate }">
+		</form>
+	</c:if>
 	<div class="table-box">
 		<table class="table table-bordered table-hover">
 			<thead>

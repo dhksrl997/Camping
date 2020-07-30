@@ -27,20 +27,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.camp.web.dao.BoardDao;
 import com.camp.web.entity.Board;
 
-@MultipartConfig(
-	      fileSizeThreshold = 1024 * 1024, 
-	      maxFileSize = 100 * 1024 * 1024, 
-	      maxRequestSize = 300 * 1024 * 1024)
+@MultipartConfig(fileSizeThreshold = 1024 * 1024, maxFileSize = 100 * 1024 * 1024, maxRequestSize = 300 * 1024 * 1024)
 
 @Controller
 @RequestMapping("/board/")
 public class BoardController {
-
 	@Autowired
 	private BoardDao boarddao;
-
+	
 	@GetMapping("list")
-	public String list(@RequestParam(name = "index") int index, Model model,
+	public String list(@RequestParam(name = "index",defaultValue = "1") int index, Model model,
 			@RequestParam(name = "cate") String category) throws ClassNotFoundException, SQLException {
 		List<Board> list = boarddao.getBoard(category, index);
 		model.addAttribute("content", list);
@@ -48,55 +44,36 @@ public class BoardController {
 	}
 
 	@GetMapping("reg")
-	public String reg(HttpServletRequest request) throws ClassNotFoundException, SQLException, IOException, ServletException {
-
-		 
+	public String reg(HttpServletRequest request,HttpSession session,Model model)
+			throws ClassNotFoundException, SQLException, IOException, ServletException {
+		String writer = (String) session.getAttribute("userId");
+		model.addAttribute("uid", writer);
 		
 		return "board.reg";
 	}
 
-
 	@PostMapping("reg")
-	public void regData(HttpServletResponse response, HttpServletRequest request, String title, String content,
+	public String regData(@RequestParam(name = "cate")String category,String title, String content,
 			HttpSession session, Model model) throws IOException, ServletException {
 
-//		 Part filepart = request.getPart("file");
-//	      String filename = filepart.getSubmittedFileName();
-//	      InputStream fis = filepart.getInputStream();
-//
-//	      String realpath = request.getServletContext().getRealPath("/images");
-//	      System.out.println(realpath);
-//
-//	      String filepath = realpath + File.separator + filename;
-//	      System.out.println(filepath);
-//	      FileOutputStream fos = new FileOutputStream(filepath);
-//
-//	      byte[] buf = new byte[1024];
-//	      int sizeb = 0;
-//	      while ((sizeb = fis.read(buf)) != -1)
-//	         fos.write(buf, 0, sizeb);
-//	      fos.close();
-//	      fis.close();
-		
-		
-		
-		
 		String writer = (String) session.getAttribute("userId");
 		boarddao.insertBoard(writer, title, content);
+		return "detail?cate"+category+"&id=";
 	}
 
 	@GetMapping("detail")
 	public String detail(@CookieValue(name = "view") String cookie, HttpServletResponse response,
 			@RequestParam(name = "cate") String category, @RequestParam(name = "id") int id, Model model)
 			throws ClassNotFoundException, SQLException {
-		System.out.println(cookie);
 		if (!(cookie.contains(String.valueOf(id)))) {
 			cookie += id + "/";
 			boarddao.hit(category, id);
 		}
-		response.addCookie(new Cookie("view", cookie));
+		response.addCookie(new Cookie("freeBoard", cookie));
 		List<Board> result = boarddao.getDetail(category, id);
 		model.addAttribute("result", result);
 		return "board.detail";
 	}
+
+
 }

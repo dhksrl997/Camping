@@ -58,35 +58,31 @@ $(function(){
  	$("input[type=file]").bind("input",function(){
  		var fileInput = $("input[type=file]");
  		var files = fileInput[0].files;
- 		for(var i=0; i<files.length;i++){
- 		 fileNames += files[i].name+",";
- 		 }
- 		console.log(fileNames);
- 		var formData = new FormData();
- 		for(var i=0; i<files.length; i++){ 			
- 			formData.append("regImages", files[i]);
- 		}
+ 		var forms=$("#forms")[0];
+ 		var formData = new FormData(forms);
+
+ 		formData.append("file",$("#images")[0].files[0]);
  		console.log(formData);
  		$.ajax({
  			type: "POST",
- 			enctype: 'multipart/form-data', 
- 			url: '/board/imgs-upload',
-// data:formData,
- 			data:{file:fileNames}, 
-//            processData: false, 
-//            contentType: false, 
-// 			cache: false,
-// success: function (result) {
-// console.log(result);
-// },
+ 			url: '/uploadImgs',
+ 			datytype:"json",
+ 			data:formData,
+ 			success:function(data){
+ 				console.log(data);
+ 				$(".content").append('<div class="insertTitle">추억이 담긴 사진!</div>');
+ 				for(var i=0; i<data.length;i++){
+ 				$(".content").append(`<img width="300px" height="200px" 
+ 				src="/upload/${data[i]}"> <br>`);
+ 				}
+ 				},
+            processData: false, 
+            contentType: false
  			 });
  	});
- 		
- 
+
  	
-
-  
-
+ 	
 	function searchPop(){
 		 $.ajax({
         type: "POST",
@@ -130,6 +126,7 @@ $(function(){
     	           success: function(popupdata) {
     	        	   console.log(popupdata);
     	        	   $(".popup").remove();
+    	        	   $(".content")
     	        	   $(".content").append(`
     	        	   
     	        	   			<div class="searched-list" >

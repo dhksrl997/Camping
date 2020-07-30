@@ -248,6 +248,12 @@
 	cursor:pointer;
 }
 
+.insertTitle{
+	font-size:25px;
+	font-family: Recipekorea;
+	text-align:center;
+	
+}
 /* body{
 	filter:blur(10px);
 } */
