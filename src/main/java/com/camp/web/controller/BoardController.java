@@ -1,65 +1,86 @@
 package com.camp.web.controller;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.sql.SQLException;
 import java.util.List;
 
+import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.servlet.http.Part;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.view.RedirectView;
 
 import com.camp.web.dao.BoardDao;
 import com.camp.web.entity.Board;
 
+@MultipartConfig(fileSizeThreshold = 1024 * 1024, maxFileSize = 100 * 1024 * 1024, maxRequestSize = 300 * 1024 * 1024)
+
 @Controller
 @RequestMapping("/board/")
 public class BoardController {
+   @Autowired
+   private BoardDao boardDao;
 
-	@Autowired
-	private BoardDao boardDao;
+   @GetMapping("list")
+   public String list(@RequestParam(name = "index", defaultValue = "1") int index, Model model,
+         @RequestParam(name = "cate") String category) throws ClassNotFoundException, SQLException {
 
-	@GetMapping("list")
-	public String list(String title, String content, String writer, Model model,
-			@RequestParam(name = "cate") String category) throws ClassNotFoundException, SQLException {
-		if (category.equals("review")) {  //review 게시판 불러옴 
-			List<Board> list = boardDao.getBoard(writer, title, content);
-			model.addAttribute("content", list);
-		} else if (category.equals("free")) {//자유 게시판 불러옴 
-			List<Board> list = boardDao.getBoard(writer, title, content);
-			model.addAttribute("content", list);
-		}
-		return "board.list";
-	}
+      index = 0;
+      List<Board> list = boardDao.getBoard(category, index);
+      model.addAttribute("content", list);
+      return "board.list";
+   }
 
-	@GetMapping("reg")
-	public String reg() throws ClassNotFoundException, SQLException {
+   @GetMapping("reg")
+   public String reg(HttpServletRequest request, HttpSession session, Model model,
+         @RequestParam(name = "cate") String category)
+         throws ClassNotFoundException, SQLException, IOException, ServletException {
+      String writer = (String) session.getAttribute("userId");
+      model.addAttribute("uid", writer);
+      return "board.reg";
+   }
 
-		return "board.reg";
-	}
+   @PostMapping("reg-data")
+   @ResponseBody
+   public Integer regData(HttpServletRequest request, @RequestParam(name = "cate") String category, String title, String content,
+         HttpSession session, Model model) throws IOException, ServletException {
+      System.out.println("---------------------");   
+      String writer = (String) session.getAttribute("userId");
+      boardDao.insertBoard(writer, title, content);
+      return boardDao.getMaxId(category);
+   }
 
-	@PostMapping("reg")
-	public void regData(HttpServletResponse response, HttpServletRequest request, String title, String content,
-			HttpSession session, Model model) throws IOException {
-
-		String writer = (String) session.getAttribute("userId");
-//		System.out.println(writer);
-		boardDao.insertBoard(writer, title, content);
-
-		System.out.println("title =" + title);
-		System.out.println("content = " + content);
-		System.out.println("userId = " + writer);
-//		response.sendRedirect("/board/list");
-
-//		return "board.list";
-
-	}
+   @GetMapping("detail")
+   public String detail(@CookieValue(name = "view") String cookie, HttpServletResponse response,
+         @RequestParam(name = "cate") String category, @RequestParam(name = "id") int id, Model model)
+         throws ClassNotFoundException, SQLException {
+      if (!(cookie.contains(String.valueOf(id)))) {
+         cookie += id + "/";
+         boardDao.hit(category, id);
+      }
+      System.out.println("detail: " + category);
+      System.out.println("detail: " + id);
+      response.addCookie(new Cookie("freeBoard", cookie));
+      List<Board> result = boardDao.getDetail(category, id);
+      model.addAttribute("result", result);
+      return "board.detail";
+   }
 
 }

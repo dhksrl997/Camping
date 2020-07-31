@@ -71,6 +71,7 @@ public class AdminListController {
 	   }
 
 	
+//	****************************************************	
 	
 	@Autowired	
 	private MemberDao memberDao;
@@ -99,6 +100,8 @@ public class AdminListController {
 	}
 	
 	
+//	****************************************************
+	
 	@Autowired
 	private BoardDao boardDao;
 
@@ -106,7 +109,7 @@ public class AdminListController {
 	private String boardlist(Model model) throws ClassNotFoundException, SQLException {
 
 		List<Board> boardlist = boardDao.boardList();
-		int index = boardDao.boardindex();
+		int index = boardDao.boardIndex();
 		model.addAttribute("boardlist", boardlist);
 		model.addAttribute("index", index);
 		
@@ -149,6 +152,7 @@ public class AdminListController {
 	   }
 	
 	
+//	****************************************************	
 	
 	@GetMapping("customerCenter")
 	public String customerCenter() {
@@ -156,5 +160,4 @@ public class AdminListController {
 		return "admin.customerCenter";
 	}
 	
-
 }

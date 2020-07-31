@@ -2,9 +2,12 @@ $(function(){
    let index=0;
    let topBtn = $('.top-btn');
    let flag = true;
-   let para = document.location.href.split("?");
-   console.log(para[1]);
    console.log(flag)
+   let para = document.location.href.split("?");
+//   console.log(para[1]);
+ 
+   
+   // ///////////////////////////////////////////////////////////
    function message1(){
       $(".Message1").css("transition","1.2s").css("left","350px");
    }
@@ -41,15 +44,14 @@ $(function(){
                  var rec = recommend.reclist[i];
                  $(".box-wrap").append(`
             <div class="box">
-                  <a href="detail?id=${rec.id}"><img src="/images/${rec.img1 }" class="rec-img"></a>
-             <div class="name-sec">
+                  <img src="/images/${rec.img1 }" class="rec-img">
+               <div class="name-sec">
                   <span class="rec-name"><i class="fas fa-map-signs">&nbsp;&nbsp;${rec.name }</i></span>
                </div>
                <div class="address-sec">
                   <span class="rec-address"> ${rec.address } </span>
                </div>
             </div>
-
    `);
                  
               };
@@ -98,8 +100,16 @@ $(function(){
            };
         }
         
-        
         function fetchsearchlist(){
+
+  		  let title = "";
+     	   let sessionValue=localStorage.getItem('darkmode');
+     	   if(sessionValue == "false"){
+     	        title = "title";
+     	     }
+     	     else if(sessionValue == "true"){
+     	        title = "title2"; 
+     	     }
             $.ajax({
                 type: "get",
                 url : "/camp/searchlist?query="+searchParam('query')+"&index="+index,
@@ -123,8 +133,8 @@ $(function(){
                      src="/images/${search.img1 }" width="200" height="150"></a>
                </div>
                <div class="content-container">
-                  <div class="title map-title">
-                     <a style="color:black"; href="detail?id=${search.id }">${search.name }</a>
+                  <div class="${title} map-title">
+                     <a href="detail?id=${search.id }">${search.name }</a>
                   </div>
                   <div style="color: rgb(0, 140, 236);" class="local">${search.address }</div>
                   <div class="comfor">${search.faclity }</div>
@@ -162,24 +172,28 @@ $(function(){
         }
         
         function fetchlist(){
-              let title = "";
-              let sessionValue=localStorage.getItem('darkmode');
-              if(sessionValue == "false"){
-                   title = "title";
-                }
-                else if(sessionValue == "true"){
-                   title = "title2"; 
-                }
+  		  let title = "";
+     	   let sessionValue=localStorage.getItem('darkmode');
+     	   if(sessionValue == "false"){
+     	        title = "title";
+     	     }
+     	     else if(sessionValue == "true"){
+     	        title = "title2"; 
+     	     }
            $.ajax({
                type: "get",
                url : "/camp/getlist?reg="+searchParam('reg')+"&index="+index,
-               async:"false",
+               async:"true",
+               
                success : function(camps) {
-                  console.log(camps.lists[1]);
-                  if (camps == null){
-                     $('.camp-list').append(``);
-                  }
-                  if(camps != null)
+            	   if (camps.lists.length <10){
+                       if(flag == true){
+                         $(".camp-list").append('<div class="alert-text">존재하는 데이터가 없습니다</div>')
+                       }
+                         flag = false;
+                      }
+
+            	   else{
                   for(var i=0; i<camps.lists.length; i++){
                      var camping = camps.lists[i];
                      
@@ -190,7 +204,7 @@ $(function(){
                               height="150">
                         </div>
                         <div class="content-container">
-                           <div class="${title} map-title">
+                           <div class="${title}">
                            <a href="detail?id=${camping.id }">${camping.name }</a>
                            </div>
                            <div class="local" style="color: rgb(0, 140, 236);">${camping.address }</div>
@@ -223,6 +237,7 @@ $(function(){
                   `);
                       
                   }
+            	   };
                }
            });
            };
@@ -234,6 +249,7 @@ $(function(){
 });
 
 
+        
   
 
 window.addEventListener("load",function(){
@@ -245,15 +261,15 @@ window.addEventListener("load",function(){
 campList.addEventListener("click",function(e){ 
 
   if (event.target.className == "icons list-map"
-							  || event.target.className == "fas fa-map-marker-alt"
-							  || event.target.className == "icon"
-							  || event.target.className == "map-span") {
-	// if (event.target.className == "icons list-map"
+                       || event.target.className == "fas fa-map-marker-alt"
+                       || event.target.className == "icon"  
+                       || event.target.className == "map-span") {
+   // if (event.target.className == "icons list-map"
 // ||"fas fa-map-marker-alt"
 // ||"icon"
 // ||"map-span") {
 
-	  var target = event.target;
+     var target = event.target;
       
       for(var i=0; i<4 ;i++){
           target = target.parentElement; 
@@ -271,31 +287,29 @@ campList.addEventListener("click",function(e){
   var mapTitle=title.innerText;
         var latitude = parseFloat(latitudeText.innerText);
         var longitude = parseFloat(longitudeText.innerText);
-
         console.log(latitude);
         console.log(longitude);
 
         mapTest.classList.remove("hide");
 
-
             var mapContainer = document.getElementById('map'), // 지도를 표시할 div
         
                 mapOption = {
                     center: new kakao.maps.LatLng(latitude, longitude), // 지도의
-																		// 중심좌표
+                                                      // 중심좌표
                     level: 3 // 지도의 확대 레벨
                 };
         
             var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
             var arriveSrc = 'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/blue_b.png', // 도착
-																									// 마커이미지
-																									// 주소입니다
+                                                                           // 마커이미지
+                                                                           // 주소입니다
                 arriveSize = new kakao.maps.Size(50, 45), // 도착 마커이미지의 크기입니다
                 arriveOption = {
                     offset: new kakao.maps.Point(15, 43) // 도착 마커이미지에서 마커의
-															// 좌표에 일치시킬 좌표를
-															// 설정합니다 (기본값은 이미지의
-															// 가운데 아래입니다)
+                                             // 좌표에 일치시킬 좌표를
+                                             // 설정합니다 (기본값은 이미지의
+                                             // 가운데 아래입니다)
                 };
         
             // 도착 마커 이미지를 생성합니다
@@ -326,8 +340,8 @@ campList.addEventListener("click",function(e){
                 + '<span class="map-title">'+mapTitle+'</span>'
                 + '</div>';
             iwPosition = new kakao.maps.LatLng(latitude, longitude); // 인포윈도우
-																		// 표시
-																		// 위치입니다
+                                                      // 표시
+                                                      // 위치입니다
         
             // 인포윈도우를 생성합니다
             var customOverlay = new kakao.maps.CustomOverlay({
@@ -352,6 +366,9 @@ mapsExit.addEventListener("click", function (e) {
 });
 
 
+
+        
+   
 
         
    

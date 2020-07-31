@@ -12,9 +12,23 @@ public class Board {
 	private int hit;
 	private int like;
 	private String del;
+	
 	public Board() {
 		// TODO Auto-generated constructor stub
 	}
+	
+	public Board(int id, String title, String content, String writer, Date regDate, int hit, int like, String del) {
+		super();
+		this.id = id;
+		this.title = title;
+		this.content = content;
+		this.writer = writer;
+		this.regDate = regDate;
+		this.hit = hit;
+		this.like = like;
+		this.del = del;
+	}
+	
 	public int getId() {
 		return id;
 	}
@@ -63,24 +77,11 @@ public class Board {
 	public void setDel(String del) {
 		this.del = del;
 	}
-	public Board(int id, String title, String content, String writer, Date regDate, int hit, int like, String del) {
-		super();
-		this.id = id;
-		this.title = title;
-		this.content = content;
-		this.writer = writer;
-		this.regDate = regDate;
-		this.hit = hit;
-		this.like = like;
-		this.del = del;
-	}
+	
 	@Override
 	public String toString() {
-		return "Board [id=" + id + ", title=" + title + ", content=" + content + ", writer=" + writer + ", hit=" + hit
-				+ ", like=" + like + ", del=" + del + "]";
+		return "Board [id=" + id + ", title=" + title + ", content=" + content + ", writer=" + writer + ", regDate="
+				+ regDate + ", hit=" + hit + ", like=" + like + ", del=" + del + "]";
 	}
 	
-	
-	
-	
-	}
+}
