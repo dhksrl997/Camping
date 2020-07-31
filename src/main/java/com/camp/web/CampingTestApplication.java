@@ -10,4 +10,5 @@ public class CampingTestApplication {
 		SpringApplication.run(CampingTestApplication.class, args);
 	}
 
+
 }

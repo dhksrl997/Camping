@@ -7,6 +7,7 @@ import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 import com.camp.web.entity.Camp;
 import com.camp.web.entity.Comment;
@@ -47,6 +48,29 @@ public interface CampDao {
    
    @Delete("DELETE from comment where id = '${commentId}';")
    int deleteComment(String commentId);
-//   
    
+   @Select("SELECT * from camper where name = '${content}'")
+   List<Camp> getPopup(String content);
+   
+
+// admin
+   @Select("SELECT * FROM camper LIMIT 20")
+   List<Camp> list() throws ClassNotFoundException, SQLException;
+   
+   @Select("SELECT * FROM camper LIMIT ${index}")
+   List<Camp> listNum(int index) throws ClassNotFoundException, SQLException;
+   
+   @Select("SELECT COUNT(*) FROM camper")
+   int campIndex() throws ClassNotFoundException, SQLException;
+   
+   @Select("SELECT * FROM camper Where name LIKE '%${query}%' || address LIKE '%${query}%' ||phone LIKE '%${query}%'  || faclity LIKE '%${query}%'  LIMIT 20")
+   List<Camp> adminSearch(String query) throws ClassNotFoundException, SQLException;
+
+   @Select("SELECT *FROM camper where id = '${id}'")
+   List<Camp> selectDetail(String id);
+
+   @Update("UPDATE camper SET name='${name}',latitude='${latitude}', longitude='${longitude}' , address='${address}',phone = '${phone}', parking='${parking}' ,faclity='${faclity}', price='${price}' where id=${id};")
+   int updateCamp(Camp camp);
+   
+  
 }	

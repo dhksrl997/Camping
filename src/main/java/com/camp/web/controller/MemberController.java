@@ -125,5 +125,4 @@ public class MemberController {
 			
 			return memberDao.updatePhone(phone,userId);
 		}
-	//
 }

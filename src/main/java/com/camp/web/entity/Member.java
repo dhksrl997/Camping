@@ -141,5 +141,4 @@ public class Member {
 				+ ", gender=" + gender + ", birthday=" + birthday + ", phone=" + phone + ", email=" + email + ", age="
 				+ age + ", modifiDate=" + modifiDate + "]";
 	}
-
 }

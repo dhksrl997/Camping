@@ -1,136 +1,61 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<!--<link rel="stylesheet" href="/css/reset.css">
- <link rel="stylesheet" href="/css/admin/camplist.css"> -->
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" 
-        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<script src="/js/admin/listSelect.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <div class="adminConWrap">
-        <div class="infoWrap">
-            <h1 class="adminConTit">캠핑장 목록</h1>
-            <button type="button">등록하기</button>
-        </div>
-        <div class="conListWrap">
-            <section class="printCount">
-                총 캠핑장 수 : 0
-                <select id="listNum-select" name="listNum-select" mode="1">
-                    <option value="20">20개 보기</option>
-                    <option value="60">60개 보기</option>
-                    <option value="150">150개 보기</option>
-                    <option value="300">300개 보기</option>
-                </select>
-            </section>
-            <table class="boardList">
-                <thead class="placeList">
-                    <tr>
-                        <td>No.</td>
-                        <td>캠핑장 상호</td>
-                        <td>캠핑장 주소</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>No.</td>
-                        <!-- <a href="" onclick="window.open(this.href, '_blank', 'width=960px, height=700px, tollbars=no, scrollbars=no'); return false"> -->
-                        <td><a href=""><b>캠핑장 상호명 db </b></a></td>
-                        <td>캠핑장 주소 db 내용</td>
-                    </tr>
-                    <tr>
-                        <td>No.</td>
-                        <td><a href=""><b>캠핑장 상호명 db </b></a></td>
-                        <td>캠핑장 주소 db 내용</td>
-                    </tr>
-                    <tr>
-                        <td>No.</td>
-                        <td><a href=""><b>캠핑장 상호명 db </b></a></td>
-                        <td>캠핑장 주소 db 내용</td>
-                    </tr>
-                    <tr>
-                        <td>No.</td>
-                        <td><a href=""><b>캠핑장 상호명 db </b></a></td>
-                        <td>캠핑장 주소 db 내용</td>
-                    </tr>
-                    <tr>
-                        <td>No.</td>
-                        <td><a href=""><b>캠핑장 상호명 db </b></a></td>
-                        <td>캠핑장 주소 db 내용</td>
-                    </tr>
-                    <tr>
-                        <td>No.</td>
-                        <td><a href=""><b>캠핑장 상호명 db </b></a></td>
-                        <td>캠핑장 주소 db 내용</td>
-                    </tr>
-                    <tr>
-                        <td>No.</td>
-                        <td><a href=""><b>캠핑장 상호명 db </b></a></td>
-                        <td>캠핑장 주소 db 내용</td>
-                    </tr>
-                    <tr>
-                        <td>No.</td>
-                        <td><a href=""><b>캠핑장 상호명 db </b></a></td>
-                        <td>캠핑장 주소 db 내용</td>
-                    </tr>
-                    <tr>
-                        <td>No.</td>
-                        <td><a href=""><b>캠핑장 상호명 db </b></a></td>
-                        <td>캠핑장 주소 db 내용</td>
-                    </tr>
-                    <tr>
-                        <td>No.</td>
-                        <td><a href=""><b>캠핑장 상호명 db </b></a></td>
-                        <td>캠핑장 주소 db 내용</td>
-                    </tr>
-                    <tr>
-                        <td>No.</td>
-                        <td><a href=""><b>캠핑장 상호명 db </b></a></td>
-                        <td>캠핑장 주소 db 내용</td>
-                    </tr>
-                    <tr>
-                        <td>No.</td>
-                        <td><a href=""><b>캠핑장 상호명 db </b></a></td>
-                        <td>캠핑장 주소 db 내용</td>
-                    </tr>
-                    <tr>
-                        <td>No.</td>
-                        <td><a href=""><b>캠핑장 상호명 db </b></a></td>
-                        <td>캠핑장 주소 db 내용</td>
-                    </tr>
-                    <tr>
-                        <td>No.</td>
-                        <td><a href=""><b>캠핑장 상호명 db </b></a></td>
-                        <td>캠핑장 주소 db 내용</td>
-                    </tr>
-                    <tr>
-                        <td>No.</td>
-                        <td><a href=""><b>캠핑장 상호명 db </b></a></td>
-                        <td>캠핑장 주소 db 내용</td>
-                    </tr>
-                    <tr>
-                        <td>No.</td>
-                        <td><a href=""><b>캠핑장 상호명 db </b></a></td>
-                        <td>캠핑장 주소 db 내용</td>
-                    </tr>
-                    <tr>
-                        <td>No.</td>
-                        <td><a href=""><b>캠핑장 상호명 db </b></a></td>
-                        <td>캠핑장 주소 db 내용</td>
-                    </tr>
-                    <tr>
-                        <td>No.</td>
-                        <td><a href=""><b>캠핑장 상호명 db </b></a></td>
-                        <td>캠핑장 주소 db 내용</td>
-                    </tr>
-                    <tr>
-                        <td>No.</td>
-                        <td><a href=""><b>캠핑장 상호명 db </b></a></td>
-                        <td>캠핑장 주소 db 내용</td>
-                    </tr>
-                    <tr>
-                        <td>No.</td>
-                        <td><a href=""><b>캠핑장 상호명 db </b></a></td>
-                        <td>캠핑장 주소 db 내용</td>
-                    </tr>
-                </tbody>
-              </table>
-        </div>
-        
-    </div>
+<div class="adminConWrap">
+   
+   <div class="infoWrap">
+      <h1 class="adminConTit">캠핑장 목록</h1>
+      <div class="searchWrap">
+         <form action="/admin/camplist" method="POST">
+            <input type="text" name="search" value=""> 
+            <input type="submit" value="" style="display:none;">
+            <i class="fas fa-search search-icon"></i>
+         </form>
+      </div>
+      <button type="button" onclick="location.href='campreg'">등록하기</button>
+   </div>
+
+   <div class="conListWrap">
+      <section class="printCount">
+         <c:if test="${exist == null}">
+         총 캠핑장 수 : ${index}  
+         </c:if>
+         <c:if test="${exist != null}">
+         검색 결과  : ${index}
+         </c:if>
+            <select id="listNum" name="listNumSelect" >
+               <option value="20" >20개 보기</option>
+               <option value="60" >60개 보기</option>
+               <option value="150" >150개 보기</option>
+               <option value="300" >300개 보기</option>
+               <option value="500" >500개 보기</option>
+               <option value="800" >800개 보기</option>
+            </select>
+      </section>
+      <table class="boardList">
+         <thead class="boardList">
+            <tr>
+               <td>No.</td>
+               <td>캠핑장 상호</td>
+               <td>캠핑장 주소</td>
+               <td>운영시간</td>
+               <td>연락처</td>
+            </tr>
+         </thead>
+         <tbody>
+            <c:forEach var="camp" items="${camplist}">
+               <tr>
+                  <td>${camp.id}</td>
+                  <td><a href="/admin/campedit?id=${camp.id}"><b>${camp.name}</b></a></td>
+                  <td>${camp.address}</td>
+                  <td>${camp.open}</td>
+                  <td>${camp.phone}</td>
+               </tr>
+            </c:forEach>
+         </tbody>
+      </table>
+   </div>
+
+</div>

@@ -8,11 +8,29 @@ a {
 	text-decoration: none;
 	color: black;
 }
-
+input:focus {
+	outline:none;
+}
 .adminConWrap {
     margin: 100px auto;
     width: 1200px;
 }   
+    .searchWrap {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin-left: 600px;
+    }
+        input[type="text"] {
+            border: none;
+            border-bottom: 2px solid black;
+            height: 36px;
+            padding-left: 4px;
+        }
+        i.fas.fa-search.search-icon {
+            margin-left: 7px;
+        }
+
     .infoWrap {
         display: flex;
         justify-content: space-between;
@@ -40,10 +58,6 @@ a {
             padding: 15px 0;
             border-top: 2px dotted dimgray;
         }
-            .listNum-select option {
-                font-weight: normal;
-                display: block;
-            }
         .boardList {
             width: 1200px;
         }

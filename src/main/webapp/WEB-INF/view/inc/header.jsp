@@ -30,7 +30,3 @@
 			<li><a href="/member/logout">로그아웃</a></li>
 		</ul>
 </section>
-
-
-
-

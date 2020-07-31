@@ -1,4 +1,3 @@
-
 $(function(){
    let index=0;
    let topBtn = $('.top-btn');
@@ -50,7 +49,6 @@ $(function(){
                   <span class="rec-address"> ${rec.address } </span>
                </div>
             </div>
-
    `);
                  
               };
@@ -147,9 +145,7 @@ $(function(){
             </div>
             <div id="map" class="map hide">
                         <div class="maps-exit">Exit
-
                         </div>
-
                     </div>
                     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=6d381a3bf90a679a591c3eb39a8edfe8"></script>
          </div>
@@ -214,9 +210,7 @@ $(function(){
             </div>
             <div id="map" class="map hide">
                         <div class="maps-exit">Exit
-
                         </div>
-
                     </div>
                     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=6d381a3bf90a679a591c3eb39a8edfe8"></script>
          </div>
@@ -351,9 +345,3 @@ mapsExit.addEventListener("click", function (e) {
 });
 
 });
-
-
-
-        
-   
-    
