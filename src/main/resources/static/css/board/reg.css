@@ -1,0 +1,259 @@
+@charset "UTF-8";
+@import url("list.css");
+@font-face {
+   font-family: 'S-CoreDream-3Light';
+   src:
+      url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff')
+      format('woff');
+   font-weight: normal;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'Recipekorea';
+   src:
+      url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/Recipekorea.woff')
+      format('woff');
+   font-weight: normal;
+   font-style: normal;
+}
+
+
+.title-wrapper{
+	width:400px;
+	display:flex;	
+	align-items:center;
+	
+}
+
+.reg-title{
+	width:300px;
+	height:30px;
+	background-color:#f1f1f1;
+}
+
+
+.reg-message{
+	display:flex;
+	align-items:center;
+    background-color: rgb(226, 225, 225);
+	width:100%;
+	height:300px;
+	font-size:100px;
+	font-family:Recipekorea;
+	margin-top:100px;
+}
+
+.reg-message2{
+	margin-top:100px;
+	font-family:S-CoreDream-3Light;
+	font-size:30px;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+
+.side-message1{
+	position : absolute;
+	font-size: 100px;
+	font-family: S-CoreDream-3Light;
+	font-weight:bold;
+	right: 120px;
+	top: 400px;  
+	writing-mode: vertical-rl;
+	
+}
+
+.side-message2{
+	position : absolute;
+	font-size: 100px;
+	font-family: S-CoreDream-3Light;
+	font-weight:bold;
+	right: 240px;
+	top: 600px;  
+	writing-mode: vertical-rl;
+	
+}
+
+.reg-box{
+	margin-top:50px;
+ margin-left:500px;
+}
+
+
+.content{
+	-moz-appearance: textfield-multiline;
+    -webkit-appearance: textarea;
+    border: 1px solid gray;
+    font: medium -moz-fixed;
+    font: -webkit-small-control;
+    overflow: auto;
+    padding: 2px;
+	resize: both;
+	width: 900px;
+	height: 400px;
+	font-size: 20px;
+	background:#f8f8f8;
+	
+}
+
+
+.filebox {
+	display:inline-block;
+	margin-right: 10px;
+  }
+  
+  
+  .filebox label {
+	display: inline-block;
+	padding: .5em .75em;
+	color: #999;
+	font-size: inherit;
+	line-height: normal;
+	vertical-align: middle;
+	background-color: #fdfdfd;
+	cursor: pointer;
+	border: 1px solid #ebebeb;
+	border-bottom-color: #e2e2e2;
+	border-radius: .25em;
+  }
+   
+  .filebox input[type="file"] {  
+	position: absolute;
+	padding: 0;
+	margin: -1px;
+	top: 0px;
+	overflow: hidden;
+	border: 0;
+	left:27px;
+	top:10px;
+	z-index:50;
+  }
+.filebox.bs3-primary label {
+	color: #fff;
+	background-color: #337ab7;
+	  border-color: #2e6da4;
+	  z-index:100;
+  }
+  
+.submit-box{
+	
+	display:flex;
+	justify-content:center;
+	margin-left:auto;
+	margin-right:auto;
+	
+}  
+  
+#submit{
+	width:50px;
+	height:30px;
+	font-size:20px;
+	margin-left:350px;
+  }
+
+.bs3-primary{
+	position:relative;
+
+
+}
+
+.wrapper{
+	display:flex;
+}
+
+.reg-search{
+	margin-left:30px;
+	display:flex;
+	align-itmes:center;
+	height:40px;
+	
+}
+.reg-search>div{
+	font-family: S-CoreDream-3Light;
+	font-size:20px;
+}
+.reg-search-box{
+	background-color:#f1f1f1;
+	width:300px;
+	height:30px;
+	font-family: S-CoreDream-3Light;
+	font-size:30px;
+}
+
+.searched-list{
+	width:100%;
+	font-size:25px;
+	font-weight:bold;
+	height:300px;
+	display:flex;
+	
+}
+
+.searched-content{
+	margin-left:30px;
+	
+}
+
+.searched-content div{
+	height:120px;
+}
+
+.popup{
+	width:600px;
+	max-height:500px;
+	background-color:#f2f2f2;
+	position:absolute;
+	left:650px;
+	top:600px;
+	display:flex;
+	font-family: Recipekorea;
+	overflow-Y:auto;
+
+}
+.popup-title{
+	
+	font-size:30px;
+	width:100%;
+	
+	
+}
+
+.popup-list-title{
+	border-top:2px solid black;
+	padding-top:10px;
+	text-align:left;
+	font-size:20px;
+	width:100%;
+	margin-top:20px;
+	padding-bottom:5px;
+	border-bottom:2px solid black;
+	
+}
+
+.popup-list-title li{
+	margin-bottom:15px;
+	border-bottom:2px solid black;
+}
+
+.popup-list-title li:hover{
+	cursor:pointer;
+}
+
+.close{
+	padding-left: 550px;
+}
+
+.close:hover{
+	cursor:pointer;
+}
+
+.insertTitle{
+	font-size:25px;
+	font-family: Recipekorea;
+	text-align:center;
+	
+}
+/* body{
+	filter:blur(10px);
+} */
