@@ -8,16 +8,6 @@
    font-style: normal;
 }
 
-/* @font-face {
-   font-family: 'Recipekorea';
-   src:
-      url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/Recipekorea.woff')
-      format('woff');
-   font-weight: normal;
-   font-style: normal;
-} */
-
-
 a{
 	text-decoration: none;
 }
@@ -40,12 +30,11 @@ a:hover{
 		.title-style {
 			position: absolute;
 			z-index: 1;
-			top: 220px;
+			top: 140px;
 			text-align: center;
-			font-size: 3.5rem;
+			font-size: 3.8rem;
 			font-weight: bold;
 			font-family: 'S-CoreDream-3Light';
-			color: white;
 		}
 
 		.bgimgWrap {
@@ -53,7 +42,7 @@ a:hover{
             left: 0;
             top: 0;
             width: 100%;
-			height: 94%;
+			height: 80%;
 			overflow: hidden;
 		}
 			.backgroundimg {
@@ -65,14 +54,14 @@ a:hover{
 				height: auto;
 				min-height: 100%;
 				position: absolute;
-				background: url(../../images/sleepingPads-cover.jpg) no-repeat center; 
+				background: url(../../images/boardmain2.jpg) no-repeat center; 
 				background-size: cover;
-				background-attachment: fixed;
+				--background-attachment: fixed;
 			}
 			
 .contentWrap {
 	width:1170px;
-	margin: 60px auto;
+	margin: 0px auto;
 }
 	.table-box{
 		width: 100%;
@@ -84,19 +73,13 @@ a:hover{
 	.table-box tr {
 		font-size: 15px;
 	}
-	.table>tbody tr td{
+	.table-box tr td{
 		table-layout: fixed;
 		white-space: nowrap;
 		word-break: break-all;
 		height: 37px;
 		overflow: hidden;
 	}
-	/* .table>tbody tr td:nth-child(3){
-		width: 100px;
-	}
-	.table>tbody tr td:nth-child(4){
-		width: 100px;
-	} */
 
 	.text-center {
 		margin: 40px 0;

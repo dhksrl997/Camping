@@ -18,7 +18,7 @@
 
 	<c:if test="${param.cate =='review' }">
 		<div class="main-background">
-			<h1>후기게시판</h1>
+			<h1 class="title-style">후기게시판</h1>
 			<div class="bgimgWrap">
 				<div class="backgroundimg"></div>
 			</div>
