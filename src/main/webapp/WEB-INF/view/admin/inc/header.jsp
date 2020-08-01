@@ -6,7 +6,7 @@
 
 <header class="header">
 	<ul class="gnb">
-		<li class="campniclogo">
+		<li class="campniclogo" onclick="location.href='/index';">
 			<img src="../images/indexlogo.png" width="230px">
 		</li>
 		<li>

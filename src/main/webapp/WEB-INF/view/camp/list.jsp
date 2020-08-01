@@ -33,6 +33,11 @@
                         <div class="d-none latitude">${rs.latitude}</div>
                              <div class="d-none longitude">${rs.longitude}</div>
                      </div>
+							</div>
+                     <div class="icons message-icons">
+							<div class="icon message-icon">
+								<i class="fas fa-book message-text"></i> <span>쪽지</span>
+						</div>
                   </div>
                  
                </div>
@@ -113,18 +118,37 @@
                      <div class="d-none latitude">${camp.latitude}</div>
                              <div class="d-none longitude">${camp.longitude}</div>
                   </div>
+                  
                </div>
-               
+               <div class="icons message-icons">
+							<div class="icon message-icon">
+								<i class="fas fa-book message-text"></i> <span>쪽지</span>
+						</div>
                
             </div>
-            <div id="map" class="map hide">
-                        <div class="maps-exit">Exit
+            
+							<div id="message" class="message hide">
+								<div class="message-exit">Exit</div>
+									<div class="message-campName"></div>
+									
+								<div class="writing_area">
+								<textarea id="writeNote" style="resize:none;" onkeyup="nWrite.checkContentLength();" rows="5" cols="55" title="쪽지 내용을 입력해 주세요."></textarea>
+								<div class="button-area">
+								<button>전송</button>
+								<button class="message-cancel">취소</button>
+								</div>
+							</div>
+							</div>
+								<div id="map" class="map hide">
+									<div class="maps-exit">Exit</div>
 
-                        </div>
+								</div>
+								<script type="text/javascript"
+									src="//dapi.kakao.com/v2/maps/sdk.js?appkey=6d381a3bf90a679a591c3eb39a8edfe8"></script>
+							</div>
 
-                    </div>
-                    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=6d381a3bf90a679a591c3eb39a8edfe8"></script>
-         </div>
+
+						</div>
       </section>
          
       </c:forEach>

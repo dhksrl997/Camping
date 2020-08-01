@@ -43,12 +43,12 @@ body {
 
 .about-wrap {
    text-align: left;
-   padding: 150px 0px 110px 47px
+   padding: 120px 0px 110px 25px;
 }
 
 .about-wrap .atitle {
-   font-family: 'SangSangShinb7',  ï¿½ï¿½ ï¿½ï¿½ê³ ë”•, ê³ ë”•;
-   font-size: 84px; 
+   font-family: 'SangSangShinb7',°íµñ,°íµñ;
+   font-size: 87px; 
    --font-weight: bold;
    padding-bottom: 20px;
 }

@@ -180,3 +180,8 @@ right:0px;
 	justify-content: center;
 	align-items: center;
 }
+.message-new {
+   right: 34px;
+    top: 5px;
+    position: absolute;
+}

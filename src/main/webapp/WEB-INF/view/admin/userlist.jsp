@@ -47,7 +47,7 @@
                     <td><a href=""><b>${member.uid}</b></a></td>
                     <td>${member.regDate}</td>
                     <td>${member.name}</td>
-                    <td>${member.phone}</td>s
+                    <td>${member.phone}</td>
                 </tr>
             </c:forEach>    
             </tbody>

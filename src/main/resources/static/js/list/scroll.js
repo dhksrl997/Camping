@@ -145,7 +145,10 @@ $(function(){
                              <div class="d-none longitude">${search.longitude}</div>
                   </div>
                </div>
-              
+              <div class="icons message-icons">
+							<div class="icon message-icon">
+								<i class="fas fa-book message-text"></i> <span>쪽지</span>
+						</div>
                
             </div>
             <div id="map" class="map hide">
@@ -164,24 +167,29 @@ $(function(){
         }
         
         function fetchlist(){
-              let title = "";
-              let sessionValue=localStorage.getItem('darkmode');
-              if(sessionValue == "false"){
-                   title = "title";
-                }
-                else if(sessionValue == "true"){
-                   title = "title2"; 
-                }
+          let title = "";
+           let sessionValue=localStorage.getItem('darkmode');
+           if(sessionValue == "false"){
+                title = "title";
+             }
+             else if(sessionValue == "true"){
+                title = "title2"; 
+             }
            $.ajax({
                type: "get",
                url : "/camp/getlist?reg="+searchParam('reg')+"&index="+index,
-               async:"false",
+               async:"true",
+               
                success : function(camps) {
-                  console.log(camps.lists[1]);
-                  if (camps == null){
-                     $('.camp-list').append(``);
-                  }
-                  if(camps != null)
+                  if (camps.lists.length <10){
+                       if(flag == true){
+                         $(".camp-list").append('<div class="alert-text">존재하는 데이터가 없습니다</div>')
+                       }
+                         flag = false;
+                      }
+
+                  else{
+
                   for(var i=0; i<camps.lists.length; i++){
                      var camping = camps.lists[i];
                      
@@ -205,8 +213,12 @@ $(function(){
                              <div class="d-none latitude">${camping.latitude}</div>
                              <div class="d-none longitude">${camping.longitude}</div>
                   </div>
+                  
                </div>
-             
+             <div class="icons message-icons">
+							<div class="icon message-icon">
+								<i class="fas fa-book message-text"></i> <span>쪽지</span>
+						</div>
                
             </div>
             <div id="map" class="map hide">
@@ -216,12 +228,14 @@ $(function(){
                     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=6d381a3bf90a679a591c3eb39a8edfe8"></script>
          </div>
       </section>
-                  `);
+                     `);
                       
                   }
+                  };
                }
            });
            };
+
            
            function searchParam(key) {
                 return new URLSearchParams(location.search).get(key);
@@ -238,8 +252,41 @@ window.addEventListener("load",function(){
     var mapsExit = document.querySelector(".maps-exit");
     var campList = document.querySelector(".camp-list");
     
+    var message = document.querySelector(".message");
+     var messageExit = document.querySelector(".message-exit");
+     var messageCancle = document.querySelector(".message-cancel");
+     
 campList.addEventListener("click",function(e){ 
 
+console.log(event.target.className);
+  if (event.target.className == "icons list-map"
+							    || event.target.className == "icons message-icons"
+                               || event.target.className == "icons message-icon"
+                               || event.target.className == "fas fa-book message-text") {
+                               
+			
+                                var target2 = event.target;
+                                        for(var i=0; i<4 ;i++){
+                                            target2 = target2.parentElement; 
+                                            if(target2.className=="icon-list")
+                                            i=4;
+                                            //console.log(target2);
+                                                    
+                                    }
+                                    var messageCampName = document.querySelector(".message-campName");
+                                              var target2Sibling =target2.previousElementSibling;
+                                                    var title2 = target2Sibling.querySelector(".map-title");
+                                                    var messageTitle2=title2.innerText;
+                                                    
+                                                   messageCampName.innerText=messageTitle2+"에게 보내기";
+                                    $(".content-container").css({"filter": "blur(10px)"});
+                                    $(".img").css({"filter": "blur(10px)"});
+                                    $(".list-map").css({"filter": "blur(10px)"});
+                                    $(".message-icons").css({"filter": "blur(10px)"});
+                                    
+                                    message.classList.remove("hide");
+                                }
+							  
   if (event.target.className == "icons list-map"
 							  || event.target.className == "fas fa-map-marker-alt"
 							  || event.target.className == "icon"
@@ -250,7 +297,6 @@ campList.addEventListener("click",function(e){
 // ||"map-span") {
 
 	  var target = event.target;
-      
       for(var i=0; i<4 ;i++){
           target = target.parentElement; 
           if(target.className=="icon-list")
@@ -336,6 +382,8 @@ campList.addEventListener("click",function(e){
         
     // console.log(place);
     // console.log(place.innerText);
+    
+   
     });
 
 
@@ -343,6 +391,23 @@ campList.addEventListener("click",function(e){
 
 mapsExit.addEventListener("click", function (e) {
         mapTest.classList.add("hide");
+});
+
+messageExit.addEventListener("click", function (e) {
+    message.classList.add("hide");
+      $(".content-container").css({"filter": "blur(0px)"});
+                                    $(".img").css({"filter": "blur(0px)"});
+                                    $(".list-map").css({"filter": "blur(0px)"});
+                                    $(".message-icons").css({"filter": "blur(0px)"});
+                                    
+});
+
+messageCancle.addEventListener("click", function (e) {
+    message.classList.add("hide");
+      $(".content-container").css({"filter": "blur(0px)"});
+                                    $(".img").css({"filter": "blur(0px)"});
+                                    $(".list-map").css({"filter": "blur(0px)"});
+                                    $(".message-icons").css({"filter": "blur(0px)"});
 });
 
 });

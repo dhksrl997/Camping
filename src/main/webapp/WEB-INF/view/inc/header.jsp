@@ -16,6 +16,8 @@
 		</form>
 		<i class="fas fa-search search-icon"></i>
 		<s:authorize access="isAuthenticated()">
+		<!-- 메시지 알림이 왔을 때 뜨는 new 아이콘 -->
+         <img class="message-new" src="/images/new.png" width="22px"/>
 			<li class="header-login"><a class="header-name">${sessionScope.userName}</a></li>
 		</s:authorize>
 		
@@ -28,5 +30,8 @@
 		<ul class="header-mypage" style="background-color:black; color:white">
 			<li><a href="/member/editProfile">정보수정</a></li>
 			<li><a href="/member/logout">로그아웃</a></li>
+			<s:authorize access="hasRole('ROLE_ADMIN')">
+			<li><a href="/admin/camplist">관리자페이지</a></li>
+		</s:authorize>
 		</ul>
 </section>
