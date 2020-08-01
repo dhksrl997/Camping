@@ -1,0 +1,170 @@
+/* font-family: 'Bangers', cursive; */
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+
+body {
+   margin: 0;
+   overflow: hidden;
+}
+
+a {
+   text-decoration: none;
+   color: black;
+}
+
+.button_wrapper {
+   margin-left: 500px;
+}
+
+/* ************************************* */
+.container {
+   position: relative;
+   overflow: hidden;
+   width: 100%;
+   height: 909px;
+}
+.active {
+   height: 850px;
+   transition: .7s;
+   z-index: 2;
+   opacity: 1;
+}
+.img1 {
+   width: 100%;
+   height: 100%;
+   position: absolute;
+   background: url(https://t1.daumcdn.net/cfile/blog/99A54D4F5A65006511) no-repeat center;
+   background-size: cover;
+   top: 0%;
+   transition: 1s;
+}
+.img2 {
+   width: 100%;
+   height: 100%;
+   position: absolute;
+    background: url(../images/main-bn2.jpg) no-repeat center; 
+   background-size: cover;
+   top: 100%;
+   transition: 1s;
+}
+.img3 {
+   width: 100%;
+   height: 100%;
+   position: absolute;
+   background: url(../images/main-bn3.jpg) no-repeat center;
+   background-size: cover;
+   top: 200%;
+   transition: 1s;
+   display: flex;
+   justify-content: center;
+}
+.img4 {
+   width: 100%;
+   height: 100%;
+   position: absolute;
+   background: url(https://s3.amazonaws.com/imagescloud/images/medias/camping/camping-groupe.jpg) no-repeat center;
+   background-size: cover;
+   top: 200%;
+   transition: 1s;
+   display: flex;
+   justify-content: center;
+}
+.numbutton {
+   position: absolute;
+   top: 45%;
+   left: 2%;
+   z-index: 3;
+   color: white;
+   font-size: 20px;
+   display: inline;
+}
+.number {
+   padding-bottom: 24px;
+}
+
+/* ******************************* */
+
+.indexConWrap {
+   position: absolute;
+    top: 20%;
+    left: 18%;
+}
+   .txt-block>.t1 {
+      margin-bottom: 22px;
+      font-size: 32px;
+      letter-spacing: -2px;
+   }
+   .txt-block>.t2 {
+      line-height: 27px;
+      font-size: 17px;
+      margin-bottom: 40px;
+   }
+   .indexCon-maintit {
+      font-size: 130px;
+      color: white;
+      --font-family: fantasy;
+      font-family: 'Bangers', cursive;
+      line-height: 1;
+      margin-left: -30px;
+      margin-top: -10px;
+      padding-bottom: 40px;
+      opacity: 0.87;
+      /* letter-spacing: -3.4px; */
+      /* mix-blend-mode: screen;*/
+   }
+   .indexCon-tit {
+      font-size: 50px;
+      font-family: cursive;
+      letter-spacing: -3.4px;
+      padding-bottom: 40px;
+      opacity: 0.7;
+   }
+      .btnbg {
+         background-color: black;
+         opacity: 0.9;
+         width: fit-content;
+         padding: 10px 20px;
+      }
+      .btnMoreText {
+         color: white;
+      }
+
+   .instaConWrap {
+      position: absolute;
+      top: 20%;
+      left: 18%;
+   }
+      .txt-block-insta {
+         display: flex;
+      }
+      .instaCon-tit {
+         font-size: 50px;
+         font-family: cursive;
+         letter-spacing: -3.4px;
+         /* padding-bottom: 40px; */
+         opacity: 0.8;
+      }
+      .iconinsta {
+         padding-left: 12px;
+         opacity: 0.7;
+      }
+
+   .instaWrap {
+      margin-top: 290px;
+      display: flex;
+      flex-direction: column;
+   }
+      .instabox {
+         width: 1000px;
+         display: flex;
+         margin-bottom: 25px;
+         justify-content: space-between;
+      }
+      .instaimg {
+         width: 230px;
+         height: 230px; 
+      }
+      
+      .numbutton li{
+         cursor:pointer;
+      }
+   

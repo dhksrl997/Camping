@@ -1,0 +1,92 @@
+@charset "UTF-8";
+@font-face {
+   font-family: 'S-CoreDream-3Light';
+   src:
+      url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff')
+      format('woff');
+   font-weight: normal;
+   font-style: normal;
+}
+
+a{
+	text-decoration: none;
+}
+a:hover{
+	text-decoration: none; 
+}
+
+.board-headerWrap {
+	position: relative;
+    width: 100%;
+	height: 400px;
+	background-repeat: no-repeat;
+	background-position: 0 50%;
+	background-size: cover;
+ }
+	.main-background {
+		width:1170px;
+		margin: 0 auto;
+	} 
+		.title-style {
+			position: absolute;
+			z-index: 1;
+			top: 140px;
+			text-align: center;
+			font-size: 3.8rem;
+			font-weight: bold;
+			font-family: 'S-CoreDream-3Light';
+		}
+
+		.bgimgWrap {
+			position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+			height: 80%;
+			overflow: hidden;
+		}
+			.backgroundimg {
+				top: 0;
+				left: 50%;
+				width: 2000px;
+				max-width: none;
+				margin-left: -960px;
+				height: auto;
+				min-height: 100%;
+				position: absolute;
+				background: url(../../images/boardmain2.jpg) no-repeat center; 
+				background-size: cover;
+				--background-attachment: fixed;
+			}
+			
+.contentWrap {
+	width:1170px;
+	margin: 0px auto;
+}
+	.table-box{
+		width: 100%;
+		text-align: center;
+	}
+	.thead-style>tr {
+		background-color: #ddd;
+	}
+	.table-box tr {
+		font-size: 15px;
+	}
+	.table-box tr td{
+		table-layout: fixed;
+		white-space: nowrap;
+		word-break: break-all;
+		height: 37px;
+		overflow: hidden;
+	}
+
+	.text-center {
+		margin: 40px 0;
+		
+	}
+		
+		
+.orange{
+	font-weight:bold;
+}

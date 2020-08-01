@@ -1,0 +1,61 @@
+@charset "UTF-8";
+
+@font-face {
+	font-family: 'Recipekorea';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/Recipekorea.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+html {
+	font-family: 'Recipekorea';
+}
+
+.section {
+	display: flex;
+	width: 90%;
+	height: 420px;
+	margin-top: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	justify-content: space-between;
+}
+
+.introduce {
+	padding-top: 50px;
+	width: 420px;
+	height: 400px;
+}
+
+.insta {
+	padding-top: 10px;
+}
+
+.content {
+	padding-left: 20px;
+	padding-top: 10px;
+	font-size: 25px;
+}
+
+.name {
+	font-size: 30px;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.introduce>ul>li {
+	margin-top: 30px;
+}
+.welecome{
+	font-size:70px;
+	padding-top:50px;
+	padding-bottom:50px;
+	text-align:center;
+}
+.contactLogo{
+	display:flex;
+	justify-content:center;
+}
