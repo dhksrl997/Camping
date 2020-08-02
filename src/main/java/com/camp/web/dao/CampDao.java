@@ -71,6 +71,10 @@ public interface CampDao {
 
    @Update("UPDATE camper SET name='${name}',latitude='${latitude}', longitude='${longitude}' , address='${address}',phone = '${phone}', parking='${parking}' ,faclity='${faclity}', price='${price}' where id=${id};")
    int updateCamp(Camp camp);
-   
+
+   @Insert("insert into letter (send,recieve,content) values(${id} , 1 , '${content}');")
+   Integer insertLetter(int id, String content);
+ 
+
   
 }	

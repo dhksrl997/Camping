@@ -258,7 +258,7 @@ window.addEventListener("load",function(){
      
 campList.addEventListener("click",function(e){ 
 
-console.log(event.target.className);
+//console.log(event.target.className);
   if (event.target.className == "icons list-map"
 							    || event.target.className == "icons message-icons"
                                || event.target.className == "icons message-icon"
@@ -273,11 +273,16 @@ console.log(event.target.className);
                                             //console.log(target2);
                                                     
                                     }
+                                    var messageCampId = document.querySelector(".message-camp-id");
                                     var messageCampName = document.querySelector(".message-campName");
                                               var target2Sibling =target2.previousElementSibling;
                                                     var title2 = target2Sibling.querySelector(".map-title");
                                                     var messageTitle2=title2.innerText;
-                                                    
+    												var campId = target2Sibling.querySelector(".camp-id");
+    												var campIdText = campId.innerText;
+    												//console.log(campIdText);                                     
+	                                                    
+                                                    messageCampId.innerText=campIdText;
                                                    messageCampName.innerText=messageTitle2+"에게 보내기";
                                     $(".content-container").css({"filter": "blur(10px)"});
                                     $(".img").css({"filter": "blur(10px)"});
@@ -285,6 +290,7 @@ console.log(event.target.className);
                                     $(".message-icons").css({"filter": "blur(10px)"});
                                     
                                     message.classList.remove("hide");
+                                  
                                 }
 							  
   if (event.target.className == "icons list-map"

@@ -60,6 +60,9 @@ public interface MemberDao {
 	
 	@Select("SELECT COUNT(*) FROM member Where uid LIKE '%${query}%' || name LIKE '%${query}%' ||phone LIKE '%${query}%'  || modifiDate LIKE '%${query}%' LIMIT 20")
     int userSearchIndex(String query);
+
+	@Select("SELECT id from member where uid = '${userName}';")
+	int getId(String userName);
 	
 
 	   

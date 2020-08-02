@@ -2,7 +2,7 @@
    pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <script defer src="/js/list/scroll.js"></script>
-<script defer src="/js/camp/list.js"></script>
+<script defer src="/js/list/message.js"></script>
 <link rel="stylesheet"
    href="https://use.fontawesome.com/releases/v5.13.1/css/all.css"
    integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q"
@@ -110,6 +110,7 @@
                   </div>
                   <div style="color: rgb(0, 140, 236);" class="local">${camp.address }</div>
                   <div class="comfor">${camp.faclity }</div>
+                  <div class="camp-id" style="display:none;">${camp.id}</div>
                </div>
                <div class="icon-list">
                <div class="icons list-map">
@@ -132,11 +133,12 @@
 									<div class="message-campName"></div>
 									
 								<div class="writing_area">
-								<textarea id="writeNote" style="resize:none;" onkeyup="nWrite.checkContentLength();" rows="5" cols="55" title="쪽지 내용을 입력해 주세요."></textarea>
+								<textarea id="writeNote" style="resize:none;" rows="5" cols="55" title="쪽지 내용을 입력해 주세요."></textarea>
 								<div class="button-area">
-								<button>전송</button>
+								<button class="message-send">전송</button>
 								<button class="message-cancel">취소</button>
 								</div>
+								<div class="message-camp-id" style="display:none;"></div>
 							</div>
 							</div>
 								<div id="map" class="map hide">

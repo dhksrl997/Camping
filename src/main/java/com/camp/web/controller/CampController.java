@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -126,6 +127,17 @@ public class CampController {
 
 		System.out.println(commentId);
 		return campDao.deleteComment(commentId);
+	}
+	
+	@PostMapping("message-data")
+	@ResponseBody
+	public Integer regData(HttpServletRequest request,String content) {
+		HttpSession session = request.getSession();
+		int id = (int)session.getAttribute("id");
+		System.out.println(id);
+		System.out.println(content);
+		return campDao.insertLetter(id,content);
+		
 	}
 
 }

@@ -49,6 +49,11 @@ public class MemberController {
 		System.out.println(userName);
 		String name = memberService.getName(userName , request);
 		
+		
+		//id저장
+		int id = memberDao.getId(userName);
+		session.setAttribute("id", id);
+		
 		return "redirect:/index";
 
 	}
