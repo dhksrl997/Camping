@@ -195,7 +195,7 @@ public class MemberController {
 //			System.out.println(send);
 //			System.out.println(recieve);
 //			System.out.println(content);
-			System.out.println(memberDao.insertResponseLetter(send, recieve, content));
+	
 			return memberDao.insertResponseLetter(send,recieve,content);
 		//	return null;
 		}
