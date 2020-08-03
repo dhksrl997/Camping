@@ -131,7 +131,7 @@ $(function(){
                      src="/images/${search.img1 }" width="200" height="150"></a>
                </div>
                <div class="content-container">
-                  <div class="${title} map-title">
+                  <div class="title2 map-title">
                      <a href="detail?id=${search.id }">${search.name }</a>
                   </div>
                   <div style="color: rgb(0, 140, 236);" class="local">${search.address }</div>
@@ -200,7 +200,7 @@ $(function(){
                               height="150">
                         </div>
                         <div class="content-container">
-                           <div class="${title} map-title">
+                           <div class="title2 map-title">
                            <a href="detail?id=${camping.id }">${camping.name }</a>
                            </div>
                            <div class="local" style="color: rgb(0, 140, 236);">${camping.address }</div>

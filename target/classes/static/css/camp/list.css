@@ -32,7 +32,7 @@ body {
    margin-top: 20px;
    margin-left: auto;
    margin-right: auto;
-   width: 75%;
+   width: 66%;
    height: 100px;
    display: flex;
    justify-content: space-between;
@@ -137,15 +137,15 @@ body {
 
 
 .icons {
+	margin-top:10px;
    display: flex;
    justify-content: center;
    align-items: center;
    border: gray 1px solid;
    border-radius: 10px;
    background-color: #f8f8f8;
-   height: 28%;
+   height: 30%;
    margin-right: 15px;
-   /*    width: 60px; */
    padding: 10px;
    border-radius: 50%;
 }
@@ -157,8 +157,9 @@ body {
 .icon i {
    font-size: 25px;
    color: darkblue;
-   padding-bottom: 10px;
+   padding-bottom: 4px;
    text-align: center;
+ 
 }
 
 .icon {
