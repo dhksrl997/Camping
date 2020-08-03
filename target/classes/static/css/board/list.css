@@ -68,8 +68,10 @@ a:hover{
 		text-align: center;
 	}
 	.thead-style>tr {
-		background-color: #ddd;
-	}
+       background-color: #ddd;
+       color: black;
+       font-weight: bold;
+    }
 	.table-box tr {
 		font-size: 15px;
 	}
@@ -90,3 +92,14 @@ a:hover{
 .orange{
 	font-weight:bold;
 }
+
+.regbtn {
+       width: 80px;
+       height: 34px;
+       margin-left: 93%;
+       margin-bottom: 24px;
+       background-color: gray;
+       border: none;
+       color: white;
+       font-weight: bold;
+   }

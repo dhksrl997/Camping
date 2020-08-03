@@ -18,7 +18,7 @@
 
 	<c:if test="${param.cate =='review' }">
 		<div class="main-background">
-			<h1 class="title-style">후기게시판</h1>
+			<h1 class="title-style">캠핑&여행 후기</h1>
 			<div class="bgimgWrap">
 				<div class="backgroundimg"></div>
 			</div>
@@ -28,8 +28,7 @@
 <div class="board-backput contentWrap" type="hidden" value="${param.cate }">
 	<c:if test="${sessionScope.userName!=null}">
 		<form action="/board/reg" method="get">
-         <input type="button" value="글쓰기" onclick="location.href='reg?cate=${param.cate}'"
-            style="margin-left: 77%; margin-bottom: 20px;"> 
+         <input type="button" value="글쓰기"  class="regbtn" onclick="location.href='reg?cate=${param.cate}'"> 
             <input type="hidden" value="${param.cate }">
       </form>
 	</c:if>

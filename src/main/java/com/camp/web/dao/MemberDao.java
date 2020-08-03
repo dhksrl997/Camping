@@ -69,19 +69,27 @@ public interface MemberDao {
 	@Select("SELECT * FROM letter where recieve=${SessionId}")
 	List<Letter> getLetter(int SessionId); 
 	
-	@Select("SELECT l.id,m.name,l.recieve,l.content,l.sendData as sendData,l.isRead FROM `member` m LEFT JOIN letter l on m.id=l.send where l.recieve=1 ORDER BY sendData DESC; ")
+	@Select("SELECT l.id,m.name,l.recieve,l.content,l.sendData as sendData,l.isRead FROM `member` m LEFT JOIN letter l on m.id=l.send where l.recieve=${recieverId} ORDER BY sendData DESC; ")
 	List<GetSenderName> whoSendMe(int recieverId);
+	
+	@Select("SELECT l.id,m.name,l.recieve,l.content,l.sendData as sendData,l.isRead FROM `member` m LEFT JOIN letter l on m.id=l.send where l.send=${testId} ORDER BY sendData DESC; ")
+	List<GetSenderName> whoRecieve(int testId);
 	
 	@Select("SELECT id FROM member where name='${userName}'")
 	int getUserNum(String userName);
 
-	@Select("SELECT Count(*) FROM letter Where isRead=1 AND recieve=1")
+	@Select("SELECT Count(*) FROM letter Where isRead=1 AND recieve=${id}")
 	int isRead(int id);
 	
 	@Update("UPDATE letter SET isRead=0 Where id=${id}")
 	int read(int id);
 	
-	@Select("SELECT m.name name,l.recieve,l.content,l.sendData,l.isRead FROM `member` m LEFT JOIN letter l on m.id=l.send where l.id=${id}")
+	@Select("SELECT m.id,m.name name,l.recieve,l.content,l.sendData,l.isRead FROM `member` m LEFT JOIN letter l on m.id=l.send where l.id=${id}")
 	List<GetSenderName> letterDetail(int id);
+
+	@Insert("insert into letter (send,recieve,content) values (${send},${recieve},'${content}');")
+	int insertResponseLetter(int send, int recieve, String content);
+
+	
 	
 }

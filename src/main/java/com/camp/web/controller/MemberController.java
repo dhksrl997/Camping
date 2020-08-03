@@ -144,26 +144,60 @@ public class MemberController {
 		@GetMapping("letters")
 		public String getLetters(Model model, HttpSession session) {
 			int id = memberDao.getUserNum((String) session.getAttribute("userName")); // 접속중인 유저의 id
-
+			
+			int testId = (int)session.getAttribute("id");
 //			List<Letter> list = memberDao.getLetter(id); // 해당 id로 도착한 쪽지
 			List<GetSenderName> senderName=memberDao.whoSendMe(id);
-			System.out.println(senderName);
+			List<GetSenderName> recieve=memberDao.whoRecieve(testId);
+//			System.out.println(senderName);
+//			System.out.printf("test : %s = ", recieve);
 			model.addAttribute("SenderName", senderName);
+			model.addAttribute("recieve", recieve);
 			return "member.letters";
 		}
 		
 		
-		//letter detail 
+		// letter detail
 		@GetMapping("readLetter")
-		public String readLetter(@RequestParam(name = "id")int id,Model model,HttpServletRequest request) {
+		public String readLetter(@RequestParam(name = "id") int id, Model model, HttpServletRequest request,
+				@RequestParam(name = "status", required = false) String status) {
 			memberDao.read(id);
 			HttpSession session = request.getSession();
 			int readCount = memberDao.isRead(id);
-			System.out.println(readCount);
-				if (readCount == 0) {
-					session.setAttribute("isRead", readCount);
+			
+			if (readCount == 0) {
+				session.setAttribute("isRead", readCount);
+			}
+			if (status != null) {
+				model.addAttribute("status", status);
 			}
 			model.addAttribute("content", memberDao.letterDetail(id));
+			System.out.println(memberDao.letterDetail(id));
 			return "member.readLetter";
 		}
+		
+		//답장
+		
+		@GetMapping("responseLetter")
+		public String response(@RequestParam(name = "id", required = true) int sendId, Model model ,HttpServletRequest request) {
+			HttpSession session = request.getSession();
+			int loginId = (int) session.getAttribute("id");
+//			System.out.println(sendId);
+//			System.out.println(loginId);
+			model.addAttribute("sendId" , sendId);
+			model.addAttribute("loginId" , loginId);
+			return "member.responseLetter";
+			
+		}
+		@PostMapping("responseLetter-data")
+		@ResponseBody
+		public int insertResponseLetter(HttpServletRequest request,int send , int recieve , String content) {
+//			System.out.println(send);
+//			System.out.println(recieve);
+//			System.out.println(content);
+			System.out.println(memberDao.insertResponseLetter(send, recieve, content));
+			return memberDao.insertResponseLetter(send,recieve,content);
+		//	return null;
+		}
+
 }

@@ -35,7 +35,7 @@ h3 {
 	font-size:25px;
 	padding-top:10px;
 	padding-left:10px;
-	
+	word-break:break-all;
 }
 .member-profile {
 	height: 360px;
@@ -398,4 +398,10 @@ input:focus::-webkit-input-placeholder{
 }
 .phone-detail div div:last-child input:focus{
 	border: 1px solid #1a73e8;
+}
+.response{
+	width:170px;
+	height:40px;
+	float:right;
+	margin-top:10px;
 }

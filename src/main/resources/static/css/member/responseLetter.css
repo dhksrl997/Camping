@@ -1,0 +1,19 @@
+.member-information{
+   width:100%;
+   height:max-content;
+   margin-top: 80px;
+}
+.areaWrap{
+   width:fit-content;
+   height:100%;
+   margin-left:auto;
+   margin-right:auto;
+}
+	.letter-form{
+	   height:max-content;
+	   margin: 40px auto 20px;
+	}
+	input.response {
+	    width: 80px;
+	    height: 34px;
+    }
