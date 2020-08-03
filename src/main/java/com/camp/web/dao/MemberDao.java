@@ -7,6 +7,8 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
+import com.camp.web.entity.GetSenderName;
+import com.camp.web.entity.Letter;
 import com.camp.web.entity.Member;
 
 @Mapper
@@ -64,6 +66,22 @@ public interface MemberDao {
 	@Select("SELECT id from member where uid = '${userName}';")
 	int getId(String userName);
 	
+	@Select("SELECT * FROM letter where recieve=${SessionId}")
+	List<Letter> getLetter(int SessionId); 
+	
+	@Select("SELECT l.id,m.name ss,l.recieve,l.content,l.sendData as sendData,l.isRead FROM `member` m LEFT JOIN letter l on m.id=l.send where l.recieve=1 ORDER BY sendData DESC; ")
+	List<GetSenderName> whoSendMe(int recieverId);
+	
+	@Select("SELECT id FROM member where name='${userName}'")
+	int getUserNum(String userName);
 
-	   
+	@Select("SELECT Count(*) FROM letter Where isRead=1 AND recieve=1")
+	int isRead(int id);
+	
+	@Update("UPDATE letter SET isRead=0 Where id=${id}")
+	int read(int id);
+	
+	@Select("SELECT m.name name,l.recieve,l.content,l.sendData,l.isRead FROM `member` m LEFT JOIN letter l on m.id=l.send where l.id=${id}")
+	List<GetSenderName> letterDetail(int id);
+	
 }

@@ -30,7 +30,9 @@ public interface BoardDao {
 
 	   @Select("SELECT MAX(id) from ${category}")
 	   int getMaxId(String category);
-
+	   
+	   @Select("SELECT Count(*) FROM letter Where isRead=1")
+		int IsRead();
 	
 	//admin
 	@Select("SELECT * FROM free LIMIT 20")

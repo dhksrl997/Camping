@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.camp.web.dao.MemberDao;
+import com.camp.web.entity.GetSenderName;
 import com.camp.web.entity.Member;
 import com.camp.web.service.MemberService;
 
@@ -48,11 +49,21 @@ public class MemberController {
 		String userName = (String) session.getAttribute("userId");
 		System.out.println(userName);
 		String name = memberService.getName(userName , request);
-		
-		
 		//id저장
 		int id = memberDao.getId(userName);
 		session.setAttribute("id", id);
+	
+		
+		int readCount = memberDao.isRead(id);
+	System.out.println(readCount);
+		
+			
+			session.setAttribute("isRead", readCount);
+			
+		
+		
+		
+		
 		
 		return "redirect:/index";
 
@@ -129,5 +140,30 @@ public class MemberController {
 			
 			
 			return memberDao.updatePhone(phone,userId);
+		}
+		@GetMapping("letters")
+		public String getLetters(Model model, HttpSession session) {
+			int id = memberDao.getUserNum((String) session.getAttribute("userName")); // 접속중인 유저의 id
+
+//			List<Letter> list = memberDao.getLetter(id); // 해당 id로 도착한 쪽지
+			List<GetSenderName> senderName=memberDao.whoSendMe(id);
+			System.out.println(senderName);
+			model.addAttribute("SenderName", senderName);
+			return "member.letters";
+		}
+		
+		
+		//letter detail 
+		@GetMapping("readLetter")
+		public String readLetter(@RequestParam(name = "id")int id,Model model,HttpServletRequest request) {
+			memberDao.read(id);
+			HttpSession session = request.getSession();
+			int readCount = memberDao.isRead(id);
+			System.out.println(readCount);
+				if (readCount == 0) {
+					session.setAttribute("isRead", readCount);
+			}
+			model.addAttribute("content", memberDao.letterDetail(id));
+			return "member.readLetter";
 		}
 }
