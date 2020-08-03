@@ -399,3 +399,10 @@ input:focus::-webkit-input-placeholder{
 .phone-detail div div:last-child input:focus{
 	border: 1px solid #1a73e8;
 }
+
+.response{
+	width:170px;
+	height:40px;
+	float:right;
+	margin-top:10px;
+}

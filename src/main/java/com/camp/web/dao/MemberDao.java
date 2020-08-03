@@ -72,6 +72,9 @@ public interface MemberDao {
 	@Select("SELECT l.id,m.name,l.recieve,l.content,l.sendData as sendData,l.isRead FROM `member` m LEFT JOIN letter l on m.id=l.send where l.recieve=1 ORDER BY sendData DESC; ")
 	List<GetSenderName> whoSendMe(int recieverId);
 	
+	@Select("SELECT * FROM letter where send=${id}")
+	List<Letter> myLetters(int id);
+	
 	@Select("SELECT id FROM member where name='${userName}'")
 	int getUserNum(String userName);
 
@@ -81,7 +84,16 @@ public interface MemberDao {
 	@Update("UPDATE letter SET isRead=0 Where id=${id}")
 	int read(int id);
 	
-	@Select("SELECT m.name name,l.recieve,l.content,l.sendData,l.isRead FROM `member` m LEFT JOIN letter l on m.id=l.send where l.id=${id}")
+	@Select("SELECT l.send sender,m.name name,l.recieve,l.content,l.sendData,l.isRead FROM `member` m LEFT JOIN letter l on m.id=l.send where l.id=${id}")
 	List<GetSenderName> letterDetail(int id);
+	
+	@Insert("INSERT INTO letter(send,recieve,content) VALUES(${sender},${recieve},'${content}')")
+	int response(int sender,int recieve,String content);
+
+	@Select("Select send FROM letter where id =${letterId}")
+	int letter(String letterId);
+	
+	@Select("SELECT Count(*) FROM letter Where isRead=1 AND recieve=${id}")
+	int isReadCheck(int id);
 	
 }
