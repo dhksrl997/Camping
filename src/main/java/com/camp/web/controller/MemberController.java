@@ -195,9 +195,17 @@ public class MemberController {
 //			System.out.println(send);
 //			System.out.println(recieve);
 //			System.out.println(content);
-	
+	 
 			return memberDao.insertResponseLetter(send,recieve,content);
 		//	return null;
 		}
+		@PostMapping("isReadCheck")	
+		@ResponseBody
+		public int check(HttpSession session) {
+			int result = memberDao.isReadCheck((int) session.getAttribute("id"));
+			System.out.println(result);
+			return result;
+		}
+		
 
 }

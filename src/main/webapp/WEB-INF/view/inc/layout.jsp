@@ -50,4 +50,5 @@
 </body>
 <script defer src="/js/header.js"></script>
 <script defer src="/js/darkmode.js"></script>
+<script defer src="/js/isReadCheck.js"></script>
 </html>

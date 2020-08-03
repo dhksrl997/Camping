@@ -17,10 +17,8 @@
 		<i class="fas fa-search search-icon"></i>
 		<s:authorize access="isAuthenticated()">
 		<!-- 메시지 알림이 왔을 때 뜨는 new 아이콘 -->
-        
-        <c:if test="${sessionScope.isRead!=0}">
-         <img class="message-new" src="/images/new.png" width="22px"/>
-		</c:if>
+			<img class="message-new" src="/images/new.png" width="22px"
+				style="display: none;" />
 			<li class="header-login"><a class="header-name">${sessionScope.userName}</a></li>
 		</s:authorize>
 		

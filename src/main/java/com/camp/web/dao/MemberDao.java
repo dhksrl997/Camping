@@ -90,6 +90,9 @@ public interface MemberDao {
 	@Insert("insert into letter (send,recieve,content) values (${send},${recieve},'${content}');")
 	int insertResponseLetter(int send, int recieve, String content);
 
+	@Select("SELECT Count(*) FROM letter Where isRead=1 AND recieve=${id}")
+	int isReadCheck(int id);
+
 	
 	
 }
