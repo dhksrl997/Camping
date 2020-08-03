@@ -69,7 +69,7 @@ public interface MemberDao {
 	@Select("SELECT * FROM letter where recieve=${SessionId}")
 	List<Letter> getLetter(int SessionId); 
 	
-	@Select("SELECT l.id,m.name ss,l.recieve,l.content,l.sendData as sendData,l.isRead FROM `member` m LEFT JOIN letter l on m.id=l.send where l.recieve=1 ORDER BY sendData DESC; ")
+	@Select("SELECT l.id,m.name,l.recieve,l.content,l.sendData as sendData,l.isRead FROM `member` m LEFT JOIN letter l on m.id=l.send where l.recieve=1 ORDER BY sendData DESC; ")
 	List<GetSenderName> whoSendMe(int recieverId);
 	
 	@Select("SELECT id FROM member where name='${userName}'")
