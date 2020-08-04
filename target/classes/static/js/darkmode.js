@@ -50,7 +50,7 @@ $(function() {
                  function() {$(this).css("background-color","rgb(47, 47, 47)").css("color", "white")});
          $(".pagination").css("background-color","rgb(47, 47, 47)").find("a").css("color","black");
          $(".header-mypage").css("background-color" , "rgb(47, 47, 47)").css("color","white");
-         
+         $(".txt-block").css("color","black");
          
       } else {// 라이트모드
          $(".search-field").attr("style","color:black;");
@@ -80,6 +80,7 @@ $(function() {
                  function() {$(this).css("background-color","white").css("color", "black")});
          $(".pagination").css("background-color","white").find("a").css("color","black");
          $(".header-mypage").css("background-color","white").css("color","black");
+         $(".txt-block").css("color","black");
       }
    });
    
@@ -118,7 +119,7 @@ $(function() {
                  function() {$(this).css("background-color","rgb(47, 47, 47)").css("color", "white")});
          $(".pagination").css("background-color","rgb(47, 47, 47)").find("a").css("color","black");
          $(".header-mypage").css("background-color" , "rgb(47, 47, 47)").css("color","white");
-         
+         $(".txt-block").css("color","black");
       } else {// 라이트모드
          localStorage.setItem('darkmode','true');
          $(".search-field").css("transition", "0.7s").attr("style","color:black;");
@@ -149,7 +150,7 @@ $(function() {
                  function() {$(this).css("background-color","white").css("color", "black")});
          $(".pagination").css("background-color","white").find("a").css("color","black");
          $(".header-mypage").css("background-color","white").css("color","black");
-         
+         $(".txt-block").css("color","black");
       }
    };
 //   ————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————

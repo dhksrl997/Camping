@@ -133,7 +133,7 @@
 		<div style=" border-top: 1px solid lightgrey;width: 800px;">
 		
 		<form class="comment-form" action="comment" method="get">
-					<fmt:formatDate var="dateTempParse" pattern="yyyy-MM-dd-hh-mm" value = "${com.regDate}"/>
+					<fmt:formatDate var="dateTempParse" pattern="yyyy년 MM월 dd일 hh:mm " value = "${com.regDate}"/>
 					<div class="regDate" style="font-size: 13px;">${dateTempParse}</div>
 			<div class="comment-section">
 				<div class="writer">${com.writer }</div>

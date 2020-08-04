@@ -70,7 +70,7 @@ font-weight: bold;
 	/* position: absolute;  */
 	position: fixed;
 	width: 350px;
-	height: 100%;
+	height: 100%; 
 	top: -10px;
 	left: -350px;
 	transition: .5s;

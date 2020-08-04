@@ -61,8 +61,6 @@ public class AsyncController {
 			region = null;
 		
 		if (region != null) {
-//            List<Camp> list = campDao.getList(region);
-//            System.out.println(index);
 			List<Camp> list = campDao.getScroll(region, index);
 			map.put("lists", list);
 		}
@@ -88,13 +86,10 @@ public class AsyncController {
 	@RequestMapping("/camp/searchlist")
 	public Map<String, Object> searchList(@RequestParam(name = "index", defaultValue = "1") int index,
 			@RequestParam(name = "query", defaultValue = "") String query) throws ClassNotFoundException, SQLException {
-		System.out.println(query);
-		System.out.println(index);
 		index = ((index) * 10) + 1;
 		Map<String, Object> map = new HashMap<>();
 		List<Camp> list = campDao.getSearchScroll(query, index);
 
-		System.out.println(list);
 		map.put("searchlist", list);
 
 		return map;
@@ -118,7 +113,6 @@ public class AsyncController {
 	@PostMapping("/admin/userlistSelect")
 	public Map<String, Object> userlist(int index, @RequestParam(name = "query", defaultValue = "") String query)
 			throws ClassNotFoundException, SQLException {
-		System.out.println(index);
 		Map<String, Object> map = new HashMap<>();
 		List<Member> userlist = memberDao.userlistNum(index);
 		map.put("userlistSelect", userlist);
@@ -134,7 +128,6 @@ public class AsyncController {
 	@PostMapping("/admin/boardlistSelect")
 	public Map<String, Object> boardlist(int index, @RequestParam(name = "query", defaultValue = "") String query)
 			throws ClassNotFoundException, SQLException {
-		System.out.println(index);
 		Map<String, Object> map = new HashMap<>();
 		List<Board> boardlist = boardDao.boardListNum(index);
 		map.put("boardlistSelect", boardlist);
@@ -146,7 +139,6 @@ public class AsyncController {
 	@PostMapping("/board/reg-search")
 	public Map<String, Object> regSearch(String content) throws ClassNotFoundException, SQLException {
 
-		System.out.println(content);
 
 		Map<String, Object> map = new HashMap<>();
 		List<Camp> list = boardDao.getSearchResult(content);
@@ -158,10 +150,8 @@ public class AsyncController {
 	@PostMapping("/board/reg-popup")
 	public List<Camp> regPopup(String content) {
 		List<Camp> list = new ArrayList<>();
-		System.out.println(content);
 
 		list = campDao.getPopup(content);
-		System.out.println(list);
 		return list;
 	}
 	
@@ -185,7 +175,6 @@ public class AsyncController {
 			}
 		}
 		for(int i = 0; i<filenames.length; i++) {
-		System.out.println("파일이름 제발 한글 " + filenames[i]);
 		}
 		return filenames;
 	}

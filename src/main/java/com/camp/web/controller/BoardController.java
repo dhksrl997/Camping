@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.camp.web.dao.BoardDao;
 import com.camp.web.entity.Board;
+import com.camp.web.entity.BoardComment;
 import com.camp.web.service.BoardService;
 
 @MultipartConfig(fileSizeThreshold = 1024 * 1024, maxFileSize = 100 * 1024 * 1024, maxRequestSize = 300 * 1024 * 1024)
@@ -82,7 +83,6 @@ public class BoardController {
 
 		List<Board> reviewBoardList = boardService.selectReviewBoardList(index, category);
 
-		
 		model.addAttribute("reviewBoardList", reviewBoardList);
 
 		return "board.list";
@@ -101,9 +101,8 @@ public class BoardController {
 	@ResponseBody
 	public Integer regData(HttpServletRequest request, @RequestParam(name = "cate") String category, String title,
 			String content, HttpSession session, Model model) throws IOException, ServletException {
-		System.out.println("---------------------");
 		String writer = (String) session.getAttribute("userId");
-		boardDao.insertBoard(writer, title, content);
+		boardDao.insertBoard(category,writer, title, content);
 		return boardDao.getMaxId(category);
 	}
 
@@ -115,12 +114,32 @@ public class BoardController {
 			cookie += id + "/";
 			boardDao.hit(category, id);
 		}
-		System.out.println("detail: " + category);
-		System.out.println("detail: " + id);
 		response.addCookie(new Cookie("freeBoard", cookie));
 		List<Board> result = boardDao.getDetail(category, id);
+		List<BoardComment> list = boardDao.getLists(id);
+		model.addAttribute("lists", list);
 		model.addAttribute("result", result);
 		return "board.detail";
+	};
+
+	@PostMapping("detail")
+	public void regCmt(@RequestParam(name = "content") String content, String writer,
+			@RequestParam(name = "cate") String category, @RequestParam(name = "id") int boardId,
+			HttpServletResponse response, HttpServletRequest request) throws IOException {
+		HttpSession session = request.getSession();
+		String userName = (String) session.getAttribute("userId");
+		writer = userName;
+		boardDao.insertCmt(writer, content, boardId);
+
+		response.sendRedirect("detail?cate=" + category + "&id=" + boardId);
+
+	}
+
+	@GetMapping("detail/delete")
+	@ResponseBody
+	public int deletComment(@RequestParam("id") int id) {
+
+		return boardDao.deleteComment(id);
 	}
 
 }

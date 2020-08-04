@@ -1,193 +1,209 @@
 @charset "UTF-8";
 
 @font-face {
-   font-family: 'Recipekorea';
-   src:
-      url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/Recipekorea.woff')
-      format('woff');
-   font-weight: normal;
-   font-style: normal;
+	font-family: 'Recipekorea';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/Recipekorea.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
 }
 
 body {
-   height: max-content;
-   margin: 0px;
+	height: max-content;
+	margin: 0px;
 }
 
 .slogan {
-   font-family: 'Recipekorea';
-   margin-top: 100px;
-   margin-bottom: 100px;
-   text-align: center;
-   font-size:35px;
+	font-family: 'Recipekorea';
+	margin-top: 100px;
+	margin-bottom: 100px;
+	text-align: center;
+	font-size: 35px;
 }
 
 .content-area {
-   width: 60%;
-   min-height: max-content;
-   min-height: 300px;
-   margin-left: auto;
-   margin-right: auto;
-   margin-bottom: 100px;
+	width: 60%;
+	min-height: max-content;
+	min-height: 300px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 100px;
 }
 
 .title {
-   border-top: 1px solid lightgray;
-   border-bottom: 1px solid lightgray;
-   padding-top:5px;
-   text-align: center;
-   font-family: 'Recipekorea';
-   width: 100%;
-   height: 40px;
-   font-size: 35px;
-   margin-top: auto;
-   margin-bottom: auto;
+	border-top: 1px solid lightgray;
+	border-bottom: 1px solid lightgray;
+	padding-top: 5px;
+	text-align: center;
+	font-family: 'Recipekorea';
+	width: 100%;
+	height: 40px;
+	font-size: 35px;
+	margin-top: auto;
+	margin-bottom: auto;
 }
 
 .info {
-   padding-top: 40px;
-   width: 215px;
-   height: 50px;
-   float: right;
-   font-size:20px;
+	padding-top: 40px;
+	width: 215px;
+	height: 50px;
+	float: right;
+	font-size: 20px;
 }
 
 .writer {
-   font-family: 'Recipekorea';
-   right:0px;
-   width: 250px;
-   height: 30px;
+	font-family: 'Recipekorea';
+	right: 0px;
+	width: 250px;
+	height: 30px;
 }
 
 .hit {
-      font-family: 'Recipekorea';
-   width: 150px;
-   height: 30px;
+	font-family: 'Recipekorea';
+	width: 150px;
+	height: 30px;
 }
 
 .Date {
-      font-family: 'Recipekorea';
-   width: 260px;
-   padding-top: 5px;
+	font-family: 'Recipekorea';
+	width: 260px;
+	padding-top: 5px;
 }
 
 .Line {
-   border: 1px solid lightgrey;
-   margin-top: 30px;
+	border: 1px solid lightgrey;
+	margin-top: 30px;
 }
 
 .review-content {
-   border-top: 2px solid black;
-   margin-top:200px;
-   height: max-content;
-   padding-top:30px;
-   padding-bottom: 30px;
-   border-bottom: 2px solid black;
-   
+	border-top: 2px solid black;
+	margin-top: 200px;
+	height: max-content;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	border-bottom: 2px solid black;
 }
 
 .commentText {
-   margin-top:200px;
-   padding-left: 300px;
-   font-size: 30px;
-}
-
-.cmtArea {
-   width: 80%;
-   min-height: 20px;
-   margin-left: auto;
-   margin-right: auto;
+	margin-top: 200px;
+	padding-left: 300px;
+	font-size: 30px;
 }
 
 .btn-area {
-   float: right;
-   padding-right: 400px;
-   margin-top:100px;
+	float: right;
+	padding-right: 400px;
+	margin-top: 100px;
 }
 
 .comment {
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   width: 1000px;
-   height: 200px;
-   margin-left: auto;
-   margin-right: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 1000px;
+	height: 200px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 50px;
+}
+
+.cmtArea {
+	width: 80%;
+	min-height: 20px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .reg-btn {
-   float: left;
-   height: 158px;
-   width: 100px;
+	float: left;
+	height: 158px;
+	width: 100px;
+}
+
+.cmt-content {
+	font-family: 'Recipekorea';
 }
 
 .cmt-writer {
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   width: 135px;
-   height: 100px;
-   padding-right:30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 135px;
+	height: 100px;
+	padding-right: 30px;
+	font-family: 'Recipekorea';
 }
 
 .cmt-area {
-   margin-left: auto;
-   margin-right: auto;
-   width: 1000px;
-   min-height: max-content;
+	margin-left: auto;
+	margin-right: auto;
+	width: 1000px;
+	min-height: max-content;
 }
 
 .get-cmt {
-   display: flex;
-   width: 1000px;
-   height: 200px;
-   border-top: 1px solid lightgrey;
-   /* border-bottom: 1px solid red;  */
+	display: flex;
+	width: 1000px;
+	height: 200px;
+	border-top: 1px solid lightgrey;
+	/* border-bottom: 1px solid red;  */
 }
 
 .get-cmt:last-child {
-   border-bottom: 1px solid lightgrey;
+	border-bottom: 1px solid lightgrey;
 }
 
 .reg-content {
-   display: flex;
-   align-items: center;
-   width: 100%;
-   padding-left: 50px;
+	display: flex;
+	align-items: center;
+	width: 100%;
+	padding-left: 50px;
+	font-family: 'Recipekorea';
 }
 
 .getCmt-writer {
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   width: 190px;
-   height: 202px;
+	font-family: 'Recipekorea';
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 190px;
+	height: 202px;
 }
 
 .del-btn {
-   margin-right: auto;
-   margin-top: auto;
-   height: 40px;
+	margin-right: auto;
+	margin-top: auto;
+	height: 40px;
 }
 
-
-.insertTitle{
-   font-size:25px;
-   font-family: Recipekorea;
-   text-align:center;
-}
-.searched-list{
-   width:100%;
-   font-size:25px;
-   font-family: S-CoreDream-3Light;
-   font-weight:bold;
-   height:300px;
-   display:flex;
-}
-.searched-content{
-   margin-left:30px;
+.insertTitle {
+	font-size: 25px;
+	font-family: Recipekorea;
+	text-align: center;
 }
 
-.searched-content div{
-   height:120px;
+.searched-list {
+	width: 100%;
+	font-size: 25px;
+	font-family: S-CoreDream-3Light;
+	font-weight: bold;
+	height: 300px;
+	display: flex;
+}
+
+.searched-content {
+	margin-left: 30px;
+}
+
+.searched-content div {
+	height: 120px;
+}
+
+.reg-Date {
+	font-family: 'Recipekorea';
+	width: 20%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }

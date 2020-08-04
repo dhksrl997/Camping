@@ -11,6 +11,7 @@ $(function(){
         let id = $("#id");
         let category = $(".content");
         console.log("sendRegData()");
+        let cate=searchParam('cate');
          $.ajax({
               type: "POST",
               url : "/board/reg-data",
@@ -21,7 +22,7 @@ $(function(){
               success: function(data) {
                  console.log("success");
                  console.log(data);
-                 let url = `/board/detail?cate=free&id=${data}`;
+                 let url = `/board/detail?cate=${cate}&id=${data}`;
                  console.log(url);
                  location.replace(url);
               }
@@ -114,8 +115,8 @@ $(function(){
                   success: function(popupdata) {
                      console.log(popupdata);
                      $(".popup").remove();
-                     $(".content")
-                     $(".content").append(`
+                     
+                     $(".content").prepend(`
                               <div class="searched-list" >
                  <a href="/camp/detail?id=${popupdata[0].id}">
                  <img src="/images/${popupdata[0].img1}" width="400px" height="300px" /></a> 

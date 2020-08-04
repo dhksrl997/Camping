@@ -1,20 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
-<!-- <ul class="numbutton">
-   <div class="1 number">MAIN</div>
-   <div class="2 number">TOOLS</div>
-   <div class="3 number">CAMPING</div>
-</ul>
-<div class="container">
-   <div class="img img1">
-   <img class="Logo" src="/images/mark-w.png" width="500px" height="500px">
-   </div>
-   <div class="img img2"></div>
-   <div class="img img3">
-      <span style="font-size: 50px; color: white;"></span>
-   </div>
-</div> -->
-
 <ul class="numbutton">
    <li class="1 number">CAMPNIC</li>
    <li class="2 number">C-PLACE</li>
@@ -64,7 +49,7 @@
       
    <div class="img img4">
       <section class="instaConWrap">
-         <div class="txt-block-insta">
+         <div class="txt-block-insta txt-block">
             <h1 class="instaCon-tit" style="color:white;">Connect on Campnic 
             </h1>
             <img class="iconinsta" src="/images/insta-icon60px.png"/>

@@ -8,7 +8,6 @@ $(function() {
 			// data:{result},
 			// datatype : "json",
 			success : function(data) {
-				console.log(data);
 				if (data != 0)
 					$(".message-new").css("display", "block");
 				else

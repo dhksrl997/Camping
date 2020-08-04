@@ -203,7 +203,6 @@ public class MemberController {
 		@ResponseBody
 		public int check(HttpSession session) {
 			int result = memberDao.isReadCheck((int) session.getAttribute("id"));
-			System.out.println(result);
 			return result;
 		}
 		
