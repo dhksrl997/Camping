@@ -79,7 +79,7 @@ public interface MemberDao {
 	int getUserNum(String userName);
 
 	@Select("SELECT Count(*) FROM letter Where isRead=1 AND recieve=${id}")
-	int isRead(int id);
+	String isRead(int id);
 	
 	@Update("UPDATE letter SET isRead=0 Where id=${id}")
 	int read(int id);
@@ -90,8 +90,8 @@ public interface MemberDao {
 	@Insert("insert into letter (send,recieve,content) values (${send},${recieve},'${content}');")
 	int insertResponseLetter(int send, int recieve, String content);
 
-	@Select("SELECT Count(*) FROM letter Where isRead=1 AND recieve=${id}")
-	int isReadCheck(int id);
+//	@Select("SELECT Count(*) FROM letter Where isRead=1 AND recieve=${id}")
+//	int isReadCheck(int id);
 
 	
 	

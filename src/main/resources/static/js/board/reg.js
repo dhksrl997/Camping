@@ -47,7 +47,6 @@ $(function(){
                 success:function(data){
                    console.log(data);
                    let texts = $(".content").html();
-                   $(".content").empty();
                    setTimeout(function(){
                       for(var i =0; i< data.length;i++){
                          var temp=data[i];
