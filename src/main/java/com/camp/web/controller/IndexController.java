@@ -17,7 +17,6 @@ public class IndexController {
 	@GetMapping("/index")
 	private String index(HttpServletResponse response) {
 		Cookie cookie =new Cookie("view",null);
-		cookie.setComment("게시글 조회 확인");
 		cookie.setMaxAge(60*60*24*365);
 		response.addCookie(cookie);
 		return "root.index";
