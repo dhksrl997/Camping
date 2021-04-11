@@ -2,7 +2,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <script defer src="/js/admin/boardlistSelect.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
+    <link href="css/plugins/toastr/toastr.min.css" rel="stylesheet">
+   <script src="js/plugins/toastr/toastr.min.js"></script>
+    
 <div class="adminConWrap">
     <div class="infoWrap">
         <h1 class="adminConTit">게시글 목록</h1>

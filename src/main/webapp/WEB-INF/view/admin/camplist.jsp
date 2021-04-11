@@ -4,7 +4,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <div class="adminConWrap">
-   
    <div class="infoWrap">
       <h1 class="adminConTit">캠핑장 목록</h1>
       <div class="searchWrap">
@@ -14,7 +13,7 @@
             <i class="fas fa-search search-icon"></i>
          </form>
       </div>
-      <button type="button" onclick="location.href='campreg'">등록하기</button>
+      <button type="button" onclick="doSave()">등록하기</button>
    </div>
 
    <div class="conListWrap">
@@ -57,5 +56,4 @@
          </tbody>
       </table>
    </div>
-
 </div>

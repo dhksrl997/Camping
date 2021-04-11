@@ -56,31 +56,5 @@ window.addEventListener("load", function() {
 			e.preventDefault();
 			$('.pwd2').focus();
 		}
-		
-		// e.preventDefault();
-		// if($('#id-danger').css('display')!="inline-block" &&
-		// $('.pwd1').val()!="" &&
-		// $('.pwd2').val()!="" &&
-		// $('.width-half').val()!="")
-		// {
-		// //alert("가입되셨습니다.");
-		//				
-		// }
-		// else {
-		// //alert("공백을 확인해주세요");
-		// }
-		// $('#submit-Button').click(function(e){
-		// if($('#id-danger').css('display')=="inline-block"){
-		// e.preventDefault();
-		// }
-		// else {
-		// if($('#id-text').val()!="" ||
-		// $('.pwd1').val()!="" ||
-		// $('.width-half').val()!=""){
-		// alert("d");
-		// }
-		// }
-
 	});
-
 });
